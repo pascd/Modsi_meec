@@ -7,3 +7,5 @@ Pronto agora já estou a alterar este documento do VSCODE.
 Este foi alterado do teste
 
 Bota que tem ! - Pablito
+
+I'm in? - Chico
