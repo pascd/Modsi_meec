@@ -11,17 +11,18 @@ h1 {
 
 /* Style the links inside the navigation bar */
 .nav_bar a {
+  width: 10%;
   float: left;
   color: #272727;
   text-align: center;
-  padding: 10px 16px;
+  padding: 2% 5%;   /* Padding 2% Top e bottom, 5% left e right*/
   text-decoration: none;
   font-size: 20px;
 }
 
 /* Change the color of links on hover */
 .nav_bar a:hover {
-  text-decoration: underline;
+  text-decoration:underline;
   text-decoration-color: green;
 }
 
@@ -32,3 +33,13 @@ h1 {
   
 }
 */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #272727;
+  color: white;
+  text-align: center;
+}
