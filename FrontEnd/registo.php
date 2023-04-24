@@ -23,7 +23,7 @@
             
             <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
-                <form action='registo_val.php' method="post" style="float: center; margin: 1% ;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+                <form class="registo" action='registo_val.php' method="post" style="float: center; margin: 1% ;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
                     <br>
                     Primeiro Nome: 
                     <input type="text" name="primeiro" placeholder="Luzinda" required><br><br>
