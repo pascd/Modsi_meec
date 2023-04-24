@@ -12,6 +12,7 @@
         );
         */
 
+        /*
         $Primeiro = mysqli_real_escape_string($conn,$_POST['primeiro']);
         $Ultimo = mysqli_real_escape_string($conn,$_POST['ultimo']);
         $Email = mysqli_real_escape_string($conn,$_POST['email']);
@@ -20,6 +21,16 @@
         $Contribuinte = mysqli_real_escape_string($conn,$_POST['contribuinte']);
         $Password = mysqli_real_escape_string($conn,$_POST['password']);
         $CPassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
+        */
+
+        $Primeiro = $_POST['primeiro'];
+        $Ultimo = $_POST['ultimo'];
+        $Email = $_POST['email'];
+        $Nascimento = $_POST['nascimento'];
+        $Telemovel = $_POST['telemovel'];
+        $Contribuinte = $_POST['contribuinte'];
+        $Password = $_POST['password'];
+        $CPassword = $_POST['cpassword'];
 
         // Server-side validation
   $errors = array();
@@ -37,15 +48,14 @@
     $errors[] = "Password is required";
   }
 
-  if (count($errors) > 0) {
-    echo "<ul>";
-    foreach ($errors as $error) {
-      echo "<li>$error</li>";
-    }
-    echo "</ul>";
+  if (empty($errors)) {
+    // Do something with the form data (e.g. insert into database)
+    $response = array('status' => 'success');
   } else {
-    // Success message
-    echo "Registration successful!";
+    $response = array('status' => 'error', 'errors' => $errors);
   }
-}
+  
+  header('Content-Type: application/json');
+  echo json_encode($response);
+  }
 ?>
