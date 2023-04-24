@@ -43,6 +43,24 @@ h1 {
 }
 */
 
+.newsfeed {
+  width: 96%;
+  margin: 2%; 
+  overflow: hidden;
+  float: center;
+  background-color: #065670;
+}
+
+.nf{
+  width: 25%;
+  height: 300px;
+  float: left;
+  margin-left: 3%;  
+  background-color: #cecece;
+  text-align: left;
+  padding: 2%;
+}
+
 .footer {
   left: 0;
   bottom: 0;
