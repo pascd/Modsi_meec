@@ -27,22 +27,16 @@
                     <br>
                     Primeiro Nome: 
                     <input type="text" name="primeiro" placeholder="Luzinda" required><br><br>
-                    <span class="error"> <?php echo $primeiro_err;?> </span>
                     Último Nome: 
                     <input type="text" name="ultimo" placeholder="Pereira" required><br><br>
-                    <span class="error"> <?php echo $ultimo_err; ?> </span>
                     Data de Nascimento: 
                     <input type="date" id="birthday" name="nascimento" required><br><br>
-                    <span class="error"> <?php echo $nascimento_err;?> </span>
                     Número de Utente: 
                     <input type="text" name="contribuinte" pattern="[0-9]{9}" required><br><br>
-                    <span class="error"> <?php echo $contribuinte_err;?> </span>
                     Email: 
                     <input type="email" name="email" placeholder="luzindapereira@email.com" size="30" required><br><br>
-                    <span class="error"> <?php echo $email_err;?> </span>
                     Número de Telemóvel: 
                     <input type="tel" id="phone" name="telemovel" placeholder="912345678" pattern="[0-9]{9}" required><br><br>
-                    <span class="error"> <?php echo $telemovel_err;?> </span>
                     Palavra-Chave: 
                     <input type="password" name="password" required><br><br>
                     Repita a Palavra-Chave Anterior: 
