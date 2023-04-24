@@ -44,6 +44,7 @@
   } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Invalid email format";
   }
+  
   if (empty($Password)) {
     $errors[] = "Password is required";
   }
@@ -52,6 +53,7 @@
     // Do something with the form data (e.g. insert into database)
     $response = array('status' => 'success');
   } else {
+    http_response_code(400);
     $response = array('status' => 'error', 'errors' => $errors);
   }
   
