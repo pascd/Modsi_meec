@@ -51,13 +51,15 @@
                     <input type="password" id="id_cpassword" name="cpassword"><br><br>
                     <div id="cpassword-erro" class="error"></div>
                     <br>
-                <input type="submit"><br><br>
-                <div id="registo-check" class="error"></div>
+                    <input type="submit"><br><br>
+                    <div id="registo-check" class="error"></div>
+                </form>
             </div>
             <script src="jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
-                        $('#registo-form').submit(function(e) {
+                        $('#registo-form').submit(function(e) 
+                        {
                             e.preventDefault();
                             $.ajax({
                                 url: "registo_val.php",
@@ -66,12 +68,13 @@
                                 dataType: "json",
                                 success: function(response) {
                                     if (response.status == 'success') {
+                                        console.log("AJAX");
                                         $('#registo-form')[0].reset();
                                         $('#registo-check').text('Registo realizado com sucesso!');
                                     } 
                                     else {
-                                        $('.error').text('');
-                                        $('#primeiro-erro').text(response.errors.primeiro);
+                                        $('.errors').text('');
+                                        $('#primeiro-erro').html(response.errors.primeiro);
                                         $('#ultimo-erro').text(response.errors.ultimo);
                                         $('#nascimento-erro').text(response.errors.nascimento);
                                         $('#nus-erro').text(response.errors.nus);
@@ -81,6 +84,11 @@
                                         $('#cpassword-erro').text(response.errors.cpassword);
                                     }
                                 },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                console.log("AJAX erro");
+                                console.log("Error: " + errorThrown);
+                                
+                                }
                             });
                         });
                     });

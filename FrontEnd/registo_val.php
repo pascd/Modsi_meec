@@ -1,19 +1,19 @@
 <?php 
-        //require_once('database.php');
+        require_once('database.php');
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {
         /*
-        $Primeiro = mysqli_real_escape_string($conn,$_POST['primeiro']);
-        $Ultimo = mysqli_real_escape_string($conn,$_POST['ultimo']);
-        $Email = mysqli_real_escape_string($conn,$_POST['email']);
-        $Nascimento = mysqli_real_escape_string($conn,$_POST['nascmineto']);
-        $Telemovel = mysqli_real_escape_string($conn,$_POST['telemovel']);
-        $Contribuinte = mysqli_real_escape_string($conn,$_POST['contribuinte']);
-        $Password = mysqli_real_escape_string($conn,$_POST['password']);
-        $CPassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
+        $Primeiro = mysqli_real_escape_string($db,$_POST['primeiro']);
+        $Ultimo = mysqli_real_escape_string($db,$_POST['ultimo']);
+        $Email = mysqli_real_escape_string($db,$_POST['email']);
+        $Nascimento = mysqli_real_escape_string($db,$_POST['nascimento']);
+        $Telemovel = mysqli_real_escape_string($db,$_POST['telemovel']);
+        $NUS = mysqli_real_escape_string($db,$_POST['NUS']);
+        $Password = mysqli_real_escape_string($db,$_POST['password']);
+        $CPassword = mysqli_real_escape_string($db,$_POST['cpassword']);
         */
-
+        
         $Primeiro = $_POST['primeiro'];
         $Ultimo = $_POST['ultimo'];
         $Email = $_POST['email'];
@@ -22,8 +22,7 @@
         $NUS = $_POST['NUS'];
         $Password = $_POST['password'];
         $CPassword = $_POST['cpassword'];
-
-        // Server-side validation
+        
     $errors = array();
     
     if (empty($Primeiro)) {
@@ -46,6 +45,13 @@
       $errors['email'] = "Email e necessario.";
     } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
       $errors['email'] = "Utilize um formato valido de email.";
+    } else {
+      $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
+      $ans = $db->query($sel_sql);
+      if($ans->num_rows > 0)
+      {
+        $errors['email'] = "Este email ja esta a ser utilizado.";
+      }
     }
 
     if (empty($Nascimento)) {
@@ -62,6 +68,13 @@
     else if(strlen($Telemovel)!=9)
     {
       $errors['telemovel'] = "Telemovel tem 9 digitos.";
+    } else{
+      $sel_sql = "SELECT * FROM users WHERE Contacto = '$Telemovel'";
+      $ans = $db->query($sel_sql);
+      if($ans->num_rows > 0)
+      {
+        $errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
+      }
     }
     
     if (empty($NUS)) {
@@ -74,6 +87,13 @@
     else if(strlen($NUS)!=9)
     {
       $errors['nus'] = "Numero de utente de saude tem 9 digitos.";
+    } else{
+      $sel_sql = "SELECT * FROM users WHERE NUS = '$NUS'";
+      $ans = $db->query($sel_sql);
+      if($ans->num_rows > 0)
+      {
+        $errors['NUS'] = "Este NUS ja esta a ser utilizado.";
+      }
     }
     
 
@@ -91,12 +111,19 @@
     }
 
     if (empty($errors)) {
-      // Do something with the form data (e.g. insert into database)
       $response = array('status' => 'success');
+      $Password_Hash = password_hash($password, PASSWORD_DEFAULT);
+      $ins_sql = "INSERT INTO users (P_nome, U_nome, Nascimento, NUS, Email, Contacto, Pass) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password_Hash')";
+      if (mysqli_query($db, $ins_sql)) {
+        echo "Registo criado com sucesso.";
+      } else {
+        echo "Erro ao criar registo: " . mysqli_error($db);
+      }
+      mysqli_close($db);
     } else {
       $response = array('status' => 'error', 'errors' => $errors);
     }
-
+    
     header('Content-Type: application/json');
     echo json_encode($response);
     }
