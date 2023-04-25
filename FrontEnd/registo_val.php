@@ -19,7 +19,7 @@
         $Email = $_POST['email'];
         $Nascimento = $_POST['nascimento'];
         $Telemovel = $_POST['telemovel'];
-        $NISS = $_POST['NISS'];
+        $NUS = $_POST['NUS'];
         $Password = $_POST['password'];
         $CPassword = $_POST['cpassword'];
 
@@ -29,9 +29,17 @@
     if (empty($Primeiro)) {
       $errors['primeiro'] = "Primeiro nome e necessario.";
     }
+    else if(!preg_match('/^[a-zA-Z]+$/',$Primeiro))
+    {
+      $errors['primeiro'] = "So pode conter letras.";
+    }
 
     if (empty($Ultimo)) {
       $errors['ultimo'] = "Ultimo nome e necessario.";
+    }
+    else if(!preg_match('/^[a-zA-Z]+$/',$Ultimo))
+    {
+      $errors['ultimo'] = "So pode conter letras.";
     }
 
     if (empty($Email)) {
@@ -41,25 +49,45 @@
     }
 
     if (empty($Nascimento)) {
-      $errors['nascimento'] = "Data de nascmineto a necessaria.";
+      $errors['nascimento'] = "Data de nascimento a necessaria.";
     }
 
     if (empty($Telemovel)) {
-      $errors['telemovel'] = "Telemóvel e necessario.";
+      $errors['telemovel'] = "Telemovel e necessario.";
+    }
+    else if(!preg_match('/^[0-9]+$/',$Telemovel))
+    {
+      $errors['telemovel'] = "Telemovel so pode conter numeros.";
+    }
+    else if(strlen($Telemovel)!=9)
+    {
+      $errors['telemovel'] = "Telemovel tem 9 digitos.";
     }
     
-    if (empty($NISS)) {
-      $errors['niss'] = "NISS e necessario.";
+    if (empty($NUS)) {
+      $errors['nus'] = "Numero de utente de saude e necessario.";
     }
+    else if(!preg_match('/^[0-9]+$/',$NUS))
+    {
+      $errors['nus'] = "Numero de utente so pode conter numeros.";
+    }
+    else if(strlen($NUS)!=9)
+    {
+      $errors['nus'] = "Numero de utente de saude tem 9 digitos.";
+    }
+    
 
     if (empty($Password)) {
       $errors['password'] = "Password e necesssaria.";
-    } else if ($Password != $CPassword){
-      $errors['password'] = "Password e necesssaria.";
+    } else if(strlen($Password)<8)
+    {
+      $errors['password'] = "Password necessita de ter pelo menos 8 caracteres.";
     }
 
     if (empty($CPassword)) {
-      $errors['cpassword'] = "Password e necesssaria.";
+      $errors['cpassword'] = "Confirme a password.";
+    } else if ($Password != $CPassword){
+      $errors['cpassword'] = "Passwords nao coincidem.";
     }
 
     if (empty($errors)) {
