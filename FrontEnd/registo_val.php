@@ -27,17 +27,39 @@
     $errors = array();
     
     if (empty($Primeiro)) {
-      $errors[] = "Name is required";
+      $errors['primeiro'] = "Primeiro nome e necessario.";
+    }
+
+    if (empty($Ultimo)) {
+      $errors['ultimo'] = "Ultimo nome e necessario.";
     }
 
     if (empty($Email)) {
-      $errors[] = "Email is required";
+      $errors['email'] = "Email e necessario.";
     } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-      $errors[] = "Invalid email format";
+      $errors['email'] = "Utilize um formato valido de email.";
+    }
+
+    if (empty($Nascimento)) {
+      $errors['nascimento'] = "Data de nascmineto a necessaria.";
+    }
+
+    if (empty($Telemovel)) {
+      $errors['telemovel'] = "Telemóvel e necessario.";
     }
     
+    if (empty($NISS)) {
+      $errors['niss'] = "NISS e necessario.";
+    }
+
     if (empty($Password)) {
-      $errors[] = "Password is required";
+      $errors['password'] = "Password e necesssaria.";
+    } else if ($Password != $CPassword){
+      $errors['password'] = "Password e necesssaria.";
+    }
+
+    if (empty($CPassword)) {
+      $errors['cpassword'] = "Password e necesssaria.";
     }
 
     if (empty($errors)) {
