@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -15,7 +16,7 @@
             <a href="#vacinas">Vacinas</a>
             <a href="#contactos">Contactos</a>
             <a href="#sobre">Sobre</a>
-            <a href="registo.html">Minha Conta</a>
+            <a href="registo.php">Minha Conta</a>
         </div>
 
 		<p>
@@ -45,37 +46,33 @@
                     Repita a Palavra-Chave Anterior: 
                     <input type="password" id="id_cpassword" name="cpassword"><br><br>
                 <br>
-                <input id="submit" type="submit"/><br><br>
+                <input type="submit"><br><br>
             </div>
-            
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
                         $('#registo-form').submit(function(e) {
                             e.preventDefault();
                             $.ajax({
-                                url: 'registo_val.php',
-                                type: 'POST',
+                                url: "registo_val.php",
+                                type: "POST",
                                 data: $('#registo-form').serialize(),
-                                dataType: 'json',
+                                dataType: "json",
                                 success: function(response) {
                                     if (response.status == 'success') {
                                         alert('Registration successful!');
-                                    } else {
+                                    } 
+                                    else {
                                         alert('Registration successful!');
                                         $('#primeiro-error').text('Nome Errado');
                                         $('#email-error').text(response.errors.Email);
                                         $('#password-error').text(response.errors.Password);
                                     }
                                 },
-                                error: function(xhr, status, error) {
-                                    console.log(xhr.responseText);
-                                }
                             });
                         });
                     });
 	            </script>
-
     		</p>
 	</body>
 </html>

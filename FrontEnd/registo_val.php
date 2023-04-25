@@ -1,17 +1,8 @@
-<?php
-        
+<?php 
         //require_once('database.php');
         
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {
-        /*
-        // $data will be encoded as json and then returned by the script
-        $data = array(
-            'success' => false, // Flag whether everything was successful
-            'errors' => array() // Provide information regarding the error(s)
-        );
-        */
-
         /*
         $Primeiro = mysqli_real_escape_string($conn,$_POST['primeiro']);
         $Ultimo = mysqli_real_escape_string($conn,$_POST['ultimo']);
@@ -28,36 +19,35 @@
         $Email = $_POST['email'];
         $Nascimento = $_POST['nascimento'];
         $Telemovel = $_POST['telemovel'];
-        $Contribuinte = $_POST['contribuinte'];
+        $NISS = $_POST['NISS'];
         $Password = $_POST['password'];
         $CPassword = $_POST['cpassword'];
 
         // Server-side validation
-  $errors = array();
+    $errors = array();
+    
+    if (empty($Primeiro)) {
+      $errors[] = "Name is required";
+    }
 
-  if (empty($Primeiro)) {
-    $errors[] = "Name is required";
-  }
+    if (empty($Email)) {
+      $errors[] = "Email is required";
+    } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+      $errors[] = "Invalid email format";
+    }
+    
+    if (empty($Password)) {
+      $errors[] = "Password is required";
+    }
 
-  if (empty($Email)) {
-    $errors[] = "Email is required";
-  } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Invalid email format";
-  }
-  
-  if (empty($Password)) {
-    $errors[] = "Password is required";
-  }
+    if (empty($errors)) {
+      // Do something with the form data (e.g. insert into database)
+      $response = array('status' => 'success');
+    } else {
+      $response = array('status' => 'error', 'errors' => $errors);
+    }
 
-  if (empty($errors)) {
-    // Do something with the form data (e.g. insert into database)
-    $response = array('status' => 'success');
-  } else {
-    http_response_code(400);
-    $response = array('status' => 'error', 'errors' => $errors);
-  }
-  
-  header('Content-Type: application/json');
-  echo json_encode($response);
-  }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    }
 ?>
