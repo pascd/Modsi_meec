@@ -12,9 +12,13 @@
         </h1>
 
         <script src="jquery-3.6.4.min.js"></script>
-        <script>
-            
-        </script>
+        <script> 
+            $(function(){
+            $("#menu_bar").load("menu_bar.php"); 
+            });
+        </script>   
+
+        <div id="menu_bar"></div>
 
 		<p>
 			Faça login na sua conta!

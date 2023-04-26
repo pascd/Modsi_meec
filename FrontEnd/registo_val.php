@@ -92,7 +92,7 @@
       $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
-        $errors['NUS'] = "Este NUS ja esta a ser utilizado.";
+        $errors['nus'] = "Este NUS ja esta a ser utilizado.";
       }
     }
     

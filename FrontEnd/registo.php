@@ -73,7 +73,7 @@
                                         $('#registo-check').text('Registo realizado com sucesso!');
                                     } 
                                     else {
-                                        $('.errors').text('');
+                                        $('.error').text('');
                                         $('#primeiro-erro').html(response.errors.primeiro);
                                         $('#ultimo-erro').text(response.errors.ultimo);
                                         $('#nascimento-erro').text(response.errors.nascimento);
