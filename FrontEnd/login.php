@@ -10,13 +10,11 @@
         <h1>
             Sistema de vacinação Portuguesa!
         </h1>
-        <div class="nav_bar">
-            <a href="index.html">Home</a>
-            <a href="#vacinas">Vacinas</a>
-            <a href="#contactos">Contactos</a>
-            <a href="#sobre">Sobre</a>
-            <a href="registo.php">Minha Conta</a>
-        </div>
+
+        <script src="jquery-3.6.4.min.js"></script>
+        <script>
+            
+        </script>
 
 		<p>
 			Faça login na sua conta!
