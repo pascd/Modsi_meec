@@ -47,7 +47,7 @@
       $errors['email'] = "Utilize um formato valido de email.";
     } else {
       $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
-      $ans = $db->query($sel_sql);
+      $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
         $errors['email'] = "Este email ja esta a ser utilizado.";
@@ -70,7 +70,7 @@
       $errors['telemovel'] = "Telemovel tem 9 digitos.";
     } else{
       $sel_sql = "SELECT * FROM users WHERE Contacto = '$Telemovel'";
-      $ans = $db->query($sel_sql);
+      $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
         $errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
@@ -89,7 +89,7 @@
       $errors['nus'] = "Numero de utente de saude tem 9 digitos.";
     } else{
       $sel_sql = "SELECT * FROM users WHERE NUS = '$NUS'";
-      $ans = $db->query($sel_sql);
+      $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
         $errors['NUS'] = "Este NUS ja esta a ser utilizado.";

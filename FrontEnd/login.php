@@ -48,10 +48,10 @@
                                 success: function(response) {
                                     if (response.status == 'success') {
                                         $('#login-form')[0].reset();
-                                        window.location.href = "index.html";
+                                        //window.location.href = "index.html";
                                     } 
                                     else {
-                                        $('.errors').text('');
+                                        $('.error').text('');
                                         $('#email-erro').text(response.errors.email);
                                         $('#password-erro').text(response.errors.password);
                                     }

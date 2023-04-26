@@ -19,7 +19,7 @@
       $errors['email'] = "Utilize um formato valido de email.";
     } else {
         $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
-        $ans = $db->query($sel_sql);
+        $ans = mysqli_query($db, $sel_sql);
         if($ans->num_rows == 0)
         {
           $errors['email'] = "Este email nao esta registado.";
@@ -30,21 +30,21 @@
       $errors['password'] = "Password e necesssaria.";
     } else if(strlen($Password)<8)
     {
-      $errors['password'] = "De certeza que e esta a sua password? Muito pequena.";
+      $errors['password'] = "Password muito pequena.";
     } else{
         $sel_sql = "SELECT Pass FROM users WHERE Email = '$Email'";
-        $ans = $db->query($sel_sql);
+        $ans = mysqli_query($db, $sel_sql);
         if($ans->num_rows == 1)
         {
-            $row = $ans->fetch_assoc();
+            $row = mysqli_fetch_assoc($ans);
             $Password_Hash = $row['Pass'];
+            echo $Password_Hash;
             if(!password_verify($Password_Hash, $Password)){
                 $errors['password'] = "Credenciais de acesso erradas";
             }
         }
     }
     
-
     if (empty($errors)) {
       $response = array('status' => 'success');
     } else {
