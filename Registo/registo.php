@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 
 	<head>
 		<title>Registo</title>
@@ -12,11 +12,11 @@
             Sistema de vacinação Portuguesa!
         </h1>
         <div class="nav_bar">
-            <a href="index.html">Home</a>
+            <a href="../pagina_inicial/index.html">Home</a>
             <a href="#vacinas">Vacinas</a>
             <a href="#contactos">Contactos</a>
             <a href="#sobre">Sobre</a>
-            <a href="registo.php">Minha Conta</a>
+            <a href="../registo/registo.php">Minha Conta</a>
         </div>
 
 		<p>
@@ -55,14 +55,14 @@
                     <div id="registo-check" class="error"></div>
                 </form>
             </div>
-            <script src="jquery-3.6.4.min.js"></script>
+            <script src="../jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
                         $('#registo-form').submit(function(e) 
                         {
                             e.preventDefault();
                             $.ajax({
-                                url: "registo_val.php",
+                                url: "../Registo/registo_val.php",
                                 type: "POST",
                                 data: $('#registo-form').serialize(),
                                 dataType: "json",
