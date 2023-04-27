@@ -1,3 +1,5 @@
+
+/* Atributos que afetam a página inteira*/
 body {
   width: 98%;
   margin-left: 1%;
@@ -14,10 +16,10 @@ h1 {
     overflow: hidden;
     background-color: #333;
   }
-  
+
   .nav_bar a {
     float: left;
-    font-size: 16px;
+    font-size: large;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -30,7 +32,7 @@ h1 {
   }
   
   .dropdown .dropbtn {
-    font-size: 16px;  
+    font-size: large;  
     border: none;
     outline: none;
     color: white;
@@ -76,13 +78,34 @@ h1 {
   text-decoration-color: green;
 }
 
-/* Add a color to the active/current link 
+/* Add a color to the active/current link */
 .nav_bar a.active {
   background-color: #04AA6D;
   color: white;
   
 }
-*/
+
+.double_column {
+  width: 42%;
+  
+  background-color: #0c6886;
+  float: left;
+  margin: 2%; 
+  text-align: center;
+  padding: 2%;
+
+}
+
+.double_column a {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+.double_column img {
+  margin-top: 1%;
+  width: 100%;
+}
 
 .newsfeed {
   width: 96%;
