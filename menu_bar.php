@@ -75,8 +75,8 @@
     <div class="dropdown">
             <button class="dropbtn" id="perfil">Perfil</button>
             <div class="dropdown-content">
-                <a href="../login/login.php" id="perfil">Meu perfil</a>
-                <a href="../registo/registo.php" id="perfil">Minhas reservas</a>
+                <a href="../perfil/meu_perfil.php" id="perfil">Meu perfil</a>
+                <a href="../registo/registo.php" id="perfil">Minhas marcações</a>
             </div>
     </div>
     <a href="../login/logout.php" id="logout">Sair</a>
