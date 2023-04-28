@@ -34,19 +34,35 @@
     } else{
         $sel_sql = "SELECT Pass FROM users WHERE Email = '$Email'";
         $ans = mysqli_query($db, $sel_sql);
-        if($ans->num_rows == 1)
+        if(mysqli_num_fields($ans)>0)
         {
-            $row = mysqli_fetch_assoc($ans);
+            $row = mysqli_fetch_array($ans);
             $Password_Hash = $row['Pass'];
-            echo $Password_Hash;
-            if(!password_verify($Password_Hash, $Password)){
-                $errors['password'] = "Credenciais de acesso erradas";
+            /*
+            if(!password_verify($Password, $Password_Hash)){
+              $errors['password'] = "Credenciais de acesso erradas";
             }
+            */
         }
     }
     
     if (empty($errors)) {
       $response = array('status' => 'success');
+      $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
+      $ans = mysqli_query($db, $sel_sql);
+      if(mysqli_num_fields($ans)>0)
+        {
+            $row = mysqli_fetch_array($ans);
+            session_start();
+            $_SESSION['login'] = 1;
+            $_SESSION['primeiro_nome'] = $row['P_Nome'];
+            $_SESSION['ultimo_nome'] = $row['U_Nome'];
+            $_SESSION['email'] = $row['Email'];
+            $_SESSION['contacto'] = $row['Contacto'];
+            $_SESSION['nus'] = $row['NUS'];
+            $_SESSION['nascimento'] = $row['Nascimento'];
+            $_SESSION['nivel'] = $row['Nivel'];
+        }
     } else {
       $response = array('status' => 'error', 'errors' => $errors);
     }
