@@ -46,7 +46,7 @@
     } else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
       $errors['email'] = "Utilize um formato valido de email.";
     } else {
-      $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
+      $sel_sql = "SELECT * FROM users WHERE email = '$Email'";
       $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
@@ -69,7 +69,7 @@
     {
       $errors['telemovel'] = "Telemovel tem 9 digitos.";
     } else{
-      $sel_sql = "SELECT * FROM users WHERE Contacto = '$Telemovel'";
+      $sel_sql = "SELECT * FROM users WHERE contacto = '$Telemovel'";
       $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
@@ -88,7 +88,7 @@
     {
       $errors['nus'] = "Numero de utente de saude tem 9 digitos.";
     } else{
-      $sel_sql = "SELECT * FROM users WHERE NUS = '$NUS'";
+      $sel_sql = "SELECT * FROM users WHERE nus = '$NUS'";
       $ans = mysqli_query($db, $sel_sql);
       if($ans->num_rows > 0)
       {
@@ -114,7 +114,7 @@
       $response = array('status' => 'success');
       $Password_Hash = password_hash($password, PASSWORD_DEFAULT);
       $Nivel = 3;
-      $ins_sql = "INSERT INTO users (P_nome, U_nome, Nascimento, NUS, Email, Contacto, Pass, Nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password_Hash', '$Nivel')";
+      $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password_Hash', '$Nivel')";
       if (mysqli_query($db, $ins_sql)) {
         echo "Registo criado com sucesso.";
       } else {

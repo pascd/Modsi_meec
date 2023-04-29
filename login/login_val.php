@@ -32,12 +32,12 @@
     {
       $errors['password'] = "Password muito pequena.";
     } else{
-        $sel_sql = "SELECT Pass FROM users WHERE Email = '$Email'";
+        $sel_sql = "SELECT pass FROM users WHERE email = '$Email'";
         $ans = mysqli_query($db, $sel_sql);
         if(mysqli_num_fields($ans)>0)
         {
             $row = mysqli_fetch_array($ans);
-            $Password_db = $row['Pass'];
+            $Password_db = $row['pass'];
             $Password_hash = password_hash($Password, '2y');
             //echo $Password_db;
             //echo "\n";
@@ -67,13 +67,14 @@
             $row = mysqli_fetch_array($ans);
             session_start();
             $_SESSION['login'] = 1;
-            $_SESSION['primeiro_nome'] = $row['P_Nome'];
-            $_SESSION['ultimo_nome'] = $row['U_Nome'];
-            $_SESSION['email'] = $row['Email'];
-            $_SESSION['contacto'] = $row['Contacto'];
-            $_SESSION['nus'] = $row['NUS'];
-            $_SESSION['nascimento'] = $row['Nascimento'];
-            $_SESSION['nivel'] = $row['Nivel'];
+            $_SESSION['id'] = $row['id_user'];
+            $_SESSION['primeiro_nome'] = $row['primeiro_nome'];
+            $_SESSION['ultimo_nome'] = $row['ultimo_nome'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['contacto'] = $row['contacto'];
+            $_SESSION['nus'] = $row['nus'];
+            $_SESSION['nascimento'] = $row['nascimento'];
+            $_SESSION['nivel'] = $row['nivel'];
         }
     } else {
       $response = array('status' => 'error', 'errors' => $errors);
