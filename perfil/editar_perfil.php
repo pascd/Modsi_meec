@@ -3,7 +3,7 @@
 
     session_start();
     
-    $Email_Ver = $_SESSION['email'];
+    $id = $_SESSION['id'];
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
@@ -37,7 +37,7 @@
         } else if (!filter_var($Email_new, FILTER_VALIDATE_EMAIL)) {
           $errors['email'] = "Utilize um formato valido de email.";
         } else {
-          $sel_sql = "SELECT * FROM users WHERE Email = '$Email_new'";
+          $sel_sql = "SELECT * FROM users WHERE email = '$Email_new'";
           $ans = mysqli_query($db, $sel_sql);
           if($ans->num_rows > 1)
           {
@@ -60,7 +60,7 @@
         {
           $errors['telemovel'] = "Telemovel tem 9 digitos.";
         } else{
-          $sel_sql = "SELECT * FROM users WHERE Contacto = '$Telemovel_new'";
+          $sel_sql = "SELECT * FROM users WHERE contacto = '$Telemovel_new'";
           $ans = mysqli_query($db, $sel_sql);
           if($ans->num_rows > 1)
           {
@@ -79,7 +79,7 @@
         {
           $errors['nus'] = "Numero de utente de saude tem 9 digitos.";
         } else{
-          $sel_sql = "SELECT * FROM users WHERE NUS = '$NUS_new'";
+          $sel_sql = "SELECT * FROM users WHERE nus = '$NUS_new'";
           $ans = mysqli_query($db, $sel_sql);
           if($ans->num_rows > 1)
           {
@@ -105,7 +105,7 @@
         if (empty($errors)) {
           $response = array('status' => 'success');
             //$Password_Hash = password_hash($password, PASSWORD_BCRYPT);
-            $query = "UPDATE users SET P_nome='$Primeiro_new', U_nome='$Ultimo_new', Nascimento='$Nascimento_new', NUS='$NUS_new', Email='$Email_new', Contacto='$Telemovel_new' WHERE Email=$Email_Ver";
+            $query = "UPDATE users SET primeiro_nome='$Primeiro_new', ultimo_nome='$Ultimo_new', nascimento='$Nascimento_new', nus='$NUS_new', email='$Email_new', contacto='$Telemovel_new' WHERE id_user=$id";
             mysqli_query($db, $query);
             //echo "Erro ao criar registo: " . mysqli_error($db);
             mysqli_close($db);
