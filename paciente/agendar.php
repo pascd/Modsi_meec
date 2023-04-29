@@ -18,7 +18,50 @@
         </script>   
 
         <div id="menu_bar"></div>
+        
+        <table>
+        <tr>
+        <td> ID </td>
+        <td> Vacina </td>
+        <td> Vagas </td>
+        <td> Data </td>
+        <td> Hora </td>
+        <td> Selecionar </td>
+        </tr>
+        <?php
 
+            require_once('../database.php');
+                    
+            $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
+            
+            $ans = mysqli_query($db, $sel_sql);
+            if(mysqli_num_rows($ans) > 0)
+            {
+            while($row = mysqli_fetch_assoc($ans)){
+            ?> 
+            <br> 
+            <tr>  
+            <td> <?php echo $row['id_vagas']; ?> </td>
+            <td> <?php echo $row['vacina']; ?> </td>
+            <td> <?php echo $row['vagas']; ?> </td>
+            <td> <?php echo $row['data_vaga']; ?> </td>
+            <td> <?php echo $row['hora']; ?> </td>
+            <td><form method=post></td>
+            <input type='radio' name='id_vagas' value='<?php $row['id_vagas']?>'>
+            <input type='submit'>
+            </form></td>
+            </tr>
+            <?php
+                
+                }
+            }else{
+                echo "Sem resultados";
+            }
+
+            
+
+            ?>
+        </table>
 		<p>
 			Introduzir vagas para vacinação
             
