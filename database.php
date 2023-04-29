@@ -1,9 +1,9 @@
 <?php
         
-        $servername = 'localhost'; // or the IP address of your database server
-        $username = 'root'; // replace with your database username
-        $password = ''; // replace with your database password
-        $dbname = 'vacinacao'; // replace with your database name
+        $servername = 'ave.dee.isep.ipp.pt'; // or the IP address of your database server
+        $username = '1190939'; // replace with your database username
+        $password = '1234'; // replace with your database password
+        $dbname = '1190939_Vacinacao'; // replace with your database name
         
         
         // Create connection

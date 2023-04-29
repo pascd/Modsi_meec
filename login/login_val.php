@@ -37,12 +37,24 @@
         if(mysqli_num_fields($ans)>0)
         {
             $row = mysqli_fetch_array($ans);
-            $Password_Hash = $row['Pass'];
-            /*
-            if(!password_verify($Password, $Password_Hash)){
-              $errors['password'] = "Credenciais de acesso erradas";
-            }
-            */
+            $Password_db = $row['Pass'];
+            $Password_hash = password_hash($Password, '2y');
+            //echo $Password_db;
+            //echo "\n";
+            //echo $Password_hash;
+            //if($Password_db != $Password_hash)
+            //{
+            //  $errors['password'] = "Credenciais de acesso erradas";
+            //}
+
+            //echo $Password_Hash;
+            //$Password_Hash='$2y$10$xYcccRzScxvaAAB.4o/NBeYc8iQX46kJAKO/XVFbDRrSPQ4WCcjdW';
+            //echo "\n";
+            //echo $Password_Hash;
+            //if(!password_verify($Password, $Password_db)){
+            //  $errors['password'] = "Credenciais de acesso erradas";
+            //}
+            
         }
     }
     

@@ -71,6 +71,7 @@
                                     if (response.status == 'success') {
                                         console.log("AJAX");
                                         $('#registo-form')[0].reset();
+                                        $('.error').text('');
                                         $('#registo-check').text('Registo realizado com sucesso!');
                                     } 
                                     else {
