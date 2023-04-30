@@ -44,11 +44,9 @@
                     <td> <?php echo $row['vagas']; ?> </td>
                     <td> <?php echo $row['data_vaga']; ?> </td>
                     <td> <?php echo $row['hora']; ?> </td>
-                    <td>
-                        <form method=post action="agendar_val.php">
-                    </td>
-                    <input type='radio' name='id_vagas' value='<?php $row['id_vagas'] ?>'>
-                    <input type='submit'>
+                    <form method='post' action="agendar_val.php">
+                        <input type='radio' name='id_vagas' value='<?php echo $row['id_vagas'] ?>'>
+                        <input type='submit'>
                     </form>
                     </td>
                 </tr>
@@ -80,11 +78,7 @@
                                 $('.error').text('');
                                 $('#vagas-check').text('Vagas introduzidas com sucesso');
                             } else {
-                                $('.error').text('');
-                                $('#vacina-erro').html(response.errors.vacina);
-                                $('#vagas-erro').text(response.errors.vagas);
-                                $('#data-erro').text(response.errors.data);
-                                $('#hora-erro').text(response.errors.hora);
+                            
                             }
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
