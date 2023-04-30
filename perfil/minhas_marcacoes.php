@@ -23,35 +23,35 @@
     <table>
         <tr>
             <td> Vacina </td>
-            <td> Vagas </td>
             <td> Data </td>
             <td> Hora </td>
-            <td> Selecionar </td>
         </tr>
         <?php
 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+        session_start();
+        $id_paciente=$_SESSION['id'];
 
-        $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
-
+        $sel_sql = "SELECT * FROM marcacao WHERE vaga='$id_paciente'";
         $ans = mysqli_query($db, $sel_sql);
         if (mysqli_num_rows($ans) > 0) {
             while ($row = mysqli_fetch_assoc($ans)) {
-                if ($row['vagas'] != 0) {
+                $vaga = $row['vaga'];
+                $sel_sql_2 = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+                $ans_2 = mysqli_query($db, $sel_sql_2);
+                $row_2 = mysqli_fetch_assoc($ans_2)
         ?>
                     <br>
                     <tr>
-                        <td> <?php echo $row['vacina']; ?> </td>
-                        <td> <?php echo $row['vagas']; ?> </td>
-                        <td> <?php echo $row['data_vaga']; ?> </td>
-                        <td> <?php echo $row['hora']; ?> </td>
+                        <td> <?php echo $row_2['vacina']; ?> </td>
+                        <td> <?php echo $row_2['data_vaga']; ?> </td>
+                        <td> <?php echo $row_2['hora']; ?> </td>
                         <form id="agendar-form" method='post' action="agendar_val.php">
                             <input type='radio' name='id_vagas' value='<?php echo $row['id_vagas'] ?>'>
 
                             </td>
                     </tr>
         <?php
-                }
             }
         } else {
             echo "Sem resultados";
@@ -60,7 +60,7 @@
         ?>
         <input type='submit'>
         </form>
-        
+        <div id="agendar-check" class="error"></div>
     </table>
     <p>
 
