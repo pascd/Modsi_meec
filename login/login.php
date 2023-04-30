@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 
 	<head>
 		<title>Registo</title>
@@ -11,10 +11,10 @@
             Sistema de vacinação Portuguesa!
         </h1>
 
-        <script src="../jquery-3.6.4.min.js"></script>
+        <script src="/jquery-3.6.4.min.js"></script>
         <script> 
             $(function(){
-            $("#menu_bar").load("../menu_bar.php"); 
+            $("#menu_bar").load("/menu_bar.php"); 
             });
         </script>   
 
@@ -37,7 +37,7 @@
                     <div id="registo-check" class="error"></div>
                 </form>
             </div>
-            <script src="../jquery-3.6.4.min.js"></script>
+            <script src="/jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
                         $('#login-form').submit(function(e) {
@@ -50,7 +50,7 @@
                                 success: function(response) {
                                     if (response.status == 'success') {
                                         $('#login-form')[0].reset();
-                                        window.location.href = "../pagina_inicial/index.php";
+                                        window.location.href = "/pagina_inicial/index.php";
                                     } 
                                     else {
                                         $('.error').text('');

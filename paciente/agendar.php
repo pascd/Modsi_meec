@@ -10,10 +10,10 @@
         <h1>
             Sistema de vacinação Portuguesa!
         </h1>
-        <script src="../../jquery-3.6.4.min.js"></script>
+        <script src="/jquery-3.6.4.min.js"></script>
         <script> 
             $(function(){
-            $("#menu_bar").load("../../menu_bar.php"); 
+            $("#menu_bar").load("/menu_bar.php"); 
             });
         </script>   
 
@@ -30,7 +30,7 @@
         </tr>
         <?php
 
-            require_once('../database.php');
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
                     
             $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
             
@@ -90,7 +90,7 @@
                     <div id="vagas-check" class="error"></div>
                 </form>
             </div>
-            <script src="../../jquery-3.6.4.min.js"></script>
+            <script src="/jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
                         $('#vagas-form').submit(function(e) 

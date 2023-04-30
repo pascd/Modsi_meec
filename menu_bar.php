@@ -50,6 +50,13 @@
         </div>
     </div>
     <div class="dropdown">
+        <button class="dropbtn" id="paciente">Paciente</button>
+        <div class="dropdown-content">
+            <a href="/paciente/agendar.php">Agendar Vacina</a>
+            <a href="#contactos">Acompanhamento</a>               
+        </div>
+    </div>
+    <div class="dropdown">
         <button class="dropbtn" id="enfermeiro">Painel Enfermeiro</button>
         <div class="dropdown-content">
             <a href="#contactos">Marcações</a>
@@ -61,23 +68,23 @@
         <div class="dropdown-content">
             <a href="#contactos">Gerir enfermeiros</a>
             <a href="#contactos">Gerir utilizadores</a>
-            <a href="#contactos">Gerir marcações</a> 
+            <a href="/admin/g_vagas/criar_vagas.php">Gerir vagas</a> 
             <a href="#contactos">Gerir stock</a>               
         </div>
     </div>
     <div class="dropdown">
             <button class="dropbtn" id="conta">Conta</button>
             <div class="dropdown-content">
-                <a href="../login/login.php">Login</a>
-                <a href="../registo/registo.php">Registar</a>
+                <a href="/login/login.php">Login</a>
+                <a href="/registo/registo.php">Registar</a>
             </div>
     </div>
     <div class="dropdown">
             <button class="dropbtn" id="perfil">Perfil</button>
             <div class="dropdown-content">
-                <a href="../perfil/meu_perfil.php" id="perfil">Meu perfil</a>
-                <a href="../registo/registo.php" id="perfil">Minhas marcações</a>
+                <a href="/perfil/meu_perfil.php" id="perfil">Meu perfil</a>
+                <a href="/registo/registo.php" id="perfil">Minhas marcações</a>
             </div>
     </div>
-    <a href="../login/logout.php" id="logout">Sair</a>
+    <a href="/login/logout.php" id="logout">Sair</a>
 </div>

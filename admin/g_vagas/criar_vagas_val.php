@@ -1,5 +1,6 @@
 <?php 
-    require_once('../../database.php');
+
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
     if(!isset($_POST['vacinas']))
     {

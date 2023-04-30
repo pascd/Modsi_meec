@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 
 	<head>
 		<title>Meu perfil</title>
@@ -13,10 +13,10 @@
         <h1>
             Sistema de vacinação Portuguesa!
         </h1>
-        <script src="../jquery-3.6.4.min.js"></script>
+        <script src="/jquery-3.6.4.min.js"></script>
         <script> 
             $(function(){
-            $("#menu_bar").load("../menu_bar.php"); 
+            $("#menu_bar").load("/menu_bar.php"); 
             });
         </script>   
 
@@ -58,20 +58,21 @@
                     <div id="perfil-check" class="error"></div>
                 </form>
             </div>
-            <script src="../jquery-3.6.4.min.js"></script>
+            <script src="/jquery-3.6.4.min.js"></script>
             <script>
                     $(document).ready(function() {
                         $('#perfil-form').submit(function(e) 
                         {
                             e.preventDefault();
                             $.ajax({
-                                url: "../perfil/editar_perfil.php",
+                                url: "/perfil/editar_perfil.php",
                                 type: "POST",
                                 data: $('#perfil-form').serialize(),
                                 dataType: "json",
                                 success: function(response) {
                                     if (response.status == 'success') {
                                         //console.log("AJAX");
+                                        $('.error').text('');
                                         $('#registo-check').text('Perfil editado com sucesso.');
                                     } 
                                     else {
