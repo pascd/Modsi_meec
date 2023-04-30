@@ -34,50 +34,42 @@
 
 </script>
 
+
+
+
 <div class="nav_bar">
-    <a href="../pagina_inicial/index.php">Home</a>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Acerca</button>
+        <div class="dropdown-content">
+            <a href="misao.html">Missão e Valores</a>
+            <a href="welcome.html">Mensagem de Boas Vindas</a>
+            <a href="contactos.html">Contactos</a>
+            <a href="#sobre">Sobre</a>
+        </div>
+    </div>
+    <a href="publicacoes.html">Publicações</a>
     <div class="dropdown">
         <button class="dropbtn">Saúde Pública</button>
         <div class="dropdown-content">
-            <a href="#vacinas">Vacinação</a>
+            <a href="vacinas.html">Vacinação</a>
         </div>
     </div>
     <div class="dropdown">
         <button class="dropbtn">Acerca</button>
         <div class="dropdown-content">
-            <a href="#contactos">Contactos</a>
+            <a href="misao.html">Missão e Valores</a>
+            <a href="welcome.html">Mensagem de Boas Vindas</a>
+            <a href="contactos.html">Contactos</a>
             <a href="#sobre">Sobre</a>
         </div>
     </div>
+    <a href="internacional.html">Internacional</a>
     <div class="dropdown">
-        <button class="dropbtn" id="enfermeiro">Painel Enfermeiro</button>
+        <button class="dropbtn">Área Reservada</button>
         <div class="dropdown-content">
-            <a href="#contactos">Marcações</a>
-            <a href="#contactos">Acompanhamento</a>               
+            <a href="login.php">Login</a>
+            <a href="registo.php">Registo</a>
         </div>
     </div>
-    <div class="dropdown">
-        <button class="dropbtn" id="admin">Painel Admin</button>
-        <div class="dropdown-content">
-            <a href="#contactos">Gerir enfermeiros</a>
-            <a href="#contactos">Gerir utilizadores</a>
-            <a href="#contactos">Gerir marcações</a> 
-            <a href="#contactos">Gerir stock</a>               
-        </div>
-    </div>
-    <div class="dropdown">
-            <button class="dropbtn" id="conta">Conta</button>
-            <div class="dropdown-content">
-                <a href="../login/login.php">Login</a>
-                <a href="../registo/registo.php">Registar</a>
-            </div>
-    </div>
-    <div class="dropdown">
-            <button class="dropbtn" id="perfil">Perfil</button>
-            <div class="dropdown-content">
-                <a href="../perfil/meu_perfil.php" id="perfil">Meu perfil</a>
-                <a href="../registo/registo.php" id="perfil">Minhas marcações</a>
-            </div>
-    </div>
-    <a href="../login/logout.php" id="logout">Sair</a>
 </div>
