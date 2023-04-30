@@ -8,6 +8,9 @@
         <title>
             Sistema de vacinação Portuguesa
         </title>
+
+        <?php include "../menu_bar.php"; ?>
+
     </head>
 
     <body href="#home">
@@ -17,11 +20,11 @@
        
         <div class="double_column">
             <a href="cidadao.html">Cidadão</a>
-            <img src="Imagens/cidadao.png" alt="Imagem Cidadão"> 
+            <img src="../img/cidadao.png" alt="Imagem Cidadão"> 
         </div>
         <div class="double_column">
             <a href="profissional.html">Profissional</a>
-            <img src="Imagens/profissional.png" alt="Imagem Profissional"> 
+            <img src="../img/profissional.png" alt="Imagem Profissional"> 
         </div>
 
         <p>Fique a par das novidades!</p>
