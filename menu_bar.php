@@ -9,9 +9,8 @@
     if (login == 1) {
         if (nivel == 3) //Paciente
         {
-            document.getElementById('conta').style.display = 'none';
-            document.getElementById('admin').style.display = 'none';
-            document.getElementById('enfermeiro').style.display = 'none';
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('registo').style.display = 'none';
         }
         if (nivel == 2) //Enfermeiro
         {
@@ -25,10 +24,9 @@
         }
     } else if (login == 0) //Visitante
     {
-        document.getElementById('perfil').style.display = 'none';
+        document.getElementById('meu_perfil').style.display = 'none';
+        document.getElementById('minhas_reservas').style.display = 'none';
         document.getElementById('logout').style.display = 'none';
-        document.getElementById('admin').style.display = 'none';
-        document.getElementById('enfermeiro').style.display = 'none';
     }
 </script>
 
@@ -36,7 +34,7 @@
 
 
 <div class="nav_bar">
-    <a href="index.php">Home</a>
+    <a href="/index.php">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Acerca</button>
         <div class="dropdown-content">
@@ -66,8 +64,11 @@
     <div class="dropdown">
         <button class="dropbtn">Área Reservada</button>
         <div class="dropdown-content">
-            <a href="login.php">Login</a>
-            <a href="registo.php">Registo</a>
+            <a href="/login/login.php" id="login">Login</a>
+            <a href="/registo/registo.php" id="registo">Registo</a>
+            <a href="/perfil/meu_perfil.php" id="meu_perfil">Meu Perfil</a>
+            <a href="/perfil/minhas_marcacoes.php" id="minhas_reservas">Minhas reservas</a>
+            <a href="/login/logout.php" id="logout">Sair</a>
         </div>
     </div>
 
