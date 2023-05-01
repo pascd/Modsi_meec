@@ -9,7 +9,18 @@
             Sistema de vacinação Portuguesa
         </title>
 
-        <?php include "../menu_bar.php"; ?>
+        <h1>
+            Sistema de vacinação Portuguesa!
+        </h1>
+
+        <script src="../jquery-3.6.4.min.js"></script>
+        <script> 
+            $(function(){
+            $("#menu_bar").load("../menu_bar.php"); 
+            });
+        </script>   
+
+        <div id="menu_bar"></div>
 
     </head>
 

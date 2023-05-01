@@ -38,7 +38,7 @@
 
 
 <div class="nav_bar">
-    <a href="index.html">Home</a>
+    <a href="index.php">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Acerca</button>
         <div class="dropdown-content">
