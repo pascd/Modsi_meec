@@ -1,37 +1,35 @@
 <script>
-    <?php 
+    <?php
     session_start();
     ?>
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
     var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
     var login = "<?php echo isset($_SESSION['login']) ? $_SESSION['login'] : 0 ?>";
-    
-    if(login == 1)
-    {
-       if(nivel == 3) //Paciente
-       {
-        document.getElementById('conta').style.display = 'none';
-        document.getElementById('admin').style.display = 'none';
-        document.getElementById('enfermeiro').style.display = 'none';
-       } 
-       if(nivel == 2) //Enfermeiro
-       {
-        document.getElementById('conta').style.display = 'none';
-        document.getElementById('admin').style.display = 'none';
-       }
-       if(nivel == 1) //Administrador
-       {
-        document.getElementById('conta').style.display = 'none';
-        document.getElementById('enfermeiro').style.display = 'none';
-       }
-    }else if(login == 0) //Visitante
+
+    if (login == 1) {
+        if (nivel == 3) //Paciente
+        {
+            document.getElementById('conta').style.display = 'none';
+            document.getElementById('admin').style.display = 'none';
+            document.getElementById('enfermeiro').style.display = 'none';
+        }
+        if (nivel == 2) //Enfermeiro
+        {
+            document.getElementById('conta').style.display = 'none';
+            document.getElementById('admin').style.display = 'none';
+        }
+        if (nivel == 1) //Administrador
+        {
+            document.getElementById('conta').style.display = 'none';
+            document.getElementById('enfermeiro').style.display = 'none';
+        }
+    } else if (login == 0) //Visitante
     {
         document.getElementById('perfil').style.display = 'none';
         document.getElementById('logout').style.display = 'none';
         document.getElementById('admin').style.display = 'none';
         document.getElementById('enfermeiro').style.display = 'none';
     }
-
 </script>
 
 
@@ -72,4 +70,5 @@
             <a href="registo.php">Registo</a>
         </div>
     </div>
+
 </div>

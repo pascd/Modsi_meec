@@ -2,6 +2,7 @@
     session_start();
        
     unset($_SESSION['login']);
+    unset($_SESSION['id']);
     unset($_SESSION['primeiro_nome']);
     unset($_SESSION['ultimo_nome']);
     unset($_SESSION['email']);
@@ -12,6 +13,6 @@
 
     session_destroy();
 
-    header("Location: ../pagina_inicial/index.php");
+    header("Location: /pagina_inicial/index.php");
 
     ?>
