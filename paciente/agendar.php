@@ -37,7 +37,7 @@
         $ans = mysqli_query($db, $sel_sql);
         if (mysqli_num_rows($ans) > 0) {
             while ($row = mysqli_fetch_assoc($ans)) {
-                if ($row['vagas'] != 0) {
+                if ($row['vagas'] > 0) {
         ?>
                     <br>
                     <tr>
@@ -60,7 +60,7 @@
         ?>
         <input type='submit'>
         </form>
-        
+        <div id="agendar-check"></div>
     </table>
     <p>
 

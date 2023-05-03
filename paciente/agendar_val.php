@@ -15,7 +15,7 @@
 
         if($ans ->num_rows>0)
         {
-            $errors['agendar']="Ja possui uma reserva para este horário";
+            //$errors['agendar']="Já possui uma reserva para este horário";
         }
 
         $sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente'";
@@ -24,8 +24,8 @@
         if(mysqli_num_fields($ans)>0)
         {
             $row = mysqli_fetch_array($ans);
-            
         }
+
         if(empty($errors))
         {
             $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$id_vaga'";
@@ -33,8 +33,7 @@
             
             if(mysqli_num_fields($ans)>0)
             {
-                
-                
+                $row = mysqli_fetch_array($ans);
                 $n_vagas = $row['vagas']-1;
 
                 $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$id_vaga'";
