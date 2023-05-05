@@ -23,7 +23,7 @@
 
             $n_vagas = $row['vagas'] + 1;
 
-            $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$id_vaga'";
+            $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$vaga'";
             mysqli_query($db,$query);
         }
 
