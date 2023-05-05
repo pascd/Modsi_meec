@@ -48,17 +48,8 @@
             <a href="vacinas.html">Vacinação</a>
         </div>
     </div>
-    <div class="dropdown">
-        <button class="dropbtn">Acerca</button>
-        <div class="dropdown-content">
-            <a href="misao.html">Missão e Valores</a>
-            <a href="welcome.html">Mensagem de Boas Vindas</a>
-            <a href="contactos.html">Contactos</a>
-            <a href="#sobre">Sobre</a>
-        </div>
-    </div>
     <a href="internacional.html">Internacional</a>
-    <a href="/login/login.php" id="login">Entrar</a>
+    <a href="/login/login.php" id="login">Área Reservada</a>
     <div class="dropdown">
         <button class="dropbtn" id="perfil_sair">Área Reservada</button>
         <div class="dropdown-content">
