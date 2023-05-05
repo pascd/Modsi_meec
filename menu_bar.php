@@ -58,7 +58,7 @@
         </div>
     </div>
     <a href="internacional.html">Internacional</a>
-    <a href="login.php" id="login">Entrar</a>
+    <a href="/login/login.php" id="login">Entrar</a>
     <div class="dropdown">
         <button class="dropbtn" id="perfil_sair">Área Reservada</button>
         <div class="dropdown-content">
