@@ -59,7 +59,8 @@
         }
 
         ?>
-        <input type='submit' value="Alterar">
+        <input type='submit' name="acao" value="alterar">
+        <input type='submit' name="acao" value="apagar"
         </form>
         <div id="agendar-check" class="error"></div>
     </table>
