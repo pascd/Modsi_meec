@@ -20,8 +20,6 @@
             });
         </script>   
 
-
-        <script src="../jquery-3.6.4.min.js"></script>
         <script> 
             $(function(){
             $("#footer").load("../footer.php"); 
