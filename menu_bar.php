@@ -9,25 +9,23 @@
     if (login == 1) {
         if (nivel == 3) //Paciente
         {
-            document.getElementById('login').style.display = 'none';
+            document.getElementById('login_registo').style.display = 'none';
 
         }
         if (nivel == 2) //Enfermeiro
         {
-            document.getElementById('login').style.display = 'none';
+            document.getElementById('login_registo').style.display = 'none';
 
         }
         if (nivel == 1) //Administrador
         {
-            document.getElementById('login').style.display = 'none';
+            document.getElementById('login_registo').style.display = 'none';
         }
     } else if (login == 0) //Visitante
     {
         document.getElementById('perfil_sair').style.display = 'none';
     }
 </script>
-
-
 
 
 <div class="nav_bar">
@@ -49,7 +47,7 @@
         </div>
     </div>
     <a href="internacional.html">Internacional</a>
-    <a href="/login/login.php" id="login">Área Reservada</a>
+    <a href="/login/login.php" id="login_registo">Área Reservada</a>
     <div class="dropdown">
         <button class="dropbtn" id="perfil_sair">Área Reservada</button>
         <div class="dropdown-content">
