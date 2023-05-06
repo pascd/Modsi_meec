@@ -45,7 +45,7 @@
                         <td> <?php echo $row['vagas']; ?> </td>
                         <td> <?php echo $row['data_vaga']; ?> </td>
                         <td> <?php echo $row['hora']; ?> </td>
-                        <form id="agendar-form" method='post' action="agendar_val.php">
+                        <form id="alterar-form" method='post' action="alterar_reserva.php">
                             <input type='radio' name='id_vagas' value='<?php echo $row['id_vagas'] ?>'>
 
                             </td>

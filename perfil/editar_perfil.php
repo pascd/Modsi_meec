@@ -105,7 +105,7 @@
         if (empty($errors)) {
           $response = array('status' => 'success');
             //$Password_Hash = password_hash($password, PASSWORD_BCRYPT);
-            $query = "UPDATE users SET primeiro_nome='$Primeiro_new', ultimo_nome='$Ultimo_new', nascimento='$Nascimento_new', nus='$NUS_new', email='$Email_new', contacto='$Telemovel_new' WHERE id_user=$id";
+            $query = "UPDATE users SET email='$Email_new', contacto='$Telemovel_new' WHERE id_user=$id";
             mysqli_query($db, $query);
             //echo "Erro ao criar registo: " . mysqli_error($db);
             mysqli_close($db);

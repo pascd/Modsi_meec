@@ -30,16 +30,16 @@
         <form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 1% ;">
             <br>
             Primeiro Nome:
-            <input type="text" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>"><br><br>
+            <input type="text" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
             <div id="primeiro-erro" class="error"></div>
             Último Nome:
-            <input type="text" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>"><br><br>
+            <input type="text" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly><br><br>
             <div id="ultimo-erro" class="error"></div>
             Data de Nascimento:
-            <input type="date" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>"><br><br>
+            <input type="date" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly><br><br>
             <div id="nascimento-erro" class="error"></div>
             Número de Utente:
-            <input type="text" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>"><br><br>
+            <input type="text" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly><br><br>
             <div id="nus-erro" class="error"></div>
             Email:
             <input type="email" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>"><br><br>
@@ -47,12 +47,14 @@
             Número de Telemóvel:
             <input type="tel" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
             <div id="telemovel-erro" class="error"></div>
+            <!--
             Palavra-Chave:
             <input type="password" id="id_password" name="password"><br><br>
             <div id="password-erro" class="error"></div>
             Repita a Palavra-Chave Anterior:
             <input type="password" id="id_cpassword" name="cpassword"><br><br>
             <div id="cpassword-erro" class="error"></div>
+            -->
             <br>
             <input type="submit" value="Editar"><br><br>
             <div id="perfil-check" class="error"></div>
@@ -72,7 +74,8 @@
                         if (response.status == 'success') {
                             //console.log("AJAX");
                             $('.error').text('');
-                            $('#registo-check').text('Perfil editado com sucesso.');
+                            $('#perfil-check').text('Perfil editado com sucesso.');
+                            location.reload();
                         } else {
                             $('.error').text('');
                             $('#primeiro-erro').html(response.errors.primeiro);

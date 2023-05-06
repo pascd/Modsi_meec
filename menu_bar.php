@@ -54,6 +54,7 @@
         <button class="dropbtn" id="perfil_sair">Área Reservada</button>
         <div class="dropdown-content">
             <a href="/perfil/meu_perfil.php">Meu Perfil</a>
+            <a href="/perfil/minhas_marcacoes.php">Minhas Reservas</a>
             <a href="/login/logout.php">Sair</a>
         </div>
     </div>
