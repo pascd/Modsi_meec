@@ -50,8 +50,7 @@
 
         <p>Fique a par das novidades!</p>
         
-    <!-- <iframe width="642" height="361" src="https://www.youtube.com/embed/QTK_bC00ilg" title="The Invisible Barrier Keeping Two Worlds Apart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         --> 
+
         <div class="newsfeed">
             <div class="newsfeed_column">
                 <script src="//rss.bloople.net/?url=https%3A%2F%2Frssfeeds.webmd.com%2Frss%2Frss.aspx%3FRSSSource%3DRSS_PUBLIC&limit=1&showtitle=false&type=js"></script>            
