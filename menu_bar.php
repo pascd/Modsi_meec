@@ -35,7 +35,7 @@
         <div class="dropdown-content">
             <a href="../acerca/missao_e_valores.html">Missão e Valores</a>
             <a href="welcome.html">Mensagem de Boas Vindas</a>
-            <a href="contactos.html">Contactos</a>
+            <a href="../acerca/contactos.html">Contactos</a>
             <a href="#sobre">Sobre</a>
         </div>
     </div>
