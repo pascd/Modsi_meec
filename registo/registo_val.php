@@ -95,7 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (empty($errors)) {
     $response = array('status' => 'success');
-    $Password_Hash = password_hash($password, PASSWORD_DEFAULT);
+    //$Password_Hash = password_hash($password, PASSWORD_DEFAULT);
+    $Password_Hash = md5($password);
     $Nivel = 3;
     $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password_Hash', '$Nivel')";
     if (mysqli_query($db, $ins_sql)) {

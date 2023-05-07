@@ -32,14 +32,14 @@
         session_start();
         $id_paciente=$_SESSION['id'];
 
-        $sel_sql = "SELECT * FROM marcacao WHERE vaga='$id_paciente'";
+        $sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente'";
         $ans = mysqli_query($db, $sel_sql);
         if (mysqli_num_rows($ans) > 0) {
             while ($row = mysqli_fetch_assoc($ans)) {
                 $vaga = $row['vaga'];
                 $sel_sql_2 = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
                 $ans_2 = mysqli_query($db, $sel_sql_2);
-                $row_2 = mysqli_fetch_assoc($ans_2)
+                while($row_2 = mysqli_fetch_assoc($ans_2)){
         ?>
                     <br>
                     <tr>
@@ -53,12 +53,14 @@
                     </tr>
         <?php
             }
+        }
         } else {
             echo "Sem resultados";
         }
 
         ?>
-        <input type='submit'>
+        <input type='submit' name="acao" value="alterar">
+        <input type='submit' name="acao" value="apagar"
         </form>
         <div id="agendar-check" class="error"></div>
     </table>

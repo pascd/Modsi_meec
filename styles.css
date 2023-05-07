@@ -107,6 +107,37 @@ h1 {
   width: 100%;
 }
 
+.double_column .login_form {
+  float: left;
+  text-align: left;
+  margin-left: 35%;
+  width: 60%;
+  height: fit-content;
+
+}
+
+.double_column .registo_form {
+  float: left;
+  text-align: left;
+  margin-left: 20%;
+  width: 60%;
+  height: fit-content;
+}
+
+
+/* Set a style for the submit button */
+.login_register_btn {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+  padding: 16px 20px;
+
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+
 .newsfeed {
   width: 96%;
   margin: 2%; 
@@ -126,11 +157,30 @@ h1 {
 }
 
 .footer {
-  left: 0;
-  bottom: 0;
   width: 100%;
   height: 5%;
   background-color: #272727;
   color: white;
   text-align: center;
+}
+
+.left {
+  background-color: #2196F3;
+  padding: 20px;
+  float: left;
+  width: 15%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  width: 30%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #04AA6D;
+  padding: 20px;
+  float: left;
+  width: 15%; /* The width is 20%, by default */
 }

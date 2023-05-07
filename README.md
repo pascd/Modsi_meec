@@ -11,3 +11,12 @@ Bota que tem ! - Pablito
 I'm in? - Chico
 
 I'M IN LET'S GOOOOO (Bora deixar o ReadMe)
+
+
+To do:
+
+- Adicionar mapa
+- Ver como fazer multilingue
+- Design "Responsivo"
+- CSS de Login/Registo/Alterações
+- Imagens para items/páginas
