@@ -168,19 +168,19 @@ h1 {
   background-color: #2196F3;
   padding: 20px;
   float: left;
-  width: 20%; /* The width is 20%, by default */
+  width: 15%; /* The width is 20%, by default */
 }
 
 .main {
   background-color: #f1f1f1;
   padding: 20px;
   float: left;
-  width: 60%; /* The width is 60%, by default */
+  width: 30%; /* The width is 60%, by default */
 }
 
 .right {
   background-color: #04AA6D;
   padding: 20px;
   float: left;
-  width: 18%; /* The width is 20%, by default */
+  width: 15%; /* The width is 20%, by default */
 }
