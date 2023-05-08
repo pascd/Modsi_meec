@@ -172,6 +172,7 @@ input {
   background-color: #272727;
   color: white;
   text-align: center;
+
   border-radius: 5px;
 
 }
@@ -196,3 +197,4 @@ input {
   float: left;
   width: 15%; /* The width is 20%, by default */
 }
+

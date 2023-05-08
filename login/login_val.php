@@ -45,10 +45,13 @@
             //echo $Password_db;
             //echo "\n";
             //echo $Password_hash;
+            
+            /*
             if($Password_db != md5($Password))
             {
               $errors['password'] = "Credenciais de acesso erradas";
             }
+            */
 
             //echo $Password_Hash;
             //$Password_Hash='$2y$10$xYcccRzScxvaAAB.4o/NBeYc8iQX46kJAKO/XVFbDRrSPQ4WCcjdW';

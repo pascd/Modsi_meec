@@ -1,40 +1,54 @@
-<?php 
+<?php
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-    session_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+session_start();
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        date_default_timezone_set("Europe/Lisbon");
-        $data_atual = date('y-m-d h:i:s');
-        
-        $vaga = $_POST["id_vagas"];
-        $acao = $_POST["acao"];
-        $paciente = $_SERVER["id"];
+    $vaga = $_POST["id_vaga"];
+    echo var_dump($vaga);
+    $acao = $_POST["acao"];
+    echo var_dump($acao);
+    $paciente = $_SESSION["id"];
+    $vaga_nova = $_POST["id_vaga_nova"];
 
-        if($acao == "apagar")
-        {
-            $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
-            mysqli_query($db,$rem_sql);
-            
-            $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
-            $ans = mysqli_query($db, $sel_sql);
-            $row = mysqli_fetch_array($ans);
+    if ($acao == "Apagar") {
+        $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
+        mysqli_query($db, $rem_sql);
 
-            $n_vagas = $row['vagas'] + 1;
+        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+        $ans = mysqli_query($db, $sel_sql);
+        $row = mysqli_fetch_array($ans);
 
-            $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$vaga'";
-            mysqli_query($db,$query);
-        }
+        $n_vagas = $row['vagas'] + 1;
 
-        if($acao == "alterar")
-        {
-
-
-
-            $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
-            mysqli_query($db,$rem_sql);
-        }
+        $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$vaga'";
+        mysqli_query($db, $query);
     }
 
-?>
+    if ($acao == "Alterar") {
+        $estado = "Marcado";
+
+        $ins_sql = "INSERT INTO marcacao(paciente, vaga, estado) VALUES ('$paciente', '$vaga_nova', '$estado')";
+        mysqli_query($db, $ins_sql);
+
+        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+        $ans = mysqli_query($db,$sel_sql);
+        $row = mysqli_fetch_array($ans);
+        $n_vagas = $row['vagas'] - 1;
+        $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$vaga'";
+        mysqli_query($db, $query);
+
+        $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
+        mysqli_query($db, $rem_sql);
+
+        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+        $ans = mysqli_query($db, $sel_sql);
+        $row = mysqli_fetch_array($ans);
+
+        $n_vagas = $row['vagas'] + 1;
+
+        $query = "UPDATE vagas SET vagas='$n_vagas' WHERE id_vagas='$vaga'";
+        mysqli_query($db, $query);
+    }
+}
