@@ -15,8 +15,8 @@ I'M IN LET'S GOOOOO (Bora deixar o ReadMe)
 
 To do:
 
-- Adicionar mapa
+- Adicionar mapa ✅
 - Ver como fazer multilingue
 - Design "Responsivo"
-- CSS de Login/Registo/Alterações
-- Imagens para items/páginas
+- CSS de Login/Registo ✅
+- Imagens para items/páginas (Fazer com AI?)
