@@ -4,15 +4,14 @@
     session_start();
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-        date_default_timezone_set("Europe/Lisbon");
-        $data_atual = date('y-m-d h:i:s');
         
-        $vaga = $_POST["id_vagas"];
+        $vaga = $_POST["id_vaga"];
+        echo var_dump($vaga);
         $acao = $_POST["acao"];
-        $paciente = $_SERVER["id"];
+        echo var_dump($acao);
+        $paciente = $_SESSION["id"];
 
-        if($acao == "apagar")
+        if($acao == "Apagar")
         {
             $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
             mysqli_query($db,$rem_sql);
@@ -27,7 +26,7 @@
             mysqli_query($db,$query);
         }
 
-        if($acao == "alterar")
+        if($acao == "Alterar")
         {
 
 
@@ -36,5 +35,3 @@
             mysqli_query($db,$rem_sql);
         }
     }
-
-?>
