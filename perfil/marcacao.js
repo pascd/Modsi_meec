@@ -26,7 +26,7 @@ rows.forEach(function (row_2) {
 
 function apagar_m(button) {
     var acao = "Apagar";
-    // Remove the row from the table
+    
     //button.parentNode.remove();
 
     var xhttp = new XMLHttpRequest();
@@ -45,8 +45,9 @@ function apagar_m(button) {
 
 function alterar_m(button) {
     acao = "Alterar";
-    // Remove the row from the table
-    button.parentNode.remove();
+    
+    //button.parentNode.remove();
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -63,5 +64,5 @@ function alterar_m(button) {
     xhttp.open('POST', 'minhas_marcacoes_val.php', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send('id_vaga_nova=' + encodeURIComponent(id_vaga_nova) + '&acao=' + encodeURIComponent(acao) + '&id_vaga=' + encodeURIComponent(id_vaga));
-    //location.reload();
+    location.reload();
 }

@@ -45,48 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $response = array('status' => 'error', 'errors' => $errors);
     }
 
-
-    //use PHPMailer\PHPMailer\PHPMailer;
-    //use PHPMailer\PHPMailer\Exception;
-
-    require 'path/to/PHPMailer/src/PHPMailer.php';
-    require 'path/to/PHPMailer/src/SMTP.php';
-    require 'path/to/PHPMailer/src/Exception.php';
-
-    // SMTP configuration
-    $smtpHost = 'smtp.gmail.com';
-    $smtpUsername = 'site.vacinacao@gmail.com';
-    $smtpPassword = 'eparatirar20$';
-    $smtpPort = 485; // or 465 for SSL encryption / 587
-
-    // Create a PHPMailer instance
-    require_once('phpmailer/PHPMailerAutoload.php');
-    $mail = new PHPMailer();
-
-    // Set the SMTP configuration
-    $mail->isSMTP();
-    $mail->Host = $smtpHost;
-    $mail->SMTPAuth = true;
-    $mail->Username = $smtpUsername;
-    $mail->Password = $smtpPassword;
-    $mail->SMTPSecure = 'tls'; // or 'ssl' for SSL encryption
-    $mail->Port = $smtpPort;
-
-    // Set the email content
-    $mail->setFrom('site.vacinacao@gmail.com', 'Vacinacao Portugal');
-    $mail->addAddress('pedro.afonso.cardoso.dias@gmail.com', 'Recipient Name');
-    $mail->Subject = 'Subject of the email';
-    $mail->Body = 'Content of the email';
-
-    // Send the email
-    if (!$mail->send()) {
-        echo 'Email could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-    } else {
-        echo 'Email has been sent.';
-    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    mysqli_close($db);
 }
-
-header('Content-Type: application/json');
-echo json_encode($response);
-mysqli_close($db);
