@@ -17,7 +17,7 @@
             $("#menu_bar").load("/menu_bar.php");
         });
     </script>
-    
+
     <div id="menu_bar"></div>
 
     <div style="overflow-x:auto;">
@@ -43,27 +43,53 @@
                     $ans_2 = mysqli_query($db, $sel_sql_2);
                     while ($row_2 = mysqli_fetch_assoc($ans_2)) {
                         echo '<tr id_vaga="' . $row_2['id_vagas'] . '">';
-                        echo '<td>' . $row_2['vacina'] . '</td>';
+                        echo '<td vacina="' . $row_2['vacina'] . '">' . $row_2['vacina'] . '</td>';
                         echo '<td>' . $row_2['data_vaga'] . '</td>';
                         echo '<td>' . $row_2['hora'] . '</td>';
                         echo '</tr>';
                     }
                     echo "</tbody>";
                 }
-                echo "<button class='action-button' onclick='deleteRow(this)'>Apagar</button>";
             }
 
             ?>
-            <script src="marcacao.js"></script>
-            <script>
-                function openPopup() {
-                    document.getElementById("alterar_popup").style.display = "block";
-                }
+            <button class='action-button' onclick='apagar_m(this)'>Apagar</button>
+            <button class='action-button' onclick='alterar_m(this)'>Alterar</button>
 
-                function closePopup() {
-                    document.getElementById("alterar_popup").style.display = "none";
-                }
-            </script>
+
+
+            <div class="alterar_popup">
+                <div class="alterar_cont">
+                    <?php
+                    $vacina = $_POST['vacina'];
+                    $sel_sql = "SELECT * FROM vagas WHERE vacina='$vacina'";
+                    $ans = mysqli_query($db, $sel_sql);
+                    if (mysqli_num_rows($ans) > 0) {
+                        while ($row = mysqli_fetch_assoc($ans)) {
+                            echo "<tbody>";
+                            $vacina = $POST['vacina'];
+                            echo var_dump($vacina);
+                            $sel_sql_2 = "SELECT * FROM vagas WHERE vacina='$vacina'";
+                            $ans_2 = mysqli_query($db, $sel_sql_2);
+                            while ($row_2 = mysqli_fetch_assoc($ans_2)) {
+                                echo '<tr id_vaga_nova="' . $row_2['id_vagas'] . '">';
+                                echo '<td>' . $row_2['vacina'] . '</td>';
+                                echo '<td>' . $row_2['data_vaga'] . '</td>';
+                                echo '<td>' . $row_2['hora'] . '</td>';
+                                echo '</tr>';
+                            }
+                            echo "</tbody>";
+                        }
+                        echo "<button class='action-button' onclick='apagar_m(this)'>Apagar</button>";
+                        echo "<button class='action-button' onclick='alterar_m(this)'>Alterar</button>";
+                    }
+
+                    ?>
+                    <button class="btn" onclick="closePopup()">Fechar</button>
+                </div>
+            </div>
+
+            <script src="marcacao.js"></script>
 </body>
 
 </html>
