@@ -19,4 +19,5 @@ To do:
 - Ver como fazer multilingue
 - Design "Responsivo"
 - CSS de Login/Registo ✅
+- CSS de Marcações/Remarcações
 - Imagens para items/páginas (Fazer com AI?)

@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../../styles.css">
+<link rel="stylesheet" type="text/css" href="../styles.css">
 
 <head>
     <title>Registo</title>
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script>
+        $(function() {
+            $("#menu_bar").load("../menu_bar.php");
+        });
+    </script>
+
+    <script> 
+        $(function(){
+            $("#footer").load("../footer.php"); 
+        });
+    </script>   
 
 </head>
 
@@ -11,12 +24,6 @@
     <h1>
         Sistema de vacinação Portuguesa!
     </h1>
-    <script src="/jquery-3.6.4.min.js"></script>
-    <script>
-        $(function() {
-            $("#menu_bar").load("/menu_bar.php");
-        });
-    </script>
 
     <div id="menu_bar"></div>
 
@@ -64,7 +71,6 @@
     </table>
     <p>
 
-        <script src="/jquery-3.6.4.min.js"></script>
         <script>
             $(document).ready(function() {
                 $('#agendar-form').submit(function(e) {
@@ -94,6 +100,8 @@
             });
         </script>
     </p>
+
+    <div id="footer"></div>
 </body>
 
 </html>
