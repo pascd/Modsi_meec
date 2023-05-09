@@ -72,6 +72,7 @@
                             $('#registo-form')[0].reset();
                             $('.error').text('');
                             $('#registo-check').text('Registo realizado com sucesso!');
+                            
                         } else {
                             $('.error').text('');
                             $('#primeiro-erro').html(response.errors.primeiro);
