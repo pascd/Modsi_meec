@@ -5,7 +5,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $user = $_POST["id_vaga"];
+    $user = $_POST["id_user"];
     $acao = $_POST["acao"];
 
     if ($acao == "Apagar") {
