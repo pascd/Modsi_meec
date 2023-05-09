@@ -198,3 +198,48 @@ input {
   width: 15%; /* The width is 20%, by default */
 }
 
+
+/*Codigo para alterar o popup*/
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.alterar_popup{
+    background-color: #4ca767bd;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none;
+    font-family: “Poppins”,sans-serif;
+    text-align: center;
+}
+
+.alterar_popup button{
+  display: block;
+  margin:  0 0 20px auto;
+  background-color: transparent;
+  font-size: 25px;
+  color: #000000;
+  background: #f80000;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup_cont{
+  font-size: 50px;
+  text-align: justify;
+  color:rgb(0, 0, 0);
+  margin: 20px 0;
+  line-height: 25px;
+}

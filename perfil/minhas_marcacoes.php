@@ -20,8 +20,7 @@
 
     <div id="menu_bar"></div>
 
-    <div style="overflow-x:auto;">
-        <table>
+    <div>
             <tr>
                 <td> Vacina </td>
                 <td> Data </td>
@@ -37,59 +36,55 @@
             $ans = mysqli_query($db, $sel_sql);
             if (mysqli_num_rows($ans) > 0) {
                 while ($row = mysqli_fetch_assoc($ans)) {
-                    echo "<tbody>";
+                    echo "<table>";
                     $vaga = $row['vaga'];
                     $sel_sql_2 = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
                     $ans_2 = mysqli_query($db, $sel_sql_2);
                     while ($row_2 = mysqli_fetch_assoc($ans_2)) {
-                        echo '<tr id_vaga="' . $row_2['id_vagas'] . '">';
-                        echo '<td vacina="' . $row_2['vacina'] . '">' . $row_2['vacina'] . '</td>';
+                        echo '<tr id_vaga="' . $row_2['id_vagas'] . '" vacina="' . $row_2['vacina'] . '">';
+                        echo '<td>' . $row_2['vacina'] . '</td>';
                         echo '<td>' . $row_2['data_vaga'] . '</td>';
                         echo '<td>' . $row_2['hora'] . '</td>';
                         echo '</tr>';
                     }
-                    echo "</tbody>";
+                    echo "</table>";
                 }
             }
 
             ?>
-            <button class='action-button' onclick='apagar_m(this)'>Apagar</button>
-            <button class='action-button' onclick='alterar_m(this)'>Alterar</button>
+            <button class='btn' onclick='apagar_m(this)'>Apagar</button>
+            <button class='btn' onclick='alterar_m(this)'>Alterar</button>
+    </div>
 
+    <div class="alterar_popup" id="alterar_popup">
+        <div class="popup_cont">
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                $id_vaga_selec = $_POST['id_vaga'];
+                $vacina = $_POST['vacina'];
 
+                $sel_sql_3 = "SELECT * FROM vagas WHERE vacina='$vacina'";
+                $ans_3 = mysqli_query($db, $sel_sql_3);
 
-            <div class="alterar_popup">
-                <div class="alterar_cont">
-                    <?php
-                    $vacina = $_POST['vacina'];
-                    $sel_sql = "SELECT * FROM vagas WHERE vacina='$vacina'";
-                    $ans = mysqli_query($db, $sel_sql);
-                    if (mysqli_num_rows($ans) > 0) {
-                        while ($row = mysqli_fetch_assoc($ans)) {
-                            echo "<tbody>";
-                            $vacina = $POST['vacina'];
-                            echo var_dump($vacina);
-                            $sel_sql_2 = "SELECT * FROM vagas WHERE vacina='$vacina'";
-                            $ans_2 = mysqli_query($db, $sel_sql_2);
-                            while ($row_2 = mysqli_fetch_assoc($ans_2)) {
-                                echo '<tr id_vaga_nova="' . $row_2['id_vagas'] . '">';
-                                echo '<td>' . $row_2['vacina'] . '</td>';
-                                echo '<td>' . $row_2['data_vaga'] . '</td>';
-                                echo '<td>' . $row_2['hora'] . '</td>';
-                                echo '</tr>';
-                            }
-                            echo "</tbody>";
-                        }
-                        echo "<button class='action-button' onclick='apagar_m(this)'>Apagar</button>";
-                        echo "<button class='action-button' onclick='alterar_m(this)'>Alterar</button>";
-                    }
+                echo "<table>";
+                while ($row_3 = mysqli_fetch_assoc($ans_3)) {
+                    
+                    echo '<tr id_vaga_nova="' . $row_3['id_vagas'] . '">';
+                    echo '<td>' . $row_3['vacina'] . '</td>';
+                    echo '<td>' . $row_3['data_vaga'] . '</td>';
+                    echo '<td>' . $row_3['hora'] . '</td>';
+                    echo '</tr>';
+                    
+                }
+                echo "</table>";
+            }
+            ?>
+            <button class="btn" onclick="closePopup()">Fechar</button>
+            <button class="btn">Alterar</button>
+        </div>
+    </div>
 
-                    ?>
-                    <button class="btn" onclick="closePopup()">Fechar</button>
-                </div>
-            </div>
-
-            <script src="marcacao.js"></script>
+    <script src="marcacao.js"></script>
 </body>
 
 </html>
