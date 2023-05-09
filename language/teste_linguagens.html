@@ -1,0 +1,89 @@
+<html lang="pt">
+    <head>
+<!--         <script>
+            var language;
+            function getLanguage() {
+                (localStorage.getItem('language') == null) ? setLanguage('pt') : false;
+                $.ajax({ 
+                url:  'language/' +  localStorage.getItem('language') + '.json', 
+                dataType: 'json', async: true, dataType: 'json', 
+                success: function (lang) { language = lang } });
+            }
+
+            function setLanguage(lang) {
+                localStorage.setItem('language', lang);
+            }
+        </script>
+        <script src="jquery-3.6.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#div1').text(language.date);
+            });
+        </script> -->
+    </head>
+    <body>
+
+<!-- HTML Structure -->
+<select id="language-select">
+  <option value="en">English</option>
+  <option value="pt">Portuguese</option>
+</select>
+
+<div id="content"></div>
+
+<!-- JavaScript Code -->
+<script>
+  // JSON data for different languages
+  const jsonData = {
+    en: {
+      home: "Home",
+      about: "About Us",
+      // ...
+    },
+    pt: {
+      home: "Página Inicial",
+      about: "Sobre Nós",
+      // ...
+    }
+  };
+
+  // Function to update content based on language selection
+  function updateContent() {
+    const selectedLanguage = document.getElementById("language-select").value;
+    const selectedData = jsonData[selectedLanguage];
+
+    const contentDiv = document.getElementById("content");
+    let htmlContent = "";
+
+    // Generate HTML content based on selected language data
+    htmlContent += `<h1>${selectedData.home}</h1>`;
+    htmlContent += `<p>${selectedData.about}</p>`;
+    // ...
+
+    // Update the content of the target div
+    contentDiv.innerHTML = htmlContent;
+  }
+
+  // Add event listener to language select element
+  const languageSelect = document.getElementById("language-select");
+  languageSelect.addEventListener("change", updateContent);
+
+  // Initial content update based on default language selection
+  updateContent();
+</script>
+
+
+
+
+
+  
+<!--         <a href="#" onclick="setLanguage('pt')">Português</a>
+        <a href="#" onclick="setLanguage('en')">English</a>
+        <h1> Example Text</h1>
+
+
+
+        <div id="div1"></div> -->
+
+    </body>
+</html>
