@@ -1,4 +1,4 @@
-var row_id = document.querySelectorAll('tbody tr');
+var row_id = document.querySelectorAll('table tr');
 var acao;
 var id_user;
 
@@ -17,7 +17,7 @@ row_id.forEach(function (row) {
     });
 });
 
-function apagar_m(button) {
+function apagar_u(button) {
     var acao = "Apagar";
 
     var xhttp = new XMLHttpRequest();
@@ -26,10 +26,10 @@ function apagar_m(button) {
             console.log(this.responseText);
         }
     };
-    if (id_vaga != "") {
+    if (id_user != "") {
         xhttp.open('POST', 'utilizador.php', true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.send('id_user=' + encodeURIComponent(id_vaga) + '&acao=' + encodeURIComponent(acao));
+        xhttp.send('id_user=' + encodeURIComponent(id_user) + '&acao=' + encodeURIComponent(acao));
         location.reload();
     }
 }

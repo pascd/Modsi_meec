@@ -52,7 +52,7 @@
                 $('#registo-form').submit(function(e) {
                     e.preventDefault();
                     $.ajax({
-                        url: "/registo/registo_val.php",
+                        url: "registo_val.php",
                         type: "POST",
                         data: $('#registo-form').serialize(),
                         dataType: "json",
@@ -168,7 +168,7 @@
         </div>
 
 
-        <p style="text-align: center;">Nunca disponibilise a sua password mesmo se alguém lhe perguntar. Nós nunca iremos pedir a password!</p>
+        <p style="text-align: center;">Nunca disponibilise a sua password mesmo se alguém lhe perguntar. Nós nunca iremos pedir a sua password!</p>
 
         <div id="footer"></div>
 

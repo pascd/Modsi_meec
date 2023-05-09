@@ -57,8 +57,7 @@
                 }
             
             ?>
-            <button class='btn' onclick='apagar_m(this)'>Apagar</button>
-            <button class='btn' onclick='alterar_m(this)'>Alterar</button>
+            <button class='btn' onclick='apagar_u(this)'>Apagar Utilizador</button>
     </div>
 
     <script src="utilizadores.js"></script>
