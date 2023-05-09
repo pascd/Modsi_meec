@@ -1,7 +1,7 @@
 .chat-bar-collapsible {
     position: fixed;
     bottom: 0;
-    right: 50px;
+    right: 80px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -9,8 +9,8 @@
     background-color: rgb(82, 151, 255);
     color: white;
     cursor: pointer;
-    padding: 18px;
-    width: 350px;
+    padding: 8px;
+    width: 300px;
     text-align: left;
     outline: none;
     font-size: 18px;
@@ -27,7 +27,7 @@
 }
 
 .full-chat-block {
-    width: 350px;
+    width: 300px;
     background: white;
     text-align: center;
     overflow: auto;
@@ -37,13 +37,13 @@
 }
 
 .outer-container {
-    min-height: 500px;
+    min-height: 400px;
     bottom: 0%;
     position: relative;
 }
 
 .chat-container {
-    max-height: 500px;
+    max-height: 400px;
     width: 100%;
     position: absolute;
     bottom: 0;
