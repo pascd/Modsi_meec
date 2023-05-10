@@ -38,8 +38,8 @@
                                 window.location.href = "../pagina_inicial/index.php";
                             } else {
                                 $('.error').text('');
-                                $('#email-erro').text(response.errors.email);
-                                $('#password-erro').text(response.errors.password);
+                                $('#email-login-erro').text(response.errors.email);
+                                $('#password-login-erro').text(response.errors.password);
                             }
                         },
                     });
@@ -103,11 +103,11 @@
             <form class="login_form" id="login-form" action="login_val.php" method="post">
                 <label for="id_email" style="display:block;">Email</label>
                 <input type="email" id="id_email" name="email" placeholder="Email"><br><br>
-                <div id="email-erro" class="error"></div>
+                <div id="email-login-erro" class="error"></div>
 
                 <label for="id_password" style="display:block;">Email</label>
                 <input type="password" id="id_password" name="password" placeholder="Password"><br><br>
-                <div id="password-erro" class="error"></div>
+                <div id="password-login-erro" class="error"></div>
                 <br>
                 <input type="submit" class="login_register_btn" value="Entrar"><br>
                 <div id="registo-check" class="error"></div>
@@ -168,7 +168,7 @@
         </div>
 
 
-        <p style="text-align: center;">Nunca disponibilise a sua password mesmo se alguém lhe perguntar. Nós nunca iremos pedir a sua password!</p>
+        <p style="text-align: center;">Nunca disponibilize a sua password mesmo se alguém lhe perguntar. Nós nunca iremos pedir a sua password!</p>
 
         <div id="footer"></div>
 
