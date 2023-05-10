@@ -1,23 +1,20 @@
 # MODSI
 MODSI project repository
 
-Maltinha toca a fazer um site do caraças!
-Pronto agora já estou a alterar este documento do VSCODE.
+Branch para teste de CSS e adição de novas funcionalidades visuais
 
-Este foi alterado do teste
+- O que está feito:
+    - FrontEnd/index.php
+    - footer.php
+    - menubar.php
+    - login/login.php
+    - acerca/*
 
-Bota que tem ! - Pablito
+- Faltam:
+    - Enfermeiro
+    - Admin
+    - Paciente
 
-I'm in? - Chico
-
-I'M IN LET'S GOOOOO (Bora deixar o ReadMe)
-
-
-To do:
-
-- Adicionar mapa ✅
-- Ver como fazer multilingue
-- Design "Responsivo"
-- CSS de Login/Registo ✅
-- CSS de Marcações/Remarcações
-- Imagens para items/páginas (Fazer com AI?)
+Outras funcionalidades:
+    - Multilingue
+    - Chatbot
