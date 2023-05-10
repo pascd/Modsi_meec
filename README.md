@@ -15,6 +15,6 @@ Branch para teste de CSS e adição de novas funcionalidades visuais
     - Admin
     - Paciente
 
-Outras funcionalidades:
+- Outras funcionalidades:
     - Multilingue
     - Chatbot
