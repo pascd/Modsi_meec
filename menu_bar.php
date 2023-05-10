@@ -1,7 +1,9 @@
-<script>
-    <?php
+<?php
     session_start();
-    ?>
+?>
+
+<script>
+
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
     var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
     var login = "<?php echo isset($_SESSION['login']) ? $_SESSION['login'] : 0 ?>";
