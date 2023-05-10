@@ -44,6 +44,19 @@ function firstBotMessage() {
     document.getElementById("userInput").scrollIntoView(false);
 }
 
+function default_responses_1() {
+    let message_1 = "Pode alterar os dados do seu perfil ao clicar";
+    let Html_1 = '<p class="botText"><span>' + message_1 + ' <a href="https://www.youtube.com">aqui</a></span></p>';
+    $("#chatbox").append(Html_1);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    let Html_2 = '<p class="botText"><span> Deseja mais alguma coisa? </span></p>'
+    $("#chatbox").append(Html_2);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+
 firstBotMessage();
 
 // Retrieves the response
