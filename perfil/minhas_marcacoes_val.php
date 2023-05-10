@@ -6,9 +6,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $vaga = $_POST["id_vaga"];
-    echo var_dump($vaga);
     $acao = $_POST["acao"];
-    echo var_dump($acao);
     $paciente = $_SESSION["id"];
     $vaga_nova = $_POST["id_vaga_nova"];
 

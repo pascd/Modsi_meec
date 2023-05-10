@@ -20,7 +20,7 @@
 
     <div id="menu_bar"></div>
 
-    <div>
+    <div class="marcacoes">
             <tr>
                 <td> Vacina </td>
                 <td> Data </td>
@@ -53,34 +53,14 @@
 
             ?>
             <button class='btn' onclick='apagar_m(this)'>Apagar</button>
-            <button class='btn' onclick='alterar_m(this)'>Alterar</button>
+            <button class='btn' onclick='tabelaVagas(this)'>Alterar</button>
     </div>
 
     <div class="alterar_popup" id="alterar_popup">
         <div class="popup_cont">
-            <?php
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $id_vaga_selec = $_POST['id_vaga'];
-                $vacina = $_POST['vacina'];
-
-                $sel_sql_3 = "SELECT * FROM vagas WHERE vacina='$vacina'";
-                $ans_3 = mysqli_query($db, $sel_sql_3);
-
-                echo "<table>";
-                while ($row_3 = mysqli_fetch_assoc($ans_3)) {
-                    
-                    echo '<tr id_vaga_nova="' . $row_3['id_vagas'] . '">';
-                    echo '<td>' . $row_3['vacina'] . '</td>';
-                    echo '<td>' . $row_3['data_vaga'] . '</td>';
-                    echo '<td>' . $row_3['hora'] . '</td>';
-                    echo '</tr>';
-                    
-                }
-                echo "</table>";
-            }
-            ?>
+            <table id="novas_vagas"></table>
             <button class="btn" onclick="closePopup()">Fechar</button>
-            <button class="btn">Alterar</button>
+            <button class="btn" onclick="alterar_m()">Alterar</button>
         </div>
     </div>
 
