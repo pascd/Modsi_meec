@@ -8,7 +8,5 @@
         <a class="legal email" href="mailto:1190939@isep.ipp.pt" target="_blank">1190939@isep.ipp.pt</a>
     </div>
     
-    <a id="pt" href="?lang=pt" class="pt">Português</a>
-    <a id="en" href="?lang=en" class="en">English</a>
     <br><br>
 </footer>

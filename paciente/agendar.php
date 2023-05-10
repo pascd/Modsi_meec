@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../../styles.css">
+<link rel="stylesheet" type="text/css" href="../styles.css">
 
 <head>
     <h1>
@@ -63,10 +63,12 @@
         ?>
         <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
         <div id="agendar-check"></div>
+      
         <script src="agendar.js"></script>
     </div>
     <div id="footer"></div>
     
+
 </body>
 
 </html>
