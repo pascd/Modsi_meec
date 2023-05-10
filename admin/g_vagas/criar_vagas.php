@@ -3,11 +3,6 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
 
 <head>
-    <title>Registo</title>
-
-</head>
-
-<body>
     <h1>
         Sistema de vacinação Portuguesa!
     </h1>
@@ -18,8 +13,17 @@
         });
     </script>
 
-    <div id="menu_bar"></div>
+    <script src="criar_vagas.js"></script>
 
+    <script>
+        $(function() {
+            $("#footer").load("/footer.php");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="menu_bar"></div>
     <p>
         Introduzir vagas para vacinação
 
@@ -48,40 +52,8 @@
             <div id="vagas-check" class="error"></div>
         </form>
     </div>
-    <script src="/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#vagas-form').submit(function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url: "criar_vagas_val.php",
-                    type: "POST",
-                    data: $('#vagas-form').serialize(),
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status == 'success') {
-                            console.log("AJAX");
-                            $('#vagas-form')[0].reset();
-                            $('.error').text('');
-                            $('#vagas-check').text('Vagas introduzidas com sucesso');
-                        } else {
-                            $('.error').text('');
-                            $('#vacina-erro').html(response.errors.vacina);
-                            $('#vagas-erro').text(response.errors.vagas);
-                            $('#data-erro').text(response.errors.data);
-                            $('#hora-erro').text(response.errors.hora);
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log("AJAX erro");
-                        console.log("Error: " + errorThrown);
-
-                    }
-                });
-            });
-        });
-    </script>
     </p>
+    <div id="footer"></div>
 </body>
 
 </html>

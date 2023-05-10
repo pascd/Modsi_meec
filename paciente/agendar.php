@@ -3,20 +3,29 @@
 <link rel="stylesheet" type="text/css" href="../../styles.css">
 
 <head>
-    <title>Registo</title>
-
-</head>
-
-<body>
     <h1>
         Sistema de vacinação Portuguesa!
     </h1>
+
     <script src="/jquery-3.6.4.min.js"></script>
     <script>
         $(function() {
             $("#menu_bar").load("/menu_bar.php");
         });
     </script>
+
+    <script>
+        $(function() {
+            $("#footer").load("/footer.php");
+        });
+    </script>
+
+    <script src="agendar.js"></script>
+</head>
+
+<body>
+
+
 
     <div id="menu_bar"></div>
 
@@ -44,7 +53,7 @@
                     echo '<td>' . $row['data_vaga'] . '</td>';
                     echo '<td>' . $row['hora'] . '</td>';
                     echo '</tr>';
-                }                
+                }
             }
             echo "</table>";
         } else {
@@ -55,10 +64,7 @@
         <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
         <div id="agendar-check"></div>
     </div>
-    <p>
-
-        <script src="agendar.js"></script>
-    </p>
+    <div id="footer"></div>
 </body>
 
 </html>
