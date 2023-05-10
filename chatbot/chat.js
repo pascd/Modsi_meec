@@ -55,6 +55,11 @@ function default_responses_1() {
     $("#chatbox").append(Html_2);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    let Html_3 = '<div class="first_questions"> <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div><p></p> <div class="button_layout">Ver as minhas reservas</div><p></p> <div class="button_layout">Agendar uma Vacina</div><p></p> </div>'
+    $("#chatbox").append(Html_3);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 
 firstBotMessage();
@@ -62,6 +67,12 @@ firstBotMessage();
 // Retrieves the response
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
+
+    let Html_3 = '<div class="first_questions"> <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div><p></p> <div class="button_layout">Ver as minhas reservas</div><p></p> <div class="button_layout">Agendar uma Vacina</div><p></p> </div>'
+    $("#chatbox").append(Html_3);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
     let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
@@ -72,14 +83,14 @@ function getHardResponse(userText) {
 function getResponse() {
     let userText = $("#textInput").val();
 
-    if (userText == "") {
-        userText = "I love Code Palace!";
-    }
+    // if (userText == "") {
+    //     userText = "I love Code Palace!";
+    // }
 
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+    // let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
 
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
+    // $("#textInput").val("");
+    // $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
     setTimeout(() => {
@@ -106,9 +117,9 @@ function sendButton() {
     getResponse();
 }
 
-function heartButton() {
-    buttonSendText("Heart clicked!")
-}
+// function heartButton() {
+//     buttonSendText("Heart clicked!")
+// }
 
 // Press enter to send a message
 $("#textInput").keypress(function (e) {
