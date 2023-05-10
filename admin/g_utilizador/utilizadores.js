@@ -34,11 +34,7 @@ function apagar_u(button) {
     }
 }
 
-function closePopup() {
-    document.getElementById('alterar_popup').style.display = 'none';
-}
-
-function myFunction(){
+function Filtro(){
     var filtro = document.getElementById("filtro").value;
     filtro = filtro.toUpperCase();
     var tabela = document.getElementById("utilizador");

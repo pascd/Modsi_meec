@@ -18,6 +18,7 @@
             $("#footer").load("/footer.php");
         });
     </script>
+
     <script src="utilizadores.js"></script>
 
 </head>
@@ -26,7 +27,7 @@
 
     <div id="menu_bar"></div>
 
-    <input type="text" id="filtro" onkeyup="myFunction()" placeholder="Procurar utilizador..">
+    <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar utilizador..">
 
     <div>
         <tr>
@@ -49,14 +50,11 @@
             echo '<table id="' . $id_tabela . '">';
             while ($row = mysqli_fetch_assoc($ans)) {
 
-                if($row['nivel'] == 3)
-                {
+                if ($row['nivel'] == 3) {
                     $nivel = "Paciente";
-                }else if($row['nivel'] == 2)
-                {
+                } else if ($row['nivel'] == 2) {
                     $nivel = "Enfermeiro";
-                }else if($row['nivel'] == 1)
-                {
+                } else if ($row['nivel'] == 1) {
                     $nivel = "Admin";
                 }
 
@@ -72,7 +70,6 @@
             }
             echo "</table>";
         }
-
         ?>
         <button class='btn' onclick='apagar_u(this)'>Apagar Utilizador</button>
     </div>
