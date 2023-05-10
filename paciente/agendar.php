@@ -20,7 +20,7 @@
         });
     </script>
 
-    <script src="agendar.js"></script>
+    
 </head>
 
 <body>
@@ -63,8 +63,10 @@
         ?>
         <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
         <div id="agendar-check"></div>
+        <script src="agendar.js"></script>
     </div>
     <div id="footer"></div>
+    
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 var row_id = document.querySelectorAll('table tr');
-var acao;
-var id_user;
+var id_vaga;
 
 row_id.forEach(function (row) {
     row.addEventListener('click', function (event) {
@@ -13,6 +12,7 @@ row_id.forEach(function (row) {
         this.classList.add('active');
 
         id_vaga = this.getAttribute('id_vaga');
+        console.log(id_vaga);
 
     });
 });
@@ -24,23 +24,24 @@ function agendar(button) {
             console.log(this.responseText);
         }
     };
-    if (id_user != "") {
+    if (id_vaga != "") {
         xhttp.open('POST', 'agendar_val.php', true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp.send('id_vagas=' + encodeURIComponent(id_vaga));
-        location.reload();
+        //console.log(id_vaga);
+        //location.reload();
     }
 }
 
-$(document).ready(function() {
-    $('#agendar-form').submit(function(e) {
+$(document).ready(function () {
+    $('#agendar-form').submit(function (e) {
         e.preventDefault();
         $.ajax({
             url: "agendar_val.php",
             type: "POST",
             data: $('#agendar-form').serialize(),
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 if (response.status == 'success') {
                     console.log("AJAX");
                     //$('#agendar-form')[0].reset();
@@ -50,7 +51,7 @@ $(document).ready(function() {
                     $('#agendar-check').text(response.errors.agendar);
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
                 console.log("AJAX erro");
                 console.log("Error: " + errorThrown);
 

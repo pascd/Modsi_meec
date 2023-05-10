@@ -45,10 +45,21 @@
         $sel_sql = "SELECT * FROM users";
         $ans = mysqli_query($db, $sel_sql);
         $id_tabela = "utilizador";
-
         if (mysqli_num_rows($ans) > 0) {
             echo '<table id="' . $id_tabela . '">';
             while ($row = mysqli_fetch_assoc($ans)) {
+
+                if($row['nivel'] == 3)
+                {
+                    $nivel = "Paciente";
+                }else if($row['nivel'] == 2)
+                {
+                    $nivel = "Enfermeiro";
+                }else if($row['nivel'] == 1)
+                {
+                    $nivel = "Admin";
+                }
+
                 echo '<tr id_user="' . $row['id_user'] . '">';
                 echo '<td>' . $row['primeiro_nome'] . '</td>';
                 echo '<td>' . $row['ultimo_nome'] . '</td>';
@@ -56,7 +67,7 @@
                 echo '<td>' . $row['nus'] . '</td>';
                 echo '<td>' . $row['email'] . '</td>';
                 echo '<td>' . $row['contacto'] . '</td>';
-                echo '<td>' . $row['nivel'] . '</td>';
+                echo '<td>' . $nivel . '</td>';
                 echo '</tr>';
             }
             echo "</table>";
