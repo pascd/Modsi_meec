@@ -93,9 +93,10 @@ function getResponse() {
     // $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
-    setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
+    getHardResponse(userText);
+    // setTimeout(() => {
+    //     getHardResponse(userText);
+    // }, 1000)
 
 }
 
