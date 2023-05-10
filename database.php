@@ -1,15 +1,29 @@
 <?php
-        $servername = "localhost"; // or the IP address of your database server
-        $username = "id20641139_admin"; // replace with your database username
-        $password = "AdminAdmin1!"; // replace with your database password
-        $dbname = "id20641139_data_users	"; // replace with your database name
+        
+        $servername = 'ave.dee.isep.ipp.pt'; // or the IP address of your database server
+        $username = '1190939'; // replace with your database username
+        $password = '1234'; // replace with your database password
+        $dbname = '1190939_Vacinacao'; // replace with your database name
+        
         
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $db = new mysqli($servername, $username, $password, $dbname);
         
         // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if ($db->connect_error) {
+            die("Connection failed: " . $db->connect_error);
         }
-        echo "Connected successfully";
+        //echo "Connected successfully";
+        
+
+        /*
+        try {
+            $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // set the PDO error mode to exception
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully";
+        } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+        */
 ?>

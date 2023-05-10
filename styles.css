@@ -1,0 +1,245 @@
+
+/* Atributos que afetam a página inteira*/
+body {
+  width: 98%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+  }
+
+  /* Add a black background color to the top navigation */
+  .nav_bar {
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 5px;
+
+  }
+
+  .nav_bar a {
+    float: left;
+    font-size: large;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: large;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .nav_bar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Change the color of links on hover */
+.nav_bar a:hover, .dropdown0:hover .dropbtn1 {
+  box-shadow: inset 2000px 0 0 0 rgb(184, 184, 184);
+  text-decoration-color: green;
+}
+
+/* Add a color to the active/current link */
+.nav_bar a.active {
+  background-color: #04AA6D;
+  color: white;
+  
+}
+
+.double_column {
+  width: 42%;
+  border-radius: 5px;
+  background-color: #0c6886;
+  float: left;
+  margin: 2%; 
+  text-align: center;
+  padding: 2%;
+
+}
+
+.double_column a {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+.double_column img {
+  margin-top: 1%;
+  width: 100%;
+}
+
+.double_column .login_form {
+  float: left;
+  text-align: left;
+  width: 70%;
+  padding-left: 15%;
+  height: fit-content;
+
+}
+
+.double_column .registo_form {
+  float: left;
+  text-align: left;
+  width: 100%;
+  height: fit-content;
+}
+
+
+/* Set a style for the submit button */
+.login_register_btn {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+  padding: 16px 20px;
+
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  border-radius: 4px;
+  width: 96%;
+  padding: 3px 3px;
+}
+
+.newsfeed {
+  width: 96%;
+  margin: 2%; 
+  overflow: hidden;
+  float: center;
+  background-color: #065670;
+  border-radius: 5px;
+
+}
+
+.newsfeed_column{
+  width: 25%;
+  height: 300px;
+  float: left;
+  margin-left: 3%;  
+  background-color: #cecece;
+  text-align: left;
+  padding: 2%;
+}
+
+.footer {
+  width: 100%;
+  height: 5%;
+  background-color: #272727;
+  color: white;
+  text-align: center;
+
+  border-radius: 5px;
+
+}
+
+.left {
+  background-color: #2196F3;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color: #04AA6D;
+  padding: 20px;
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+
+/*Codigo para alterar o popup*/
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.alterar_popup{
+    background-color: #4ca767bd;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none;
+    font-family: “Poppins”,sans-serif;
+    text-align: center;
+}
+
+.alterar_popup button{
+  display: block;
+  margin:  0 0 20px auto;
+  background-color: transparent;
+  font-size: 25px;
+  color: #000000;
+  background: #f80000;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup_cont{
+  font-size: 50px;
+  text-align: justify;
+  color:rgb(0, 0, 0);
+  margin: 20px 0;
+  line-height: 25px;
+}
