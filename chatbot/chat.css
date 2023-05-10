@@ -28,7 +28,7 @@
 
 .full-chat-block {
     width: 300px;
-    background: white;
+    background: rgb(235, 235, 235);
     text-align: center;
     overflow: auto;
     scrollbar-width: none;
@@ -96,7 +96,7 @@
     padding: 10px;
     font-size: 16px;
     color: #000;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     outline: none
 }
 
@@ -132,13 +132,27 @@
 .botText span {
     line-height: 1.5em;
     display: inline-block;
-    background: #e0e0e0;
+    background: #ffffff;
     padding: 10px;
     border-radius: 8px;
     border-bottom-left-radius: 2px;
     max-width: 80%;
     margin-left: 10px;
     animation: floatup .5s forwards
+}
+
+.first_questions {
+    color: #6eefef;
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 @keyframes floatup {
