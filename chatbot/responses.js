@@ -7,7 +7,7 @@ function getBotResponse(input) {
     } else if (input == "scissors") {
         return "rock";
     }
-
+    
     // Simple responses
     if (input == "hello") {
         return "Hello there!";
