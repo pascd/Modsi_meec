@@ -11,6 +11,8 @@ if (!isset($_POST['vacinas'])) {
 $vagas = $_POST['vagas'];
 $data = $_POST['data'];
 $hora = $_POST['hora'];
+$acao = $_POST['acao'];
+$id_vaga = $_POST['id_vaga'];
 
 $errors = array();
 
@@ -30,6 +32,15 @@ if (empty($data)) {
 
 if (empty($hora)) {
     $errors['hora'] = "E necessario introduzir uma hora.";
+}
+
+if($acao == "Apagar")
+{
+    $rem_sql = "DELETE FROM vagas WHERE id_vagas='$id_vaga'";
+    mysqli_query($db, $rem_sql);
+
+    $rem_sql_2 = "DELETE FROM marcacao WHERE vaga='$id_vaga'";
+    mysqli_query($db, $rem_sql_2);
 }
 
 if (empty($errors)) {

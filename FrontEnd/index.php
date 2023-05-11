@@ -26,10 +26,10 @@
     </div> -->
 
     <!-- ***** Header Area Start ***** -->
-    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="/jquery-3.6.4.min.js"></script>
     <script> 
         $(function(){
-        $("#header-area").load("../menu_bar.php"); 
+        $("#header-area").load("/menu_bar.php"); 
         });
     </script>   
     <div id="header-area"></div>
@@ -39,7 +39,7 @@
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00000-3993320424.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(/img/bg_img/00000-3993320424.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -447,7 +447,7 @@
     <!-- ***** Footer Area Start ***** -->
     <script> 
         $(function(){
-        $("#footer-area").load("../footer.php"); 
+        $("#footer-area").load("/footer.php"); 
         });
     </script>   
     <div id="footer-area"></div>

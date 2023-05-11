@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#vagas-form').submit(function(e) {
-        e.preventDefault();
+        //e.preventDefault();
         $.ajax({
             url: "criar_vagas_val.php",
             type: "POST",
@@ -28,3 +28,22 @@ $(document).ready(function() {
         });
     });
 });
+
+function apagar_v(button) {
+    var row = button.parentNode;
+    var id = row.getAttribute("id_vaga");
+    var acao = "Apagar";
+    // send an AJAX request to delete the row from the database
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "criar_vagas_val.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState === 4 && xhttp.status === 200) {
+        // if the row is successfully deleted from the database, remove it from the HTML table
+        row.parentNode.removeChild(row);
+      }
+    };
+    xhttp.send("id_vaga=" + id, "acao" + acao);
+    location.reload();
+  }
+  

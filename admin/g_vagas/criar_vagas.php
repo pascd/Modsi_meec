@@ -26,7 +26,7 @@
     <div id="menu_bar"></div>
     <p>
         Introduzir vagas para vacinação
-
+    </p>
     <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
         <form id="vagas-form" action="criar_vagas_val.php" method="post" style="float: center; margin: 1% ;">
@@ -52,8 +52,41 @@
             <div id="vagas-check" class="error"></div>
         </form>
     </div>
-    </p>
-    <div id="footer"></div>
+    <br><br><br><br><br>
+
+    <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar utilizador..">
+
+    <div>
+        <tr>
+            <td> Vacina </td>
+            <td> Vagas </td>
+            <td> Data </td>
+            <td> Hora </td>
+            <td> Apagar </td>
+        </tr>
+        <?php
+
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+        $sel_sql = "SELECT * FROM vagas";
+        $ans = mysqli_query($db, $sel_sql);
+        $id_tabela = "vagas";
+        if (mysqli_num_rows($ans) > 0) {
+            echo '<table id="' . $id_tabela . '">';
+            while ($row = mysqli_fetch_assoc($ans)) {
+                echo '<tr id_vaga="' . $row['id_vagas'] . '">';
+                echo '<td>' . $row['vacina'] . '</td>';
+                echo '<td>' . $row['vagas'] . '</td>';
+                echo '<td>' . $row['data_vaga'] . '</td>';
+                echo '<td>' . $row['hora'] . '</td>';
+                echo "<button class='btn' onclick='apagar_v(this)'> X </button>";
+                echo '</tr>';
+            }
+            echo "</table>";
+        }
+        ?>
+
+        <div id="footer"></div>
 </body>
 
 </html>
