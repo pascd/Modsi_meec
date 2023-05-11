@@ -35,7 +35,6 @@
         <br><br><br><br>
         <br><br>
     <p>
-
     <!-- ***** Book An Appoinment Area Start ***** -->
     <div class="medilife-book-an-appoinment-area">
         <div class="container">

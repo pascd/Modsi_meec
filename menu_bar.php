@@ -3,15 +3,15 @@
 ?>
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="../js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="../js/popper.min.js"></script>
+<script src="/js/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="../js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="../js/plugins.js"></script>
+<script src="/js/plugins.js"></script>
 <!-- Active js -->
-<script src="../js/active.js"></script>
+<script src="/js/active.js"></script>
 
 <script>
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
@@ -63,7 +63,7 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="../img/core-img/logo.png" alt="Logo"></a>
+                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo"></a>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -76,9 +76,9 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acerca</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="../acerca/missao_e_valores.html">Missão e Valores</a>
-                                            <a class="dropdown-item" href="../acerca/welcome.html">Mensagem de Boas Vindas</a>
-                                            <a class="dropdown-item" href="../acerca/contactos.html">Contactos</a>
+                                            <a class="dropdown-item" href="/acerca/missao_e_valores.html">Missão e Valores</a>
+                                            <a class="dropdown-item" href="/acerca/welcome.html">Mensagem de Boas Vindas</a>
+                                            <a class="dropdown-item" href="/acerca/contactos.html">Contactos</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
