@@ -96,7 +96,7 @@
                                 </ul>
                                 <!-- Appointment Button -->
                                 <a href="../login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
-                                <a href="../login/logout.php" id="perfil_sair" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
+                                <a href="../login/logout.php" id="perfil_sair" class="btn medilife-appoint-btn ml-30"> <span>Sair</span></a>
                             </div>
                         </nav>
                     </div>
