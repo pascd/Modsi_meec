@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mail/email_enviar.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   /*
@@ -80,30 +81,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
   }
 
-
-  if (empty($Password)) {
-    $errors['password'] = "Password e necesssaria.";
-  } else if (strlen($Password) < 8) {
-    $errors['password'] = "Password necessita de ter pelo menos 8 caracteres.";
+  function criarPassword($tamanho = 10) {
+    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $password = '';
+    for ($i = 0; $i < $tamanho; $i++) {
+      $password .= $caracteres[rand(0, strlen($caracteres) - 1)];
+    }
+    return $password;
   }
 
-  if (empty($CPassword)) {
-    $errors['cpassword'] = "Confirme a password.";
-  } else if ($Password != $CPassword) {
-    $errors['cpassword'] = "Passwords nao coincidem.";
-  }
 
   if (empty($errors)) {
     $response = array('status' => 'success');
-    $Password_Hash = md5($password);
+    $Password = criarPassword();
     $Nivel = 2;
-    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password_Hash', '$Nivel')";
+    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password', '$Nivel')";
     if (mysqli_query($db, $ins_sql)) {
       echo "Enfermeiro criado com sucesso.";
     } else {
       echo "Erro ao criar registo: " . mysqli_error($db);
     }
     mysqli_close($db);
+
+     // Get HTML template
+    $html = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/mail/enfermeiro_mail.html');
+
+    // Replace placeholders in HTML template with dynamic content
+    $emailContent = str_replace('{nome}', $Primeiro, $html);
+    $emailContent = str_replace('{apelido}', $Ultimo, $emailContent);
+    $emailContent = str_replace('{email}', $Email, $emailContent);
+    $emailContent = str_replace('{senha}', $Password, $emailContent);
+
+    $destino = $Email;
+    $assunto = "Criação de Perfil";
+    $mensagem = $emailContent;
+
+    enviar($destino, $assunto, $mensagem);
   } else {
     $response = array('status' => 'error', 'errors' => $errors);
   }
@@ -111,3 +124,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   header('Content-Type: application/json');
   echo json_encode($response);
 }
+?>
