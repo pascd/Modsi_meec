@@ -51,8 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $n_vagas = $row['vagas'] - 1;
 
             $nome = $_SESSION['primeiro_nome'];
+            $apelido = $_SESSION['ultimo_nome'];
             $data = $row['data_vaga'];
             $hora = $row['hora'];
+            $vacina = $row['vacina'];
         }
 
         // Get HTML template
@@ -60,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Replace placeholders in HTML template with dynamic content
         $emailContent = str_replace('{nome}', $nome, $html);
+        $emailContent = str_replace('{apelido}', $apelido, $emailContent);
+        $emailContent = str_replace('{vacina}', $vacina, $emailContent);
         $emailContent = str_replace('{data}', $data, $emailContent);
         $emailContent = str_replace('{hora}', $hora, $emailContent);
 

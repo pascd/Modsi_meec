@@ -24,6 +24,7 @@ $mail->FromName = "SVPortugal";
 $mail->AddAddress($destino);
 $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
 
+$mail->CharSet = 'UTF-8';
 $mail->isHTML(true);
 $mail->Subject = $assunto;
 $mail->Body = $mensagem;
