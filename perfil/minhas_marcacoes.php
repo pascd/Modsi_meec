@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../../styles.css">
+<!-- <link rel="stylesheet" type="text/css" href="../styles.css">
 
 <head>
     <title>Registo</title>
 
+</head> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Sistema de vacinação Portuguesa | Marcações</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/Vaccine.png">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
-    <h1>
+    <!-- <h1>
         Sistema de vacinação Portuguesa!
     </h1>
     <script src="/jquery-3.6.4.min.js"></script>
@@ -16,11 +34,30 @@
         $(function() {
             $("#menu_bar").load("/menu_bar.php");
         });
+    </script> -->
+
+    <!-- Preloader -->
+    <!-- <div id="preloader">
+            <div class="medilife-load"></div>
+        </div> -->
+
+    <!-- ***** Header Area Start ***** -->
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script>
+        $(function() {
+            $("#header-area").load("../menu_bar.php");
+        });
     </script>
+    <div id="header-area"></div>
+    <!-- ***** Header Area End ***** -->
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
 
     <div id="menu_bar"></div>
 
-    <div>
+    <div class="medilife-book-an-appoinment-area">
+        <div style="text-align: center; font-size: large;">Faça aqui a gestão das suas marcações!</div><br><br>
             <tr>
                 <td> Vacina </td>
                 <td> Data </td>
@@ -85,6 +122,16 @@
     </div>
 
     <script src="marcacao.js"></script>
+
+    <script src="login_registo.js"></script>
+    <!-- ***** Footer Area Start ***** -->
+    <script>
+        $(function() {
+            $("#footer-area").load("/footer.php");
+        });
+    </script>
+    <div id="footer-area"></div>
+    <!-- ***** Footer Area End ***** --> 
 </body>
 
 </html>

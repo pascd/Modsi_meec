@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../styles.css">
+<!-- <link rel="stylesheet" type="text/css" href="../styles.css"> -->
 
-<head>
+<!-- <head>
     <h1>
         Sistema de vacinação Portuguesa!
     </h1>
@@ -21,15 +21,45 @@
     </script>
 
     
+</head> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Sistema de vacinação Portuguesa | Agendamentos</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/Vaccine.png">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
 
+    <!-- ***** Header Area Start ***** -->
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script>
+        $(function() {
+            $("#header-area").load("../menu_bar.php");
+        });
+    </script>
+    <div id="header-area"></div>
+    <!-- ***** Header Area End ***** -->
 
+    <br><br><br><br><br>
+    <br><br><br><br><br>
 
     <div id="menu_bar"></div>
 
-    <div>
+    <div class="medilife-book-an-appoinment-area">
+        <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br><br>
         <tr>
             <td> Vacina </td>
             <td> Vagas </td>
