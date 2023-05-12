@@ -2,6 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 //use PHPMailer\PHPMailer\Exception;
+header('Content-Type: text/html; charset=utf-8');
 
 require("Exception.php");
 require("PHPMailer.php");
@@ -23,6 +24,7 @@ $mail->FromName = "SVPortugal";
 $mail->AddAddress($destino);
 $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
 
+$mail->isHTML(true);
 $mail->Subject = $assunto;
 $mail->Body = $mensagem;
 $mail->WordWrap = 50;
