@@ -17,6 +17,13 @@
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
     var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
 
+    var primeiro_nome = "<?php echo isset($_SESSION['primeiro_nome']) ? $_SESSION['primeiro_nome'] : 0 ?>";
+    var ultimo_nome = "<?php echo isset($_SESSION['ultimo_nome']) ? $_SESSION['ultimo_nome'] : 0 ?>";
+
+    $('#bem_vindo').html("Bem vindo, <span>" + primeiro_nome + " " + ultimo_nome + "</span>");
+
+
+
     if (nivel==0){      //Visitante
         document.getElementById('perfil_gerir_sair').style.display = 'none';
     }
@@ -46,8 +53,10 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                        <p>Bem vindo ao Website do <span>Sistema de vacinação Portuguesa</span> </p>
+                        <p><span>Sistema de vacinação Portuguesa</span></p>
                         <p>Horário de atendimento: 2ª a 6ªfeira - 09h30h às 20h</p>
+                        <p id="bem_vindo"></p>
+
                     </div>
                 </div>
             </div>
@@ -63,7 +72,6 @@
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
                             <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo"></a>
-
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                             <div class="collapse navbar-collapse" id="medilifeMenu">
@@ -111,12 +119,11 @@
                                         <a href="/admin/g_vagas/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
                                         <!-- Opções globais -->
                                         <a href="../login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
-
-                                    </div>
+                                    </div>    
                                 </div>
                             </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ Branch para teste de CSS e adição de novas funcionalidades visuais
 - Outras funcionalidades:
     - Multilingue 😔
     - Chatbot (Paulo)
-    - Colocar no header algo do estilo: "Bem vindo, $Nome $Sobrenome"
+    - Colocar no header algo do estilo: "Bem vindo, $Nome $Sobrenome" ✔️
 
 Coisas a fazer por todos:
 - Apagar pasta e ficheiro registo/registo.php (ver se o código de verificação é utilizado)
