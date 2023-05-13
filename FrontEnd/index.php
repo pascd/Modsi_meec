@@ -67,7 +67,7 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/cidadao.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00011-1621470304.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">

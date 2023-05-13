@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" type="text/css" href="/styles.css">
+<html lang="pt">
 
 <head>
-    <title>Meu perfil</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Sistema de vacinação Portuguesa | Perfil</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/Vaccine.png">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 
 <?php session_start(); ?>
 
 <body>
-    <h1>
-        Sistema de vacinação Portuguesa!
-    </h1>
-    <script src="/jquery-3.6.4.min.js"></script>
-    <script>
-        $(function() {
-            $("#menu_bar").load("/menu_bar.php");
+    <!-- ***** Header Area Start ***** -->
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script> 
+        $(function(){
+        $("#header-area").load("../menu_bar.php"); 
         });
-    </script>
-
-    <div id="menu_bar"></div>
+    </script>   
+    <div id="header-area"></div>
+    <!-- ***** Header Area End ***** -->
+    <br><br><br><br>
+        <br><br><br><br>
 
     <p>
         Meu perfil
@@ -60,7 +72,7 @@
             <div id="perfil-check" class="error"></div>
         </form>
     </div>
-    <script src="/jquery-3.6.4.min.js"></script>
+    <script src="../jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#perfil-form').submit(function(e) {
@@ -98,6 +110,16 @@
         });
     </script>
     </p>
+
+    <!-- ***** Footer Area Start ***** -->
+    <script> 
+        $(function(){
+        $("#footer-area").load("../footer.php"); 
+        });
+    </script>   
+    <div id="footer-area"></div>
+    <!-- ***** Footer Area End ***** -->
+
 </body>
 
 </html>

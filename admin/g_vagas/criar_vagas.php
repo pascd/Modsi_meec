@@ -48,7 +48,7 @@
 
                                     <form action="#" method="post">
                                         <div class="row align-items-end">
-                                            <div class="col-12 col-md-4">
+                                            <div class="col-12 col-md-2">
                                                 <div class="form-group">
                                                     <label for="vacinas" style="color: #ffffff;">Vacina</label>
                                                     <select class="form-control" id="vacinas">
@@ -56,20 +56,22 @@
                                                         <option id="id_vacina_hepatite" name="vacinas" value="Hepatite">Hepatite</option>
                                                         <option id="id_vacina_tetano" name="vacinas" value="Tetano">Tetano</option>
                                                         <option id="id_vacina_sarampo" name="vacinas" value="Sarampo">Sarampo</option>
-                                                    </select><br><br>
-                                                    <div id="vacina-erro" class="error"></div>
+                                                    </select>
+                                                    <br><br><div id="vacina-erro" class="error"></div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
+                                                    <label for="id_data" style="color: #ffffff;">Data</label>
                                                     <input type="date" class="form-control" id="id_data" name="date" id="date" placeholder="Dia">
-                                                    <br><br><div id="data-erro" class="error"></div>
+                                                    <div id="data-erro" class="error"></div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
+                                                    <label for="id_hora" style="color: #ffffff;">Hora</label>
                                                     <input type="time" class="form-control" id="id_hora" name="time" id="time" placeholder="Hora">
-                                                    <br><br><div id="hora-erro" class="error"></div>        
+                                                    <div id="hora-erro" class="error"></div>        
                                                 </div>
                                             </div>
                                             <br>
@@ -77,10 +79,10 @@
                                                 <div class="form-group">
                                                     <label for="id_vagas" style="color: #ffffff;">Número a Administrar</label>
                                                     <input type="number" class="form-control border-top-0 border-right-0 border-left-0" id="id_vagas" name="vagas" placeholder="Número">
-                                                    <br><br>
                                                     <div id="vagas-erro" class="error"></div>   
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-12 col-md-5 mb-0">
                                                 <div class="form-group mb-0">
                                                     <button type="submit" class="btn medilife-btn">Submeter Vagas<span>+</span></button>

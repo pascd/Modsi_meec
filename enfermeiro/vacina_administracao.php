@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" type="text/css" href="../../styles.css">
+<html lang="pt">
 
 <head>
-    <h1>
-        Sistema de vacinação Portuguesa!
-    </h1>
-    <script src="/jquery-3.6.4.min.js"></script>
-    <script>
-        $(function() {
-            $("#menu_bar").load("/menu_bar.php");
-        });
-    </script>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <script>
-        $(function() {
-            $("#footer").load("/footer.php");
-        });
-    </script>
+    <!-- Title  -->
+    <title>Sistema de vacinação Portuguesa | Administração Vacinas</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/Vaccine.png">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../style.css">
     <script src="vacina_administracao.js"></script>
 
 </head>
 
 <body>
 
-    <div id="menu_bar"></div>
+    <!-- ***** Header Area Start ***** -->
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script> 
+        $(function(){
+        $("#header-area").load("../menu_bar.php"); 
+        });
+    </script>   
+    <div id="header-area"></div>
+    <!-- ***** Header Area End ***** -->
+    <br><br><br><br>
+        <br><br><br><br>
+        
 
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar marcação..">
 
@@ -90,7 +99,15 @@
         }
         ?>
     </div>
-    <div id="footer"></div>
+
+    <!-- ***** Footer Area Start ***** -->
+    <script> 
+        $(function(){
+        $("#footer-area").load("../footer.php"); 
+        });
+    </script>   
+    <div id="footer-area"></div>
+    <!-- ***** Footer Area End ***** -->
 </body>
 
 </html>

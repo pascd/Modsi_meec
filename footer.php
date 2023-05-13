@@ -44,31 +44,10 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget-area">
                         <div class="widget-title">
-                            <h6>Contact Form</h6>
+                            <h6>Localização</h6>
                         </div>
-                        <div class="footer-contact-form">
-                            <form action="#" method="post">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="footer-name" id="footer-name" placeholder="Name">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="footer-email" id="footer-email" placeholder="Email">
-                                <textarea name="message" class="form-control border-top-0 border-right-0 border-left-0" id="footerMessage" placeholder="Message"></textarea>
-                                <button type="submit" class="btn medilife-btn">Contact Us <span>+</span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <div class="footer-widget-area">
-                        <div class="widget-title">
-                            <h6>News Letter</h6>
-                        </div>
-
-                        <div class="footer-newsletter-area">
-                            <form action="#">
-                                <input type="email" class="form-control border-0 mb-0" name="newsletterEmail" id="newsletterEmail" placeholder="Your Email Here">
-                                <button type="submit">Subscribe</button>
-                            </form>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
+                        <div class="widget-blog-post">    <!-- https://support.google.com/maps/answer/144361?hl=en&co=GENIE.Platform%3DDesktop -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.001608830983!2d-8.610876966583904!3d41.178132112488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246449b419e1c1%3A0x16a6fd2fcace4efe!2sInstituto%20Superior%20de%20Engenharia%20do%20Porto%20(ISEP)%20-%20Instituto%20Polit%C3%A9cnico%20do%20Porto%20(IPP)!5e0!3m2!1sen!2spt!4v1683491937326!5m2!1sen!2spt" width="500" height="250" style="border:0; margin-left: 5%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
