@@ -26,10 +26,10 @@
     </div> -->
 
     <!-- ***** Header Area Start ***** -->
-    <script src="/jquery-3.6.4.min.js"></script>
+    <script src="../jquery-3.6.4.min.js"></script>
     <script> 
         $(function(){
-        $("#header-area").load("/menu_bar.php"); 
+        $("#header-area").load("../menu_bar.php"); 
         });
     </script>   
     <div id="header-area"></div>
@@ -39,7 +39,7 @@
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(/img/bg_img/00000-3993320424.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00000-3993320424.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/breadcumb1.jpg);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/cidadao.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -370,21 +370,21 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area mb-100">
-                        <script src="//rss.bloople.net/?url=https%3A%2F%2Fportal-chsj.min-saude.pt%2Fpages%2F748.rss&detail=50&limit=1&showtitle=false&type=js"></script>
+                        <script src="https://rss.bloople.net/?url=https%3A%2F%2Fportal-chsj.min-saude.pt%2Fpages%2F748.rss&detail=50&limit=1&showtitle=false&type=js"></script>
                     </div>
                 </div>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area mb-100">
                         <!-- Link usado da RSS de https://portal-chsj.min-saude.pt/pages/746 -->
-                        <script src="//rss.bloople.net/?url=https%3A%2F%2Fportal-chsj.min-saude.pt%2Fpages%2F747.rss&detail=50&limit=1&showtitle=false&type=js"></script>
+                        <script src="https://rss.bloople.net/?url=https%3A%2F%2Fportal-chsj.min-saude.pt%2Fpages%2F747.rss&detail=50&limit=1&showtitle=false&type=js"></script>
                     </div>
                 </div>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area mb-100">
                         <!-- Link usado da RSS de https://rr.sapo.pt/rss#info -->
-                        <script src="//rss.bloople.net/?url=https%3A%2F%2Frr.sapo.pt%2Frss%2Frssfeed.aspx%3Ftag%3D1450&detail=50&limit=1&type=js"></script>
+                        <script src="https://rss.bloople.net/?url=https%3A%2F%2Frr.sapo.pt%2Frss%2Frssfeed.aspx%3Ftag%3D1450&detail=50&limit=1&type=js"></script>
                     </div>
                 </div>
             </div>
@@ -447,7 +447,7 @@
     <!-- ***** Footer Area Start ***** -->
     <script> 
         $(function(){
-        $("#footer-area").load("/footer.php"); 
+        $("#footer-area").load("../footer.php"); 
         });
     </script>   
     <div id="footer-area"></div>
