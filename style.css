@@ -1711,6 +1711,7 @@ textarea {
   color: black;
   padding: 20px;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
 /* Define styles for the element when it's touched */
@@ -1718,11 +1719,9 @@ textarea {
   filter: contrast(0.8);
 }
 
-.touch.on {
-  background-color: greenyellow;
+.touch:active{
+  background-color: #006CFF80;
 }
-/*.touch:active{
-  background-color: rgb(220, 220, 220);
-}*/
+
 
 

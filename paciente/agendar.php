@@ -89,6 +89,26 @@
                 $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
                 $ans = mysqli_query($db, $sel_sql);
 
+                }
+
+                if ($selected_vaccine == "option_2"){
+
+                    require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+    
+                    $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Hepatite'";
+                    $ans = mysqli_query($db, $sel_sql);
+    
+                }
+
+                if ($selected_vaccine == "option_1"){
+
+                    require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+    
+                    $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Covid'";
+                    $ans = mysqli_query($db, $sel_sql);
+    
+                }
+
                 if (mysqli_num_rows($ans) > 0) {
                     echo "<table class='content-table'>";
                     echo "<thead>";
@@ -118,7 +138,7 @@
                 }
                 // Print the selected vaccine option
                 // echo "You selected: " . $selected_vaccine;
-                }
+
             ?>
 
             <!-- <form method="post">
