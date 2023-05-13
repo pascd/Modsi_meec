@@ -60,15 +60,91 @@
 
     <div class="medilife-book-an-appoinment-area">
         <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br><br>
-        <tr>
+
+        <!-- <div class="skrr-container"> -->
+            
+            <?php
+
+                echo "<div class='skrr-container'>";
+                echo "<form method='post'>";
+                echo "<select name='vaccine_selection' class='skrr-box'>";
+                echo "<option>Selecionar Vacina</option>";
+                echo "<option value='option_1'>Covid</option>";
+                echo "<option value='option_2'>Hepatite</option>";
+                echo "<option value='option_3'>Todas</option>";
+                echo "</select>";
+                echo "<p></p>";
+                echo "<button type='submit' class='submeter'>Visualizar marcações</button>";
+                echo "</form>";
+                echo "</div>";
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Check if the form has been submitted via POST
+                $selected_vaccine = $_POST['vaccine_selection'];
+
+                if ($selected_vaccine == "option_3"){
+
+                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
+                $ans = mysqli_query($db, $sel_sql);
+
+                if (mysqli_num_rows($ans) > 0) {
+                    echo "<table class='content-table'>";
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo "<td>Vacina</td>";
+                    echo "<td>Vagas</td>";
+                    echo "<td>Data</td>";
+                    echo "<td>Hora</td>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    while ($row = mysqli_fetch_assoc($ans)) {
+                        if ($row['vagas'] > 0) {
+                            //echo '<tr id_vaga="' . $row['id_vagas'] . '">';
+                            echo "<tr class='touch'>";
+                            echo '<td>' . $row['vacina'] . '</td>';
+                            echo '<td>' . $row['vagas'] . '</td>';
+                            echo '<td>' . $row['data_vaga'] . '</td>';
+                            echo '<td>' . $row['hora'] . '</td>';
+                            echo '</tr>';
+                        }
+                    }
+
+                    echo "</table>";
+                } else {
+                    echo "Sem resultados";
+                }
+                }
+                // Print the selected vaccine option
+                // echo "You selected: " . $selected_vaccine;
+                }
+            ?>
+
+            <!-- <form method="post">
+            <select name="vaccine_selection" class="skrr-box">
+                <option>Selecionar Vacina</option>
+                <option value="option_1">Covid</option>
+                <option value="option_2">Hepatite</option>
+                <option value="option_3">Todas</option>
+            </select>
+            <p></p>
+                <button type="submit" class="submeter">Visualizar marcações</button>
+            </form> -->
+
+            
+        <!-- </div> -->
+        <p></p>
+        <!-- <tr>
             <td> Vacina </td>
             <td> Vagas </td>
             <td> Data </td>
             <td> Hora </td>
-        </tr>
+        </tr> -->
+        
         <?php
 
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+        /*require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
         $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
         $ans = mysqli_query($db, $sel_sql);
@@ -90,11 +166,12 @@
             echo "Sem resultados";
         }
 
-        ?>
-        <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
+        */?>
+
+        <!-- <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
         <div id="agendar-check"></div>
       
-        <script src="agendar.js"></script>
+        <script src="agendar.js"></script> -->
     </div>
     <div id="footer"></div>
     
