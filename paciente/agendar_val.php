@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mail/email_enviar.php';
 session_start();
 
 $errors = array();
@@ -39,6 +40,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $estado = 'Marcado';
         $ins_sql = "INSERT INTO marcacao(paciente, vaga, estado) VALUES ('$id_paciente', '$id_vaga', '$estado')";
         mysqli_query($db, $ins_sql);
+
+
+        //Para o email
+        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$id_vaga'";
+        $ans = mysqli_query($db, $sel_sql);
+
+        if (mysqli_num_fields($ans) > 0) {
+            $row = mysqli_fetch_array($ans);
+            $n_vagas = $row['vagas'] - 1;
+
+            $nome = $_SESSION['primeiro_nome'];
+            $apelido = $_SESSION['ultimo_nome'];
+            $data = $row['data_vaga'];
+            $hora = $row['hora'];
+            $vacina = $row['vacina'];
+        }
+
+        // Get HTML template
+        $html = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/mail/agendar_mail.html');
+
+        // Replace placeholders in HTML template with dynamic content
+        $emailContent = str_replace('{nome}', $nome, $html);
+        $emailContent = str_replace('{apelido}', $apelido, $emailContent);
+        $emailContent = str_replace('{vacina}', $vacina, $emailContent);
+        $emailContent = str_replace('{data}', $data, $emailContent);
+        $emailContent = str_replace('{hora}', $hora, $emailContent);
+
+        $destino = $_SESSION['email'];
+        $assunto = "Agendamento de Vacina";
+        $mensagem = $emailContent;
+
+        enviar($destino, $assunto, $mensagem);
+
 
         $response = array('status' => 'success');
     } else {
