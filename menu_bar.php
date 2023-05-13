@@ -26,6 +26,8 @@
 
     if (nivel==0){      //Visitante
         document.getElementById('perfil_gerir_sair').style.display = 'none';
+        document.getElementById('bem_vindo').style.display = 'none';
+        
     }
     if (nivel==3){      //Paciente
         document.getElementById('login_registo').style.display = 'none';

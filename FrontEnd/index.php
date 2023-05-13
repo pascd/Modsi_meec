@@ -21,9 +21,9 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="medilife-load"></div>
-    </div>
+    </div> -->
 
     <!-- ***** Header Area Start ***** -->
     <script src="../jquery-3.6.4.min.js"></script>
