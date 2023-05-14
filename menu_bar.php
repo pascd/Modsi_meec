@@ -83,7 +83,7 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo"></a>
+                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo" width="171"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                             <div class="collapse navbar-collapse" id="medilifeMenu">
@@ -130,7 +130,7 @@
                                         <a href="/admin/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
                                         <a href="/admin/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
                                         <!-- Opções globais -->
-                                        <a href="/login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
+                                        <a href="/login/logout.php" id="sair" class="dropdown-item" style="background-color: #f0f0f0;"> <span style="color: #000000;">Sair</span></a>
                                     </div>    
                                 </div>
                             </div>

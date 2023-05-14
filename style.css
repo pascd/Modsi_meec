@@ -1644,3 +1644,8 @@ textarea {
       color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.error {
+  color: red;
+}
