@@ -16,6 +16,8 @@ Branch para teste de CSS e adição de novas funcionalidades visuais
 - Faltam:
     - Basicamente as tabelas todas (Paulo, looking at you 👀)
     - Corrigir Passwords
+    - Popup de confirmação
+    - Alterar password
 
 - Outras funcionalidades:
     - Multilingue 😔

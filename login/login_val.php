@@ -38,28 +38,10 @@
         {
             $row = mysqli_fetch_array($ans);
             $Password_db = $row['pass'];
-            //$Password_hash = password_hash($Password, '2y');
-
-
-
-            //echo $Password_db;
-            //echo "\n";
-            //echo $Password_hash;
             
-            /*
-            if($Password_db != md5($Password))
-            {
+            if(!password_verify($Password, $Password_db)){
               $errors['password'] = "Credenciais de acesso erradas";
             }
-            */
-
-            //echo $Password_Hash;
-            //$Password_Hash='$2y$10$xYcccRzScxvaAAB.4o/NBeYc8iQX46kJAKO/XVFbDRrSPQ4WCcjdW';
-            //echo "\n";
-            //echo $Password_Hash;
-            //if(!password_verify($Password, $Password_db)){
-            //  $errors['password'] = "Credenciais de acesso erradas";
-            //}
             
         }
     }
