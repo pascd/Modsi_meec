@@ -296,6 +296,9 @@ input {
   font-size: 0.9em;
   min-width: 500px;
   background-color: rgb(0, 108, 255, 0.5);
+  width: 90%;
+  margin-left: 5%;
+
 }
 
 .content-table thead {

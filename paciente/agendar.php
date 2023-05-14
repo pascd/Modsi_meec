@@ -1,27 +1,5 @@
 <!DOCTYPE html>
-<html>
-<!-- <link rel="stylesheet" type="text/css" href="../styles.css"> -->
-
-<!-- <head>
-    <h1>
-        Sistema de vacinação Portuguesa!
-    </h1>
-
-    <script src="/jquery-3.6.4.min.js"></script>
-    <script>
-        $(function() {
-            $("#menu_bar").load("/menu_bar.php");
-        });
-    </script>
-
-    <script>
-        $(function() {
-            $("#footer").load("/footer.php");
-        });
-    </script>
-
-    
-</head> -->
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
@@ -56,8 +34,6 @@
 
     <br><br><br><br><br>
     <br><br><br><br><br>
-
-    <div id="menu_bar"></div>
 
     <div class="medilife-book-an-appoinment-area">
         <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br><br>
@@ -194,7 +170,13 @@
       
         <script src="agendar.js"></script> -->
     </div>
-    <div id="footer"></div>
+
+    <script> 
+        $(function(){
+        $("#footer-area").load("../footer.php"); 
+        });
+    </script>   
+    <div id="footer-area"></div>
     
 
 </body>

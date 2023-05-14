@@ -13,6 +13,15 @@
 <!-- Active js -->
 <script src="js/active.js"></script>
 
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <script>
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
     var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
@@ -56,6 +65,7 @@
                 <div class="col-12 h-100">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
                         <p><span>Sistema de vacinação Portuguesa</span></p>
+                        <div id="google_translate_element"></div>
                         <p>Horário de atendimento: 2ª a 6ªfeira - 09h30h às 20h</p>
                         <p id="bem_vindo"></p>
 
@@ -104,7 +114,7 @@
                                     </li>
                                 </ul>
                                 <!-- Appointment Button -->
-                                <a href="../login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
+                                <a href="/login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
                                 <div class="nav-item dropdown" id="perfil_gerir_sair">
                                     <a class="btn medilife-appoint-btn ml-30" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Área Reservada</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -116,9 +126,9 @@
                                         <!-- Opções enfermeiro -->
                                         <a href="/enfermeiro/vacina_administracao.php" id="vacina_administracao" class="dropdown-item"> <span>Administração Vacinas</span></a>
                                         <!-- Opções administrador -->
-                                        <a href="/admin/g_enfermeiro/registo_enfermeiro.php" id="registo_enfermeiro" class="dropdown-item"> <span>Registo de Enfermeiro</span></a>
-                                        <a href="/admin/g_utilizador/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
-                                        <a href="/admin/g_vagas/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
+                                        <a href="/admin/registo_enfermeiro.php" id="registo_enfermeiro" class="dropdown-item"> <span>Registo de Enfermeiro</span></a>
+                                        <a href="/admin/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
+                                        <a href="/admin/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
                                         <!-- Opções globais -->
                                         <a href="/login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
                                     </div>    
