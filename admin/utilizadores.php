@@ -12,10 +12,10 @@
     <title>Sistema de vacinação Portuguesa | Gerir Utilizadores</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="../../img/Vaccine.png">
+    <link rel="icon" href="../img/Vaccine.png">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <script src="utilizadores.js"></script>
 
@@ -24,10 +24,10 @@
 <body>
 
         <!-- ***** Header Area Start ***** -->
-        <script src="../../jquery-3.6.4.min.js"></script>
+        <script src="../jquery-3.6.4.min.js"></script>
         <script> 
             $(function(){
-            $("#header-area").load("../../menu_bar.php"); 
+            $("#header-area").load("../menu_bar.php"); 
             });
         </script>   
         <div id="header-area"></div>
@@ -89,7 +89,7 @@
     <!-- ***** Footer Area Start ***** -->
     <script>
         $(function(){
-        $("#footer-area").load("../../footer.php");
+        $("#footer-area").load("../footer.php");
         });
     </script>   
     <div id="footer-area"></div>
