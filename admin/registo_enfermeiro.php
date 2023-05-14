@@ -75,16 +75,6 @@
                         <label for="id_email">Email</label>
                         <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" placeholder="Email"><br>
                         <div id="email-erro" class="error"></div>
-
-
-                        <label for="id_password" style="display:block;">Password</label>
-                        <input type="password" class="form-control border-top-0 border-right-0 border-left-0" id="id_password" name="password" placeholder="Password"><br>
-                        <div id="password-erro" class="error"></div>
-
-                        <label for="id_cpassword" style="display:block;">Repita a Password</label>
-                        <input type="password" class="form-control border-top-0 border-right-0 border-left-0" id="id_cpassword" name="cpassword" placeholder="Password"><br>
-                        <div id="cpassword-erro" class="error"></div>
-
                         <br>
                         <input type="submit" class="btn medilife-btn" value="Registar"><br>
                         <div id="registo-check" class="error"></div>

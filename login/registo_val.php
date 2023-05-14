@@ -97,7 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $response = array('status' => 'success');
     $Hash = password_hash($Password, PASSWORD_BCRYPT);
     $Nivel = 3;
-    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Hash', '$Nivel')";
+    $Alterar_Senha = 0;
+    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, alt_senha, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Hash', '$Alterar_Senha', '$Nivel')";
     if (mysqli_query($db, $ins_sql)) {
       echo "Registo criado com sucesso.";
     } else {
