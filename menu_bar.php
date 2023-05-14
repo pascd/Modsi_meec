@@ -120,7 +120,7 @@
                                         <a href="/admin/g_utilizador/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
                                         <a href="/admin/g_vagas/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
                                         <!-- Opções globais -->
-                                        <a href="../login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
+                                        <a href="/login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
                                     </div>    
                                 </div>
                             </div>
