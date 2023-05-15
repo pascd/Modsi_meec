@@ -24,15 +24,15 @@
 <body>
     <!-- ***** Header Area Start ***** -->
     <script src="../jquery-3.6.4.min.js"></script>
-    <script> 
-        $(function(){
-        $("#header-area").load("../menu_bar.php"); 
+    <script>
+        $(function() {
+            $("#header-area").load("../menu_bar.php");
         });
-    </script>   
+    </script>
     <div id="header-area"></div>
     <!-- ***** Header Area End ***** -->
     <br><br><br><br>
-        <br><br><br><br>
+    <br><br><br><br>
 
     <p>
         Meu perfil
@@ -67,56 +67,66 @@
             <input type="password" id="id_cpassword" name="cpassword"><br><br>
             <div id="cpassword-erro" class="error"></div>
             -->
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Alterar password
+            </button>
+
             <br>
             <input type="submit" value="Editar"><br><br>
             <div id="perfil-check" class="error"></div>
         </form>
     </div>
-    <script src="../jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#perfil-form').submit(function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url: "/perfil/editar_perfil.php",
-                    type: "POST",
-                    data: $('#perfil-form').serialize(),
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status == 'success') {
-                            //console.log("AJAX");
-                            $('.error').text('');
-                            $('#perfil-check').text('Perfil editado com sucesso.');
-                            location.reload();
-                        } else {
-                            $('.error').text('');
-                            $('#primeiro-erro').html(response.errors.primeiro);
-                            $('#ultimo-erro').text(response.errors.ultimo);
-                            $('#nascimento-erro').text(response.errors.nascimento);
-                            $('#nus-erro').text(response.errors.nus);
-                            $('#email-erro').text(response.errors.email);
-                            $('#telemovel-erro').text(response.errors.telemovel);
-                            $('#password-erro').text(response.errors.password);
-                            $('#cpassword-erro').text(response.errors.cpassword);
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        //console.log("AJAX erro");
-                        console.log("Error: " + errorThrown);
 
-                    }
-                });
-            });
-        });
+    <script src="perfil.js"></script>
     </script>
     </p>
 
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Alterar a Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="actualPassword" class="col-form-label">Password atual</label>
+                            <input type="password" class="form-control" id="password_atual">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword" class="col-form-label">Nova password</label>
+                            <input type="password" class="form-control" id="nova_password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword" class="col-form-label">Confirmar nova password</label>
+                            <input type="password" class="form-control" id="confirmar_password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="save-changes-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- ***** Footer Area Start ***** -->
-    <script> 
-        $(function(){
-        $("#footer-area").load("../footer.php"); 
+    <script>
+        $(function() {
+            $("#footer-area").load("../footer.php");
         });
-    </script>   
+    </script>
     <div id="footer-area"></div>
     <!-- ***** Footer Area End ***** -->
 

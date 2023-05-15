@@ -1,10 +1,29 @@
-let $modal = $("#myModal");
-$modal.draggable({
-  handle: ".modal-header",
-});
-$modal.resizable();
-
 $(document).ready(function () {
+
+$('#save-changes-btn').click(function () {
+    // Get the values of the form inputs
+    var senha_atual = $('#password_atual').val();
+    var nova_senha = $('#nova_password').val();
+    var confirmar_senha = $('#confirmar_password').val();
+    var alterar_senha = "Sim";
+    // Send an AJAX request to the PHP script
+    $.ajax({
+        url: 'editar_perfil.php',
+        type: 'POST',
+        data: {
+            senha_atual: senha_atual,
+            nova_senha: nova_senha,
+            confirmar_senha: confirmar_senha,
+            alterar_senha: alterar_senha
+        },
+        success: function (response) {
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus, errorThrown);
+        }
+    });
+});
+
     $('#perfil-form').submit(function (e) {
         e.preventDefault();
         $.ajax({
