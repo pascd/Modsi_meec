@@ -59,14 +59,6 @@
             Número de Telemóvel:
             <input type="tel" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
             <div id="telemovel-erro" class="error"></div>
-            <!--
-            Palavra-Chave:
-            <input type="password" id="id_password" name="password"><br><br>
-            <div id="password-erro" class="error"></div>
-            Repita a Palavra-Chave Anterior:
-            <input type="password" id="id_cpassword" name="cpassword"><br><br>
-            <div id="cpassword-erro" class="error"></div>
-            -->
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Alterar password
@@ -100,14 +92,17 @@
                         <div class="form-group">
                             <label for="actualPassword" class="col-form-label">Password atual</label>
                             <input type="password" class="form-control" id="password_atual">
+                            <div id="passwordatual-erro" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="newPassword" class="col-form-label">Nova password</label>
                             <input type="password" class="form-control" id="nova_password">
+                            <div id="novapassword-erro" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="confirmNewPassword" class="col-form-label">Confirmar nova password</label>
                             <input type="password" class="form-control" id="confirmar_password">
+                            <div id="confirmarpassword-erro" class="error"></div>
                         </div>
                     </form>
                 </div>

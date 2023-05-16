@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   if (empty($errors)) {
-    $response = array('status' => 'success');
+    $response = array('status' => 'success', 'alterar_senha' => $Alterar_Senha);
     $sel_sql = "SELECT * FROM users WHERE Email = '$Email'";
     $ans = mysqli_query($db, $sel_sql);
     if (mysqli_num_fields($ans) > 0) {
