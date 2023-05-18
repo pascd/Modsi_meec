@@ -44,8 +44,8 @@
 
         echo "<div class='skrr-container'>";
         echo "<form method='post'>";
+        echo "<label>Selecionar Vacina</label>";
         echo "<select name='vaccine_selection' class='skrr-box'>";
-        echo "<option>Selecionar Vacina</option>";
         echo "<option value='option_1'>Covid</option>";
         echo "<option value='option_2'>Hepatite</option>";
         echo "<option value='option_3'>Todas</option>";
