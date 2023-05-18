@@ -37,28 +37,45 @@
 
     <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
-    <br><form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 1% ;">
+    <br><form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 5% ;">
 
-            <h3 style="text-align: center; font-size: large;">Meu Perfil</h3><br>
+            <h2 style="text-align: center; font-size: large;">Meu Perfil</h2><br>
 
-            Primeiro Nome:
-            <input type="text" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
+            <div style="float:left;margin-right:20px;width: 47%; ">
+                <label for="id_primeiro">Primeiro Nome</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
+            </div>
+            <div style="float:left;width: 47%; ">
+                <label for="id_ultimo">Último Nome</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly><br><br>
+            </div>
+            <br><br>
             <div id="primeiro-erro" class="error"></div>
-            Último Nome:
-            <input type="text" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly><br><br>
-            <div id="ultimo-erro" class="error"></div>
-            Data de Nascimento:
-            <input type="date" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly><br><br>
-            <div id="nascimento-erro" class="error"></div>
-            Número de Utente:
-            <input type="text" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly><br><br>
-            <div id="nus-erro" class="error"></div>
-            Email:
-            <input type="email" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>"><br><br>
-            <div id="email-erro" class="error"></div>
-            Número de Telemóvel:
-            <input type="tel" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
+            <div id="ultimo-erro" class="error"></div><br>
+
+            <div>
+                <label for="id_nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control border-top-0 border-right-0 border-left-0" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly><br><br>
+                <div id="nascimento-erro" class="error"></div>
+            </div>
+            <div style="float:left;margin-right:20px;width: 47%; ">
+                <label for="id_NUS">Número de Utente</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly><br><br>
+            </div>
+            <div style="float:left;width: 47%; ">
+                <label for="id_phone">Número de Telemóvel</label>
+                <input type="tel" class="form-control border-top-0 border-right-0 border-left-0" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
+            </div>
+            <br><br>
             <div id="telemovel-erro" class="error"></div>
+            <div id="nus-erro" class="error"></did>
+            <br><br>
+            <div style="float:left;width: 100%; >
+                <label for="id_email">Email</label>
+                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>"><br><br>
+            </div>
+            <div id="email-erro" class="error"></div>
+
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Alterar password

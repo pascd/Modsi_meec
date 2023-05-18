@@ -34,11 +34,13 @@
         <br><br><br><br>
 
     <div>
+        <table>
             <tr>
                 <td> Vacina </td>
                 <td> Data </td>
                 <td> Hora </td>
             </tr>
+        </table>
             <?php
 
             require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';

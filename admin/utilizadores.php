@@ -16,6 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
 
     <script src="utilizadores.js"></script>
 
@@ -40,15 +41,7 @@
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar utilizador..">
 
     <div>
-        <tr>
-            <td> Primeiro Nome </td>
-            <td> Ultimo Nome </td>
-            <td> Nascimento </td>
-            <td> NUS </td>
-            <td> Email </td>
-            <td> Contacto </td>
-            <td> Nivel </td>
-        </tr>
+
         <?php
 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
@@ -57,7 +50,16 @@
         $ans = mysqli_query($db, $sel_sql);
         $id_tabela = "utilizador";
         if (mysqli_num_rows($ans) > 0) {
-            echo '<table id="' . $id_tabela . '">';
+            echo '<table class="content-table" id="' . $id_tabela . '">';
+            echo '<tr>';
+            echo '<td> Primeiro Nome </td>';
+                echo '<td> Ultimo Nome </td>';
+                echo '<td> Nascimento </td>';
+                echo '<td> NUS </td>';
+                echo '<td> Email </td>';
+                echo '<td> Contacto </td>';
+                echo '<td> Nivel </td>';
+            echo '</tr>';
             while ($row = mysqli_fetch_assoc($ans)) {
 
                 if ($row['nivel'] == 3) {
