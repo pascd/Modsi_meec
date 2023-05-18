@@ -8,7 +8,7 @@ $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $Alterar_Senha = $_POST['alterar_senha'];
+  $Alterar_Senha = isset($_POST['alterar_senha']) ? $_POST['alterar_senha'] : 0;
 
   if ($Alterar_Senha == "Sim") {
 

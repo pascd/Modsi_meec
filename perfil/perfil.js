@@ -45,8 +45,9 @@ $('#save-changes-btn').click(function () {
                     $('#nus-erro').text(response.errors.nus);
                     $('#email-erro').text(response.errors.email);
                     $('#telemovel-erro').text(response.errors.telemovel);
-                    $('#password-erro').text(response.errors.password);
-                    $('#cpassword-erro').text(response.errors.cpassword);
+                    $('#passwordatual-erro').text(response.errors.password_atual);
+                    $('#novapassword-erro').text(response.errors.nova_password);
+                    $('#confirmarpassword-erro').text(response.errors.confirmar_password);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
