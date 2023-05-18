@@ -16,6 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
     <script src="vacina_administracao.js"></script>
 
 </head>
@@ -36,6 +37,9 @@
         
 
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar marcação..">
+
+    <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br><br>
+
 
     <div>
         <tr>
@@ -69,7 +73,7 @@
 
                 if (mysqli_num_rows($ans2) > 0 && mysqli_num_rows($ans2) > 0) {
 
-                    echo '<table id="' . $id_tabela . '">';
+                    echo '<table class="content-table" id="' . $id_tabela . '">';
                     while ($row_2 = mysqli_fetch_assoc($ans2)) {
                         while ($row_3 = mysqli_fetch_assoc($ans3)) {
                             echo '<tr id_marcacao="' . $row['id_marcacao'] . '">';

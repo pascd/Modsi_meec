@@ -34,13 +34,13 @@
     <br><br><br><br>
     <br><br><br><br>
 
-    <p>
-        Meu perfil
 
     <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
-        <form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 1% ;">
-            <br>
+    <br><form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 1% ;">
+
+            <h3 style="text-align: center; font-size: large;">Meu Perfil</h3><br>
+
             Primeiro Nome:
             <input type="text" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
             <div id="primeiro-erro" class="error"></div>
@@ -72,8 +72,7 @@
                 Alterar password
             </button>
 
-            <br>
-            <input type="submit" value="Editar"><br><br>
+            <input type="submit" class="btn btn-primary" value="Editar"><br><br>
             <div id="perfil-check" class="error"></div>
         </form>
     </div>
@@ -91,7 +90,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Alterar a Password</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
