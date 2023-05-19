@@ -102,7 +102,7 @@
                         echo '<td>' . $row['vagas'] . '</td>';
                         echo '<td>' . $row['data_vaga'] . '</td>';
                         echo '<td>' . $row['hora'] . '</td>';
-                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button>';
+                        echo '<td><button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button><td>';
                         echo '</tr>';
                     }
                 }
