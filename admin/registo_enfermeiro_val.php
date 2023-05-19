@@ -95,7 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $response = array('status' => 'success');
     $Password = criarPassword();
     $Nivel = 2;
-    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password', '$Nivel')";
+    $Alterar_Senha = 1;
+    $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, alt_senha, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Password', '$Alterar_Senha', '$Nivel')";
     if (mysqli_query($db, $ins_sql)) {
       echo "Enfermeiro criado com sucesso.";
     } else {

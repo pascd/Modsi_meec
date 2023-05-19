@@ -13,6 +13,15 @@
 <!-- Active js -->
 <script src="js/active.js"></script>
 
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <script>
     //Verifica se os valores da sessão foram establecidos, se negativo, coloca a 0
     var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
@@ -56,6 +65,7 @@
                 <div class="col-12 h-100">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
                         <p><span>Sistema de vacinação Portuguesa</span></p>
+                        <div id="google_translate_element"></div>
                         <p>Horário de atendimento: 2ª a 6ªfeira - 09h30h às 20h</p>
                         <p id="bem_vindo"></p>
 
@@ -73,7 +83,7 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo"></a>
+                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo" width="171"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                             <div class="collapse navbar-collapse" id="medilifeMenu">
@@ -91,20 +101,20 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="publicacoes.html">Publicações</a>
+                                        <a class="nav-link" href="/publicacoes.html">Publicações</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Saúde Pública</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="vacinas.html">Vacinação</a>
+                                            <a class="dropdown-item" href="/vacinas.html">Vacinação</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="internacional.html">Internacional</a>
+                                        <a class="nav-link" href="/internacional.html">Internacional</a>
                                     </li>
                                 </ul>
                                 <!-- Appointment Button -->
-                                <a href="../login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
+                                <a href="/login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
                                 <div class="nav-item dropdown" id="perfil_gerir_sair">
                                     <a class="btn medilife-appoint-btn ml-30" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Área Reservada</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -116,11 +126,11 @@
                                         <!-- Opções enfermeiro -->
                                         <a href="/enfermeiro/vacina_administracao.php" id="vacina_administracao" class="dropdown-item"> <span>Administração Vacinas</span></a>
                                         <!-- Opções administrador -->
-                                        <a href="/admin/g_enfermeiro/registo_enfermeiro.php" id="registo_enfermeiro" class="dropdown-item"> <span>Registo de Enfermeiro</span></a>
-                                        <a href="/admin/g_utilizador/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
-                                        <a href="/admin/g_vagas/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
+                                        <a href="/admin/registo_enfermeiro.php" id="registo_enfermeiro" class="dropdown-item"> <span>Registo de Enfermeiro</span></a>
+                                        <a href="/admin/utilizadores.php" id="utilizadores" class="dropdown-item"> <span>Gestão de Utilizadores</span></a>
+                                        <a href="/admin/criar_vagas.php" id="criar_vagas" class="dropdown-item"> <span>Criar Vagas Vacinação</span></a>
                                         <!-- Opções globais -->
-                                        <a href="../login/logout.php" id="sair" class="dropdown-item"> <span>Sair</span></a>
+                                        <a href="/login/logout.php" id="sair" class="dropdown-item" style="background-color: #f0f0f0;"> <span style="color: #000000;">Sair</span></a>
                                     </div>    
                                 </div>
                             </div>

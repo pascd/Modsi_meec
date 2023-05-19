@@ -9,7 +9,13 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.status == 'success') {
                     $('#login-form')[0].reset();
-                    window.location.href = "/FrontEnd/index.php";
+                    var alt_senha = response.alterar_senha;
+                    console.log(alt_senha);
+                    if (alt_senha == 1) {
+                        window.location.href = "/perfil/meu_perfil.php";
+                    } else {
+                        window.location.href = "/FrontEnd/index.php";
+                    }
                 } else {
                     $('.error').text('');
                     $('#email-login-erro').text(response.errors.email);

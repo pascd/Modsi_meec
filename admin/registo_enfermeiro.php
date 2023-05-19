@@ -12,19 +12,19 @@
     <title>Sistema de vacinação Portuguesa | Gerir Enfermeiros</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="../../img/Vaccine.png">
+    <link rel="icon" href="../img/Vaccine.png">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 
 <body>
     <!-- ***** Header Area Start ***** -->
-    <script src="../../jquery-3.6.4.min.js"></script>
+    <script src="../jquery-3.6.4.min.js"></script>
     <script> 
         $(function(){
-        $("#header-area").load("../../menu_bar.php"); 
+        $("#header-area").load("../menu_bar.php"); 
         });
     </script>   
     <div id="header-area"></div>
@@ -75,16 +75,6 @@
                         <label for="id_email">Email</label>
                         <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" placeholder="Email"><br>
                         <div id="email-erro" class="error"></div>
-
-
-                        <label for="id_password" style="display:block;">Password</label>
-                        <input type="password" class="form-control border-top-0 border-right-0 border-left-0" id="id_password" name="password" placeholder="Password"><br>
-                        <div id="password-erro" class="error"></div>
-
-                        <label for="id_cpassword" style="display:block;">Repita a Password</label>
-                        <input type="password" class="form-control border-top-0 border-right-0 border-left-0" id="id_cpassword" name="cpassword" placeholder="Password"><br>
-                        <div id="cpassword-erro" class="error"></div>
-
                         <br>
                         <input type="submit" class="btn medilife-btn" value="Registar"><br>
                         <div id="registo-check" class="error"></div>
@@ -103,7 +93,7 @@
     <!-- ***** Footer Area Start ***** -->
     <script>
         $(function(){
-        $("#footer-area").load("../../footer.php");
+        $("#footer-area").load("../footer.php");
         });
     </script>   
     <div id="footer-area"></div>

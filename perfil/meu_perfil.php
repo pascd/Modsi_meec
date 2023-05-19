@@ -24,99 +24,122 @@
 <body>
     <!-- ***** Header Area Start ***** -->
     <script src="../jquery-3.6.4.min.js"></script>
-    <script> 
-        $(function(){
-        $("#header-area").load("../menu_bar.php"); 
+    <script>
+        $(function() {
+            $("#header-area").load("../menu_bar.php");
         });
-    </script>   
+    </script>
     <div id="header-area"></div>
     <!-- ***** Header Area End ***** -->
     <br><br><br><br>
-        <br><br><br><br>
+    <br><br><br><br>
 
-    <p>
-        Meu perfil
 
     <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
-        <form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 1% ;">
-            <br>
-            Primeiro Nome:
-            <input type="text" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
+    <br><form id="perfil-form" action="editar_perfil.php" method="post" style="float: center; margin: 5% ;">
+
+            <h2 style="text-align: center; font-size: large;">Meu Perfil</h2><br>
+
+            <div style="float:left;margin-right:20px;width: 47%; ">
+                <label for="id_primeiro">Primeiro Nome</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly>
+                
+            </div>
+            <div style="float:left;width: 47%;">
+                <label for="id_ultimo">Último Nome</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly>
+
+            </div>
             <div id="primeiro-erro" class="error"></div>
-            Último Nome:
-            <input type="text" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly><br><br>
             <div id="ultimo-erro" class="error"></div>
-            Data de Nascimento:
-            <input type="date" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly><br><br>
+
+            <div>
+                <label for="id_nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control border-top-0 border-right-0 border-left-0" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly>
+            </div>
             <div id="nascimento-erro" class="error"></div>
-            Número de Utente:
-            <input type="text" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly><br><br>
-            <div id="nus-erro" class="error"></div>
-            Email:
-            <input type="email" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>"><br><br>
-            <div id="email-erro" class="error"></div>
-            Número de Telemóvel:
-            <input type="tel" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
+
+            <div style="float:left;margin-right:20px;width: 47%;">
+                <label for="id_NUS">Número de Utente</label>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly>
+            </div>
+            <div style="float:left;width: 47%;">
+                <label for="id_phone">Número de Telemóvel</label>
+                <input type="tel" class="form-control border-top-0 border-right-0 border-left-0" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>">
+                <br>
+            </div>
             <div id="telemovel-erro" class="error"></div>
-            <!--
-            Palavra-Chave:
-            <input type="password" id="id_password" name="password"><br><br>
-            <div id="password-erro" class="error"></div>
-            Repita a Palavra-Chave Anterior:
-            <input type="password" id="id_cpassword" name="cpassword"><br><br>
-            <div id="cpassword-erro" class="error"></div>
-            -->
-            <br>
-            <input type="submit" value="Editar"><br><br>
+            <div id="nus-erro" class="error"></did>
+
+            <div style="float:left;width: 100%;">
+                <label for="id_email" style="color: #000000;">Email</label>
+                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>">
+            </div>
+            <div id="email-erro" class="error"></div>
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Alterar password
+            </button>
+
+            <input type="submit" class="btn btn-primary" value="Editar"><br><br>
             <div id="perfil-check" class="error"></div>
         </form>
     </div>
-    <script src="../jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#perfil-form').submit(function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url: "/perfil/editar_perfil.php",
-                    type: "POST",
-                    data: $('#perfil-form').serialize(),
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status == 'success') {
-                            //console.log("AJAX");
-                            $('.error').text('');
-                            $('#perfil-check').text('Perfil editado com sucesso.');
-                            location.reload();
-                        } else {
-                            $('.error').text('');
-                            $('#primeiro-erro').html(response.errors.primeiro);
-                            $('#ultimo-erro').text(response.errors.ultimo);
-                            $('#nascimento-erro').text(response.errors.nascimento);
-                            $('#nus-erro').text(response.errors.nus);
-                            $('#email-erro').text(response.errors.email);
-                            $('#telemovel-erro').text(response.errors.telemovel);
-                            $('#password-erro').text(response.errors.password);
-                            $('#cpassword-erro').text(response.errors.cpassword);
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        //console.log("AJAX erro");
-                        console.log("Error: " + errorThrown);
 
-                    }
-                });
-            });
-        });
+    <script src="perfil.js"></script>
     </script>
     </p>
 
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Alterar a Password</h5>
+                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="actualPassword" class="col-form-label">Password atual</label>
+                            <input type="password" class="form-control" id="password_atual">
+                            <div id="passwordatual-erro" class="error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword" class="col-form-label">Nova password</label>
+                            <input type="password" class="form-control" id="nova_password">
+                            <div id="novapassword-erro" class="error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword" class="col-form-label">Confirmar nova password</label>
+                            <input type="password" class="form-control" id="confirmar_password">
+                            <div id="confirmarpassword-erro" class="error"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="save-changes-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- ***** Footer Area Start ***** -->
-    <script> 
-        $(function(){
-        $("#footer-area").load("../footer.php"); 
+    <script>
+        $(function() {
+            $("#footer-area").load("../footer.php");
         });
-    </script>   
+    </script>
     <div id="footer-area"></div>
     <!-- ***** Footer Area End ***** -->
 
