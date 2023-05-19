@@ -11,7 +11,7 @@
     <!-- Title  -->
     <title>Sistema de vacinação Portuguesa | Home</title>
 
-    <link rel="stylesheet" href="chatbot/chat.css">
+    <link rel="stylesheet" href="../chatbot/chat.css">
     <!-- <link rel="stylesheet" href="chatbot/home.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -511,7 +511,7 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="chatbot/responses.js"></script>
-<script src="chatbot/chat.js"></script>
+<script src="../chatbot/responses.js"></script>
+<script src="../chatbot/chat.js"></script>
 
 </html>
