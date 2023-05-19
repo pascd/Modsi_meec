@@ -35,27 +35,26 @@
     <br><br><br><br>
         <br><br><br><br>
         
+    <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br>
 
-    <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar marcação..">
-
-    <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br><br>
+    <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar marcação.." class="form-control border-top-0 border-right-0 border-left-0" style='margin-left:15%; width: 70%'>
 
 
     <div>
-        <tr>
-            <td> Vacina </td>
-            <td> Data </td>
-            <td> Hora </td>
-            <td> NUS </td>
-            <td> Estado </td>
-        </tr>
+        <table class="content-table" id="marcacao">
+            <tr>
+                <th> Vacina </th>
+                <th> Data </th>
+                <th> Hora </th>
+                <th> NUS </th>
+                <th> Estado </th>
+            </tr>
         <?php
 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
         $sel_sql = "SELECT * FROM marcacao";
         $ans = mysqli_query($db, $sel_sql);
-        $id_tabela = "marcacao";
         if (mysqli_num_rows($ans) > 0) {
             while ($row = mysqli_fetch_assoc($ans)) {
 
@@ -71,38 +70,42 @@
                 $estado = $row['estado'];
                 $id_select = "estado";
 
-                if (mysqli_num_rows($ans2) > 0 && mysqli_num_rows($ans2) > 0) {
-
-                    echo '<table class="content-table" id="' . $id_tabela . '">';
+                if (mysqli_num_rows($ans2) > 0 && mysqli_num_rows($ans3) > 0) {
                     while ($row_2 = mysqli_fetch_assoc($ans2)) {
                         while ($row_3 = mysqli_fetch_assoc($ans3)) {
                             echo '<tr id_marcacao="' . $row['id_marcacao'] . '">';
-                            echo '<td>' . $row_2['vacina'] . '</td>';
-                            echo '<td>' . $row_2['data_vaga'] . '</td>';
-                            echo '<td>' . $row_2['hora'] . '</td>';
-                            echo '<td>' . $row_3['nus'] . '</td>';
-                            echo '<td>' . '<select id="' . $id_select . '">';
-                            echo '<option value="' . $estado . '">' . $estado . '</option>';
-                            if ($estado == "Marcado") {
-                                echo '<option value="Resolvido">Resolvido</option>';
-                                echo '<option value="Ausente">Ausente</option>';
-                            } else if ($estado == "Resolvido") {
-                                echo '<option value="Marcado">Marcado</option>';
-                                echo '<option value="Ausente">Ausente</option>';
-                            } else if ($estado == "Ausente") {
-                                echo '<option value="Marcado">Marcado</option>';
-                                echo '<option value="Resolvido">Resolvido</option>';
-                            }
-                            echo '</select>' . '<td>';
+                                echo '<td>' . $row_2['vacina'] . '</td>';
+                                echo '<td>' . $row_2['data_vaga'] . '</td>';
+                                echo '<td>' . $row_2['hora'] . '</td>';
+                                echo '<td>' . $row_3['nus'] . '</td>';
+                                echo '<td>' . '<select id="' . $id_select . '">';
+                                    echo '<option value="' . $estado . '">' . $estado . '</option>';
+                                    if ($estado == "Marcado") {
+                                        echo '<option value="Resolvido">Resolvido</option>';
+                                        echo '<option value="Ausente">Ausente</option>';
+                                    } else if ($estado == "Resolvido") {
+                                        echo '<option value="Marcado">Marcado</option>';
+                                        echo '<option value="Ausente">Ausente</option>';
+                                    } else if ($estado == "Ausente") {
+                                        echo '<option value="Marcado">Marcado</option>';
+                                        echo '<option value="Resolvido">Resolvido</option>';
+                                    }
+                                    echo '</select></td>';
                             echo '</tr>';
                         }
+
                     }
-                    echo "</table>";
                 }
             }
         }
         ?>
+        </table>
+
     </div>
+
+    <p></p>
+    <br><br><br><br>
+        <br><br><br><br>
 
     <!-- ***** Footer Area Start ***** -->
     <script> 
