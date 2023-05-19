@@ -14,14 +14,14 @@ To do list:
     - Paciente
 
 - Faltam:
-    - Basicamente as tabelas todas (Paulo, looking at you 👀)
-    - Corrigir Passwords
+    - Basicamente as tabelas todas (Paulo, looking at you 👀) ✔️
+    - Corrigir Passwords ✔️
     - Popup de confirmação
-    - Alterar password
+    - Alterar password ✔️
 
 - Outras funcionalidades:
     - Multilingue ✔️
-    - Chatbot (Paulo)
+    - Chatbot (Paulo) ✔️
 
 Coisas a fazer por todos:
 - Apagar pasta e ficheiro registo/registo.php (ver se o código de verificação é utilizado)   ✔️
@@ -31,3 +31,7 @@ Coisas a fazer por todos:
 - Testar as mensagens de erro/sucesso a submeter formulários
 - Verificar se menu_bar abre os dropdown menu em todas as páginas
 - Colocar apenas um ficheiro css para o documento todo OU dois sem partes em conflito
+
+- Imprimir o boletim
+- Dados página inicial
+- Colocar foto de pessoa logada
