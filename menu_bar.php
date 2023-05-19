@@ -3,15 +3,15 @@
 ?>
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="js/popper.min.js"></script>
+<script src="/js/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="js/plugins.js"></script>
+<script src="/js/plugins.js"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="/js/active.js"></script>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -101,16 +101,16 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="publicacoes.html">Publicações</a>
+                                        <a class="nav-link" href="/publicacoes.html">Publicações</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Saúde Pública</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="vacinas.html">Vacinação</a>
+                                            <a class="dropdown-item" href="/vacinas.html">Vacinação</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="internacional.html">Internacional</a>
+                                        <a class="nav-link" href="/internacional.html">Internacional</a>
                                     </li>
                                 </ul>
                                 <!-- Appointment Button -->
