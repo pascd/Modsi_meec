@@ -43,36 +43,38 @@
 
             <div style="float:left;margin-right:20px;width: 47%; ">
                 <label for="id_primeiro">Primeiro Nome</label>
-                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly><br><br>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_primeiro" name="primeiro" value="<?php echo $_SESSION['primeiro_nome']; ?>" readonly>
+                
             </div>
-            <div style="float:left;width: 47%; ">
+            <div style="float:left;width: 47%;">
                 <label for="id_ultimo">Último Nome</label>
-                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly><br><br>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_ultimo" name="ultimo" value="<?php echo $_SESSION['ultimo_nome']; ?>" readonly>
+
             </div>
-            <br><br>
             <div id="primeiro-erro" class="error"></div>
-            <div id="ultimo-erro" class="error"></div><br>
+            <div id="ultimo-erro" class="error"></div>
 
             <div>
                 <label for="id_nascimento">Data de Nascimento</label>
-                <input type="date" class="form-control border-top-0 border-right-0 border-left-0" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly><br><br>
-                <div id="nascimento-erro" class="error"></div>
+                <input type="date" class="form-control border-top-0 border-right-0 border-left-0" id="id_nascimento" name="nascimento" value="<?php echo $_SESSION['nascimento']; ?>" readonly>
             </div>
-            <div style="float:left;margin-right:20px;width: 47%; ">
+            <div id="nascimento-erro" class="error"></div>
+
+            <div style="float:left;margin-right:20px;width: 47%;">
                 <label for="id_NUS">Número de Utente</label>
-                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly><br><br>
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="id_NUS" name="NUS" value="<?php echo $_SESSION['nus']; ?>" readonly>
             </div>
-            <div style="float:left;width: 47%; ">
+            <div style="float:left;width: 47%;">
                 <label for="id_phone">Número de Telemóvel</label>
-                <input type="tel" class="form-control border-top-0 border-right-0 border-left-0" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>"><br><br>
+                <input type="tel" class="form-control border-top-0 border-right-0 border-left-0" id="id_phone" name="telemovel" value="<?php echo $_SESSION['contacto']; ?>">
+                <br>
             </div>
-            <br><br>
             <div id="telemovel-erro" class="error"></div>
             <div id="nus-erro" class="error"></did>
-            <br><br>
-            <div style="float:left;width: 100%; >
-                <label for="id_email">Email</label>
-                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>"><br><br>
+
+            <div style="float:left;width: 100%;">
+                <label for="id_email" style="color: #000000;">Email</label>
+                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="id_email" name="email" value="<?php echo $_SESSION['email']; ?>">
             </div>
             <div id="email-erro" class="error"></div>
 
