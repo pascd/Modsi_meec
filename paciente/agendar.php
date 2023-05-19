@@ -85,27 +85,25 @@
 
             if (mysqli_num_rows($ans) > 0) {
                 echo "<table class='content-table'>";
-                echo "<thead>";
-                echo "<tr>";
-                echo "<td>Vacina</td>";
-                echo "<td>Vagas</td>";
-                echo "<td>Data</td>";
-                echo "<td>Hora</td>";
-                echo "<td>Selecionar</td>";
-                echo "</tr>";
-                echo "</thead>";
-                while ($row = mysqli_fetch_assoc($ans)) {
-                    if ($row['vagas'] > 0) {
-                        //echo '<tr id_vaga="' . $row['id_vagas'] . '">';
-                        echo "<tr class='touch'>";
-                        echo '<td>' . $row['vacina'] . '</td>';
-                        echo '<td>' . $row['vagas'] . '</td>';
-                        echo '<td>' . $row['data_vaga'] . '</td>';
-                        echo '<td>' . $row['hora'] . '</td>';
-                        echo '<td><button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button><td>';
-                        echo '</tr>';
+                    echo "<tr>";
+                        echo "<th>Vacina</td>";
+                        echo "<th>Vagas</td>";
+                        echo "<th>Data</td>";
+                        echo "<th>Hora</td>";
+                        echo "<th>Selecionar</td>";
+                    echo "</tr>";
+                    while ($row = mysqli_fetch_assoc($ans)) {
+                        if ($row['vagas'] > 0) {
+                            //echo '<tr id_vaga="' . $row['id_vagas'] . '">';
+                            echo "<tr class='touch'>";
+                                echo '<td>' . $row['vacina'] . '</td>';
+                                echo '<td>' . $row['vagas'] . '</td>';
+                                echo '<td>' . $row['data_vaga'] . '</td>';
+                                echo '<td>' . $row['hora'] . '</td>';
+                                echo '<td><button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button><td>';
+                            echo '</tr>';
+                        }
                     }
-                }
 
                 echo "</table>";
             } else {
