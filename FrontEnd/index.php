@@ -11,6 +11,10 @@
     <!-- Title  -->
     <title>Sistema de vacinação Portuguesa | Home</title>
 
+    <link rel="stylesheet" href="chatbot/chat.css">
+    <!-- <link rel="stylesheet" href="chatbot/home.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Favicon  -->
     <link rel="icon" href="../img/Vaccine.png">
 
@@ -36,6 +40,57 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Hero Area Start ***** -->
+
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Sistema de Vacinação Chatbot
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            <!-- <p id="options_1" class="first_questions">Yes</p> -->
+                            <div class="first_questions">
+                                <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div><p></p>
+                                <div class="button_layout">Ver as minhas marcações</div><p></p>
+                                <div class="button_layout">Agendar vacinação</div><p></p>
+                            </div>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Pressionar 'Enter' para enviar mensagem">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i> -->
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
@@ -454,5 +509,9 @@
     <!-- ***** Footer Area End ***** -->
 
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="chatbot/responses.js"></script>
+<script src="chatbot/chat.js"></script>
 
 </html>
