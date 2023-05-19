@@ -26,7 +26,7 @@
     <script src="../jquery-3.6.4.min.js"></script>
     <script> 
         $(function(){
-        $("#header-area").load("../menu_bar.php"); 
+            $("#header-area").load("../menu_bar.php"); 
         });
     </script>   
     <div id="header-area"></div>
