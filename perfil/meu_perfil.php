@@ -16,6 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
 
 </head>
 
