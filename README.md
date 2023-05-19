@@ -35,3 +35,4 @@ Coisas a fazer por todos:
 - Imprimir o boletim
 - Dados página inicial
 - Colocar foto de pessoa logada
+
