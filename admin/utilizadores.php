@@ -51,36 +51,36 @@
         $id_tabela = "utilizador";
         if (mysqli_num_rows($ans) > 0) {
             echo '<table class="content-table" id="' . $id_tabela . '">';
-            echo '<tr>';
-            echo '<td> Primeiro Nome </td>';
-                echo '<td> Ultimo Nome </td>';
-                echo '<td> Nascimento </td>';
-                echo '<td> NUS </td>';
-                echo '<td> Email </td>';
-                echo '<td> Contacto </td>';
-                echo '<td> Nivel </td>';
-            echo '</tr>';
-            while ($row = mysqli_fetch_assoc($ans)) {
-
-                if ($row['nivel'] == 3) {
-                    $nivel = "Paciente";
-                } else if ($row['nivel'] == 2) {
-                    $nivel = "Enfermeiro";
-                } else if ($row['nivel'] == 1) {
-                    $nivel = "Admin";
-                }
-
-                echo '<tr id_user="' . $row['id_user'] . '">';
-                echo '<td>' . $row['primeiro_nome'] . '</td>';
-                echo '<td>' . $row['ultimo_nome'] . '</td>';
-                echo '<td>' . $row['nascimento'] . '</td>';
-                echo '<td>' . $row['nus'] . '</td>';
-                echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['contacto'] . '</td>';
-                echo '<td>' . $nivel . '</td>';
+                echo '<tr>';
+                echo '<td> Primeiro Nome </td>';
+                    echo '<td> Ultimo Nome </td>';
+                    echo '<td> Nascimento </td>';
+                    echo '<td> NUS </td>';
+                    echo '<td> Email </td>';
+                    echo '<td> Contacto </td>';
+                    echo '<td> Nivel </td>';
                 echo '</tr>';
-            }
-            echo "</table>";
+                while ($row = mysqli_fetch_assoc($ans)) {
+
+                    if ($row['nivel'] == 3) {
+                        $nivel = "Paciente";
+                    } else if ($row['nivel'] == 2) {
+                        $nivel = "Enfermeiro";
+                    } else if ($row['nivel'] == 1) {
+                        $nivel = "Admin";
+                    }
+
+                    echo '<tr id_user="' . $row['id_user'] . '">';
+                        echo '<td>' . $row['primeiro_nome'] . '</td>';
+                        echo '<td>' . $row['ultimo_nome'] . '</td>';
+                        echo '<td>' . $row['nascimento'] . '</td>';
+                        echo '<td>' . $row['nus'] . '</td>';
+                        echo '<td>' . $row['email'] . '</td>';
+                        echo '<td>' . $row['contacto'] . '</td>';
+                        echo '<td>' . $nivel . '</td>';
+                    echo '</tr>';
+                }
+            echo '</table>';
         }
         ?>
         <button class='btn' onclick='apagar_u(this)'>Apagar Utilizador</button>

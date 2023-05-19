@@ -33,7 +33,7 @@
 
                             <div class="widget-single-blog-post d-flex">
                                 <div class="widget-post-content">
-                                    <script src="//rss.bloople.net/?url=https%3A%2F%2Frssfeeds.webmd.com%2Frss%2Frss.aspx%3FRSSSource%3DRSS_PUBLIC&limit=1&showtitle=false&type=js"></script>            
+                                    <script src="https://rss.bloople.net/?url=https%3A%2F%2Frssfeeds.webmd.com%2Frss%2Frss.aspx%3FRSSSource%3DRSS_PUBLIC&limit=1&showtitle=false&type=js"></script>            
                                 </div>
                             </div>
                         </div>
