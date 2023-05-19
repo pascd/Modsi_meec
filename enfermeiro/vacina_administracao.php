@@ -93,7 +93,6 @@
                                     echo '</select></td>';
                             echo '</tr>';
                         }
-
                     }
                 }
             }
@@ -103,9 +102,6 @@
 
     </div>
 
-    <p></p>
-    <br><br><br><br>
-        <br><br><br><br>
 
     <!-- ***** Footer Area Start ***** -->
     <script> 
