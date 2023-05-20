@@ -65,109 +65,75 @@
 
                 $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
                 $ans = mysqli_query($db, $sel_sql);
-            }
-
-            if ($selected_vaccine == "option_2") {
+            }else if ($selected_vaccine == "option_2") {
 
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
                 $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Hepatite'";
                 $ans = mysqli_query($db, $sel_sql);
-            }
-
-            if ($selected_vaccine == "option_1") {
+            }else if ($selected_vaccine == "option_1") {
 
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
                 $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Covid'";
                 $ans = mysqli_query($db, $sel_sql);
+            }else{
+                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
+                $ans = mysqli_query($db, $sel_sql);
             }
 
             if (mysqli_num_rows($ans) > 0) {
                 echo "<table class='content-table'>";
-                    echo "<tr>";
-                        echo "<th>Vacina</td>";
-                        echo "<th>Vagas</td>";
-                        echo "<th>Data</td>";
-                        echo "<th>Hora</td>";
-                        echo "<th>Selecionar</td>";
-                    echo "</tr>";
-                    while ($row = mysqli_fetch_assoc($ans)) {
-                        if ($row['vagas'] > 0) {
-                            //echo '<tr id_vaga="' . $row['id_vagas'] . '">';
-                            echo "<tr class='touch'>";
-                                echo '<td>' . $row['vacina'] . '</td>';
-                                echo '<td>' . $row['vagas'] . '</td>';
-                                echo '<td>' . $row['data_vaga'] . '</td>';
-                                echo '<td>' . $row['hora'] . '</td>';
-                                echo '<td><button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button><td>';
-                            echo '</tr>';
-                        }
+                echo "<tr>";
+                echo "<th>Vacina</td>";
+                echo "<th>Vagas</td>";
+                echo "<th>Data</td>";
+                echo "<th>Hora</td>";
+                echo "</tr>";
+                while ($row = mysqli_fetch_assoc($ans)) {
+                    if ($row['vagas'] > 0) {
+                        echo '<tr id_vaga="' . $row['id_vagas'] . '" class="touch">';
+                        echo '<td>' . $row['vacina'] . '</td>';
+                        echo '<td>' . $row['vagas'] . '</td>';
+                        echo '<td>' . $row['data_vaga'] . '</td>';
+                        echo '<td>' . $row['hora'] . '</td>';
+                        echo '</tr>';
                     }
+                }
 
                 echo "</table>";
             } else {
                 echo "Sem resultados";
             }
         }
-        // Print the selected vaccine option
-        // echo "You selected: " . $selected_vaccine;
 
         ?>
-
-        <!-- <form method="post">
-            <select name="vaccine_selection" class="skrr-box">
-                <option>Selecionar Vacina</option>
-                <option value="option_1">Covid</option>
-                <option value="option_2">Hepatite</option>
-                <option value="option_3">Todas</option>
-            </select>
-            <p></p>
-                <button type="submit" class="submeter">Visualizar marcações</button>
-            </form> -->
-
-
-        <!-- </div> -->
-        <p></p>
-        <!-- <tr>
-            <td> Vacina </td>
-            <td> Vagas </td>
-            <td> Data </td>
-            <td> Hora </td>
-        </tr> -->
-
-        <?php
-
-        /*require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-
-        $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
-        $ans = mysqli_query($db, $sel_sql);
-
-        if (mysqli_num_rows($ans) > 0) {
-            echo "<table>";
-            while ($row = mysqli_fetch_assoc($ans)) {
-                if ($row['vagas'] > 0) {
-                    echo '<tr id_vaga="' . $row['id_vagas'] . '">';
-                    echo '<td>' . $row['vacina'] . '</td>';
-                    echo '<td>' . $row['vagas'] . '</td>';
-                    echo '<td>' . $row['data_vaga'] . '</td>';
-                    echo '<td>' . $row['hora'] . '</td>';
-                    echo '</tr>';
-                }
-            }
-            echo "</table>";
-        } else {
-            echo "Sem resultados";
-        }
-
-        */ ?>
-
-        <!-- <button class='btn' onclick='agendar(this)'>Agendar vaga</button>
-        <div id="agendar-check"></div>
-      
-        <script src="agendar.js"></script> -->
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Agendar vaga</button>
     </div>
 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;width: auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmação de agendamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="save-changes-btn" onclick="agendar(this)">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="agendar.js"></script>
     <script>
         $(function() {
             $("#footer-area").load("../footer.php");
