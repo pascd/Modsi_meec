@@ -1,18 +1,14 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-if (!isset($_POST['vacinas'])) {
-    $vacina = '';
-} else {
-    $vacina = $_POST['vacinas'];
-}
-
+$vacina = $_POST['vacinas'];
 $vagas = $_POST['vagas'];
 $data = $_POST['data'];
 $hora = $_POST['hora'];
-$acao = $_POST['acao'];
-$id_vaga = $_POST['id_vaga'];
+//$acao = $_POST['acao'];
+//$id_vaga = $_POST['id_vaga'];
 
 $errors = array();
 
@@ -34,6 +30,7 @@ if (empty($hora)) {
     $errors['hora'] = "E necessario introduzir uma hora.";
 }
 
+/*
 if($acao == "Apagar")
 {
     $rem_sql = "DELETE FROM vagas WHERE id_vagas='$id_vaga'";
@@ -42,6 +39,7 @@ if($acao == "Apagar")
     $rem_sql_2 = "DELETE FROM marcacao WHERE vaga='$id_vaga'";
     mysqli_query($db, $rem_sql_2);
 }
+*/
 
 if (empty($errors)) {
     $response = array('status' => 'success');
@@ -59,3 +57,4 @@ if (empty($errors)) {
 
 header('Content-Type: application/json');
 echo json_encode($response);
+}

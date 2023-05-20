@@ -46,16 +46,16 @@
                                 <div class="medilife-appointment-form">
                                     <h3 style="color: #ffffff;">Introduzir vagas para vacinação</h3>
                                     <br>
-                                    <form action="#" method="post">
+                                    <form id="vagas-form" action="criar_vagas_val.php" method="post">
                                         <div class="row align-items-end">
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
                                                     <label for="vacinas" style="color: #ffffff;">Vacina</label>
-                                                    <select class="form-control" id="vacinas" style="background-color: #ffffff;">
-                                                        <option id="id_vacina_covid" name="vacinas" value="Covid" style="background-color: #ffffff;">Covid-19</option>
-                                                        <option id="id_vacina_hepatite" name="vacinas" value="Hepatite" style="background-color: #ffffff;">Hepatite</option>
-                                                        <option id="id_vacina_tetano" name="vacinas" value="Tetano" style="background-color: #ffffff;">Tetano</option>
-                                                        <option id="id_vacina_sarampo" name="vacinas" value="Sarampo" style="background-color: #ffffff;">Sarampo</option>
+                                                    <select class="form-control" id="vacinas" name="vacinas" style="background-color: #ffffff;">
+                                                        <option id="id_vacina_covid" value="Covid" style="background-color: #ffffff;">Covid-19</option>
+                                                        <option id="id_vacina_hepatite" value="Hepatite" style="background-color: #ffffff;">Hepatite</option>
+                                                        <option id="id_vacina_tetano" value="Tetano" style="background-color: #ffffff;">Tetano</option>
+                                                        <option id="id_vacina_sarampo" value="Sarampo" style="background-color: #ffffff;">Sarampo</option>
                                                     </select>
                                                     <br><br><div id="vacina-erro" class="error"></div>
                                                 </div>
@@ -63,14 +63,14 @@
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group" >
                                                     <label for="id_data" style="color: #ffffff;">Data</label>
-                                                    <input type="date" class="form-control" id="id_data" name="date" id="date" style="background-color: #ffffff;">
+                                                    <input type="date" class="form-control" id="id_data" name="data" id="date" style="background-color: #ffffff;">
                                                     <div id="data-erro" class="error"></div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
                                                     <label for="id_hora" style="color: #ffffff;">Hora</label>
-                                                    <input type="time" class="form-control" id="id_hora" name="time" id="time" style="background-color: #ffffff;">
+                                                    <input type="time" class="form-control" id="id_hora" name="hora" id="time" style="background-color: #ffffff;">
                                                     <div id="hora-erro" class="error"></div>        
                                                 </div>
                                             </div>
@@ -122,6 +122,7 @@
     <br><br><br><br>
     
     <!-- ***** Footer Area Start ***** -->
+    <script src="criar_vagas.js"></script>
     <script>
         $(function(){
         $("#footer-area").load("../footer.php");
