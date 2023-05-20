@@ -1,5 +1,6 @@
 //Seleciona todas as linhas e adiciona à variàvel rows
-var row_id = document.querySelectorAll('table tr');
+var row_id_reservas = document.querySelectorAll('#table_reserva tr');
+var row_id_alt = document.querySelectorAll('#table_alt tr');
 var acao;
 var id_vaga;
 var vacina;
@@ -7,11 +8,11 @@ var id_vaga_selec;
 var id_vaga_nova;
 
 //Atribui um evento de clique a cada linha
-row_id.forEach(function (row_2) {
+row_id_reservas.forEach(function (row_2) {
     row_2.addEventListener('click', function (event) {
 
         //Isto significa que apenas a linha que foi selecionada vai ficar como ativa
-        row_id.forEach(function (otherRow) {
+        row_id_reservas.forEach(function (otherRow) {
             otherRow.classList.remove('active');
             //otherRow.querySelector('.action-button').remove();
         });
@@ -29,7 +30,7 @@ row_id.forEach(function (row_2) {
         $.ajax({
             url: "tab_alterar.php",
             type: "POST",
-            data: { id_vaga: id_vaga, vacina: vacina},
+            data: { id_vaga: id_vaga, vacina: vacina },
             dataType: "html",
             success: function (response) {
                 $(".modal-body-alterar").html(response);
@@ -40,14 +41,29 @@ row_id.forEach(function (row_2) {
 
             }
         });
+
+        $.ajax({
+            url: "tab_conf_apagar.php",
+            type: "POST",
+            data: { id_vaga: id_vaga},
+            dataType: "html",
+            success: function (response) {
+                $(".modal-body-apagar").html(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("AJAX erro");
+                console.log("Error: " + errorThrown);
+
+            }
+        });
     });
 });
 
-row_id.forEach(function (row_3) {
+row_id_alt.forEach(function (row_3) {
     row_3.addEventListener('click', function (event) {
 
         //Isto significa que apenas a linha que foi selecionada vai ficar como ativa
-        row_id.forEach(function (otherRow) {
+        row_id_alt.forEach(function (otherRow) {
             otherRow.classList.remove('active');
             //otherRow.querySelector('.action-button').remove();
         });
@@ -64,7 +80,7 @@ row_id.forEach(function (row_3) {
         $.ajax({
             url: "tab_conf_alterar.php",
             type: "POST",
-            data: { id_vaga_selec: id_vaga_selec, id_vaga: id_vaga},
+            data: { id_vaga_selec: id_vaga_selec, id_vaga: id_vaga, acao: acao },
             dataType: "html",
             success: function (response) {
                 $(".modal-body-confirmar").html(response);
@@ -83,59 +99,39 @@ function apagar_m(button) {
 
     //button.parentNode.remove();
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+    $.ajax({
+        url: "minhas_marcacoes_val.php",
+        type: "POST",
+        data: { id_vaga: id_vaga, acao: acao },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("AJAX erro");
+            console.log("Error: " + errorThrown);
+
         }
-    };
-    xhttp.open('POST', 'minhas_marcacoes_val.php', true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('id_vaga=' + encodeURIComponent(id_vaga) + '&acao=' + encodeURIComponent(acao));
-    location.reload();
+    });
 }
 
 function alterar_m(button) {
 
-    if (id_vaga != "" && id_vaga != "null" && id_vaga != "undefined") {
-        document.getElementById('alterar_popup').style.display = 'block';
-    }
-    else {
-        document.getElementById('alterar_popup').style.display = 'none';
-    }
     acao = "Alterar";
 
     //button.parentNode.remove();
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-        }
-    };
-
-    /*
     $.ajax({
-        url: "minhas_marcacoes.php",
+        url: "minhas_marcacoes_val.php",
         type: "POST",
-        data: {vacina_tipo: vacina, id_selec: id_vaga},
-        success: function(response) {
+        data: { id_vaga: id_vaga, id_vaga_nova: id_vaga_selec, acao: acao },
+        success: function (response) {
             console.log(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("AJAX erro");
+            console.log("Error: " + errorThrown);
+
         }
     });
-    */
 
-    xhttp.open('POST', 'minhas_marcacoes.php', true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('id_vaga=' + encodeURIComponent(id_vaga) + '&vacina=' + encodeURIComponent(vacina));
-    /*
-    xhttp.open('POST', 'minhas_marcacoes_val.php', true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('id_vaga_nova=' + encodeURIComponent(id_vaga_nova) + '&acao=' + encodeURIComponent(acao) + '&id_vaga=' + encodeURIComponent(id_vaga));
-    location.reload();
-    */
-}
-
-function closePopup() {
-    document.getElementById('alterar_popup').style.display = 'none';
 }

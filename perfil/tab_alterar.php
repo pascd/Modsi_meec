@@ -6,11 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $id_vaga_selec = $_POST['id_vaga'];
     $vacina = $_POST['vacina'];
 
-
     $sel_sql_3 = "SELECT * FROM vagas WHERE vacina='$vacina'";
     $ans_3 = mysqli_query($db, $sel_sql_3);
 
-    echo "<table>";
+    echo '<table id="table_alt">';
     while ($row_3 = mysqli_fetch_assoc($ans_3)) {
 
         echo '<tr id_vaga_nova="' . $row_3['id_vagas'] . '">';

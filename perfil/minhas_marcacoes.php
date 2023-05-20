@@ -45,7 +45,7 @@
         $sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente'";
         $ans = mysqli_query($db, $sel_sql);
         if (mysqli_num_rows($ans) > 0) {
-            echo '<table class="content-table">';
+            echo '<table class="content-table" id="table_reserva">';
             echo '<tr>';
             echo '<th> Vacina </th>';
             echo '<th> Data </th>';
@@ -68,11 +68,11 @@
         }
 
         ?>
-        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Alterar</button>
-        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Apagar</button>
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_alterar">Alterar</button>
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_apagar">Apagar</button>
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter_alterar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;width: auto;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -105,6 +105,25 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="save-changes-btn" onclick="alterar_m(this)">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter_apagar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;width: auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmação de alteração de reserva</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body-apagar">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="save-changes-btn" onclick="apagar_m(this)">Confirmar</button>
                 </div>
             </div>
         </div>
