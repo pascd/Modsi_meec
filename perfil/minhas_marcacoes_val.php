@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $emailContent = str_replace('{hora}', $hora, $emailContent);
 
         $destino = $_SESSION['email'];
-        $assunto = "Re-agendamento de Vacina";
+        $assunto = "Cancelamento de agendamento";
         $mensagem = $emailContent;
 
         enviar($destino, $assunto, $mensagem);
