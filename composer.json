@@ -1,0 +1,11 @@
+{
+    "require": {
+        "tecnickcom/tcpdf": "^6.3"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnickcom/TCPDF.git"
+        }
+    ]
+}
