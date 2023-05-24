@@ -8,7 +8,7 @@ $nus = $_SESSION['nus'];
 
 $id_paciente = $_SESSION['id'];
 
-$sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente'";
+$sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente' AND estado ='Resolvido'";
 $ans = mysqli_query($db, $sel_sql);
 
 $html = '<style>';
