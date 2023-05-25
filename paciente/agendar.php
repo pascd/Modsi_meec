@@ -28,6 +28,8 @@
         $(function() {
             $("#header-area").load("../menu_bar.php");
         });
+
+
     </script>
     <div id="header-area"></div>
     <!-- ***** Header Area End ***** -->

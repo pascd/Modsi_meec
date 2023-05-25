@@ -36,6 +36,8 @@
     <br><br><br><br>
     <br><br>
 
+    <div style="text-align: center; font-size: large;">Tabela de Gestão de Utilizadores</div><br><br>
+
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar utilizador..">
 
     <div>
@@ -68,7 +70,7 @@
                     $nivel = "Admin";
                 }
 
-                echo '<tr id_user="' . $row['id_user'] . '">';
+                echo '<tr id_user="' . $row['id_user'] . '" class="touch">';
                 echo '<td>' . $row['primeiro_nome'] . '</td>';
                 echo '<td>' . $row['ultimo_nome'] . '</td>';
                 echo '<td>' . $row['nascimento'] . '</td>';

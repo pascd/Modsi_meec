@@ -36,6 +36,8 @@
 
     <div>
 
+        <div style="text-align: center; font-size: large;">Faça aqui a consulta das suas marcações!</div><br><br>
+
         <?php
 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
@@ -57,7 +59,7 @@
                 $sel_sql_2 = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
                 $ans_2 = mysqli_query($db, $sel_sql_2);
                 while ($row_2 = mysqli_fetch_assoc($ans_2)) {
-                    echo '<tr id_vaga="' . $row_2['id_vagas'] . '" vacina="' . $row_2['vacina'] . '">';
+                    echo '<tr id_vaga="' . $row_2['id_vagas'] . '" vacina="' . $row_2['vacina'] . '" class="touch">';
                     echo '<td>' . $row_2['vacina'] . '</td>';
                     echo '<td>' . $row_2['data_vaga'] . '</td>';
                     echo '<td>' . $row_2['hora'] . '</td>';

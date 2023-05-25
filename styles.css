@@ -316,6 +316,13 @@ input {
   cursor: pointer;
 }
 
+.touch2 {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  transition: background-color 0.2s;
+}
+
 /* Define styles for the element when it's touched */
 .touch:hover {
   filter: contrast(0.8);
@@ -324,3 +331,5 @@ input {
 .touch:active{
   background-color: #006CFF80;
 }
+
+table tr.active {background: #006CFF80;}

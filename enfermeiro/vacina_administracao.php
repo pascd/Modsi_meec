@@ -35,7 +35,7 @@
     <br><br><br><br>
         <br><br><br><br>
         
-    <div style="text-align: center; font-size: large;">Faça aqui o seu agendamento!</div><br>
+    <div style="text-align: center; font-size: large;">Faça aqui a gestão das marcações!</div><br>
 
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar marcação.." class="form-control border-top-0 border-right-0 border-left-0" style='margin-left:15%; width: 70%'>
 
@@ -73,7 +73,7 @@
                 if (mysqli_num_rows($ans2) > 0 && mysqli_num_rows($ans3) > 0) {
                     while ($row_2 = mysqli_fetch_assoc($ans2)) {
                         while ($row_3 = mysqli_fetch_assoc($ans3)) {
-                            echo '<tr id_marcacao="' . $row['id_marcacao'] . '">';
+                            echo '<tr id_marcacao="' . $row['id_marcacao'] . '" class="touch2">';
                                 echo '<td>' . $row_2['vacina'] . '</td>';
                                 echo '<td>' . $row_2['data_vaga'] . '</td>';
                                 echo '<td>' . $row_2['hora'] . '</td>';
