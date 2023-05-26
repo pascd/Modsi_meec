@@ -5,32 +5,36 @@ let alteracoes = [];
 
 
 $(document).ready(function () {
+    $('input.estado').on('change', function () {
+        var marcacaoId = $(this).data('marcacao');
+        var estado = $(this).data('estado');
+        var isChecked = $(this).is(':checked');
 
-$('select#estado').on('change', function () {
-    var id_marcacao = $(this).closest('tr').attr('id_marcacao');
-    var estado = $(this).val();
+        var selecoes = {
+            id_marcacao: marcacaoId,
+            estado: estado
+        };
 
-    var selecoes = {
-        id_marcacao: id_marcacao,
-        estado: estado
-    };
+        alteracoes.push(selecoes);
+        console.log(alteracoes);
 
-    alteracoes.push(selecoes);
-    console.log(alteracoes);
+        if (isChecked) {
+            $('input.estado[data-marcacao="' + marcacaoId + '"]').not(this).prop('checked', false);
 
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            //location.reload();
+            $.ajax({
+                url: 'vacina_administracao_val.php', 
+                method: 'POST',
+                data: {alteracoes},
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
         }
-    }
-
-    xhttp.open('POST', 'vacina_administracao_val.php', true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('alteracoes=' + encodeURIComponent(JSON.stringify(alteracoes)));
-    //location.reload();
-});
+    });
+    
 });
 
 function Filtro() {
@@ -58,19 +62,3 @@ function Filtro() {
         }
     }
 }
-
-/*row_id.forEach(function (row) {
-    row.addEventListener('click', function (event) {
-
-        row_id.forEach(function (otherRow) {
-            otherRow.classList.remove('active');
-
-        });
-
-        this.classList.add('active');
-
-        id_user = this.getAttribute('id_user');
-
-    });
-});
-*/
