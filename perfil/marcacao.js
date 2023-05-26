@@ -38,7 +38,7 @@ row_id_reservas.forEach(function (row_2) {
 
             }
         });
-        console.log(vacina);
+
         $.ajax({
             url: "tab_conf_apagar.php",
             type: "POST",
