@@ -61,7 +61,11 @@
                     $id_paciente = $row['paciente'];
                     $id_vaga = $row['vaga'];
 
-                    $sel_sql_2 = "SELECT * FROM vagas WHERE id_vagas='$id_vaga'";
+                    $sel_sql_2 = "SELECT v.*, vac.vacina
+                    FROM vagas v
+                    JOIN vacinas vac ON v.vacina = vac.id_vacina
+                    WHERE v.id_vagas = $id_vaga";
+
                     $ans2 = mysqli_query($db, $sel_sql_2);
 
                     $sel_sql_3 = "SELECT * FROM users WHERE id_user='$id_paciente'";
@@ -111,7 +115,6 @@
         </table>
 
     </div>
-    <button class="atualizar" data-marcacao="' . $id_marcacao . '">Atualizar</button>
 
     <!-- ***** Footer Area Start ***** -->
     <script>
