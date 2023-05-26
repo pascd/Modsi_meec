@@ -6,7 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $id_vaga_selec = $_POST['id_vaga'];
     $vacina = $_POST['vacina'];
 
-    $sel_sql_3 = "SELECT * FROM vagas WHERE vacina='$vacina'";
+    $sel_sql_3 = "SELECT v.*, vac.vacina
+    FROM vagas v
+    JOIN vacinas vac ON v.vacina = vac.id_vacina
+    WHERE vac.vacina = '$vacina'";
+
     $ans_3 = mysqli_query($db, $sel_sql_3);
 
     echo '<table id="table_alt">';

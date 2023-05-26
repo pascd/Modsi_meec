@@ -9,7 +9,7 @@ function imprimir_pdf($html, $nus)
     $pdf->SetTitle('Boletim_' . $nus);
 
     //Cria o Header, colocar logo do site
-    $pdf->setHeaderData('../img/core-img/logo.png', 0, 'SVPortugal', 'Boletim de Vacinas do utente ' . $nus, array(0, 0, 0), array(0, 0, 0));
+    $pdf->setHeaderData('logo.png', PDF_HEADER_LOGO_WIDTH, 'SVPortugal', 'Boletim de Vacinas do utente ' . $nus, array(0, 0, 0), array(0, 0, 0));
     $pdf->setFooterData(array(0, 0, 0), array(0, 0, 0));
 
     $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));

@@ -136,7 +136,10 @@
         echo '<th> Hora </th>';
         echo '</tr>';
 
-        $sel_sql_2 = "SELECT * FROM vagas";
+
+        $sel_sql_2 = "SELECT v.*, vac.vacina
+                FROM vagas v
+                JOIN vacinas vac ON v.vacina = vac.id_vacina";
         $ans_2 = mysqli_query($db, $sel_sql_2);
         while ($row_2 = mysqli_fetch_assoc($ans_2)) {
             echo '<tr id_vaga="' . $row_2['id_vagas'] . '">';
