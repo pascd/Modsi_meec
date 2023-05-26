@@ -63,6 +63,7 @@
         echo "<form method='post'>";
         echo "<label>Selecionar Vacina</label>";
         echo "<select name='vaccine_selection' class='skrr-box'>";
+        echo $vacinaOptions;
         echo "</select>";
         echo "<p></p>";
         echo "<button type='submit' class='submeter'>Visualizar marcações</button>";

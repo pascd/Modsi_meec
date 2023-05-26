@@ -51,6 +51,23 @@
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
                                                     <label for="vacinas" style="color: #ffffff;">Vacina</label>
+                                                    <?php
+                                                    require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+                                                    $vacinaOptions = "";
+                                                    $query = "SELECT id_vacina, vacina FROM vacinas";
+                                                    $result = mysqli_query($db, $query);
+                                                    if ($result) {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                            $idVacina = $row['id_vacina'];
+                                                            $vacina = $row['vacina'];
+                                                            $vacinaOptions .= "<option value='$idVacina'>$vacina</option>";
+                                                        }
+                                                    } else {
+                                                        echo "Error retrieving vaccine options from the database.";
+                                                        exit();
+                                                    }
+                                                    ?>
                                                     <select class="form-control" id="vacinas" name="vacinas" style="background-color: #ffffff;">
                                                         <option id="id_vacina_covid" value="Covid" style="background-color: #ffffff;">Covid-19</option>
                                                         <option id="id_vacina_hepatite" value="Hepatite" style="background-color: #ffffff;">Hepatite</option>
@@ -120,7 +137,7 @@
     <br><br><br>
 
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar vaga..">
-    
+
     <br><br><br>
 
     <div>
