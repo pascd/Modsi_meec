@@ -5,7 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $vaga_selec = $_POST['id_selec'];
     require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
-    $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE id_vagas = '$vaga_selec'";
+    $sel_sql = "SELECT v.*, vac.vacina
+    FROM vagas v
+    JOIN vacinas vac ON v.vacina = vac.id_vacina
+    WHERE v.id_vagas = '$vaga_selec'";
+
     $ans = mysqli_query($db, $sel_sql);
 }
 

@@ -28,8 +28,6 @@
         $(function() {
             $("#header-area").load("../menu_bar.php");
         });
-
-
     </script>
     <div id="header-area"></div>
     <!-- ***** Header Area End ***** -->
@@ -44,13 +42,29 @@
 
         <?php
 
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+        $vacinaOptions = "";
+        $query = "SELECT id_vacina, vacina FROM vacinas";
+        $result = mysqli_query($db, $query);
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $idVacina = $row['id_vacina'];
+                $vacina = $row['vacina'];
+                $vacinaOptions .= "<option value='$idVacina'>$vacina</option>";
+            }
+        } else {
+            echo "Error retrieving vaccine options from the database.";
+            exit();
+        }
+
+
         echo "<div class='skrr-container'>";
         echo "<form method='post'>";
         echo "<label>Selecionar Vacina</label>";
         echo "<select name='vaccine_selection' class='skrr-box'>";
-        echo "<option value='option_1'>Covid</option>";
-        echo "<option value='option_2'>Hepatite</option>";
-        echo "<option value='option_3'>Todas</option>";
+        echo "<option>" . $mostrar . "</option>";
+        echo $vacinaOptions;
         echo "</select>";
         echo "<p></p>";
         echo "<button type='submit' class='submeter'>Visualizar marcações</button>";
@@ -58,33 +72,14 @@
         echo "</div>";
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Check if the form has been submitted via POST
+
             $selected_vaccine = $_POST['vaccine_selection'];
 
-            if ($selected_vaccine == "option_3") {
-
-                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-
-                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
-                $ans = mysqli_query($db, $sel_sql);
-            }else if ($selected_vaccine == "option_2") {
-
-                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-
-                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Hepatite'";
-                $ans = mysqli_query($db, $sel_sql);
-            }else if ($selected_vaccine == "option_1") {
-
-                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-
-                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas WHERE vacina = 'Covid'";
-                $ans = mysqli_query($db, $sel_sql);
-            }else{
-                require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
-
-                $sel_sql = "SELECT id_vagas, vacina, vagas, data_vaga, hora FROM vagas";
-                $ans = mysqli_query($db, $sel_sql);
-            }
+            $sel_sql = "SELECT v.*, vac.vacina
+            FROM vagas v
+            JOIN vacinas vac ON v.vacina = vac.id_vacina
+            WHERE v.vacina = '$selected_vaccine'";
+            $ans = mysqli_query($db, $sel_sql);
 
             if (mysqli_num_rows($ans) > 0) {
                 echo "<table class='content-table'>";
