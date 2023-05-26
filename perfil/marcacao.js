@@ -23,9 +23,6 @@ row_id_reservas.forEach(function (row_2) {
         // Vai buscar o id da linha selecionada
         id_vaga = this.getAttribute('id_vaga');
         vacina = this.getAttribute('vacina');
-        console.log(id_vaga);
-        //console.log(id_vaga);
-        //console.log(vacina);
 
         $.ajax({
             url: "tab_alterar.php",
@@ -41,7 +38,7 @@ row_id_reservas.forEach(function (row_2) {
 
             }
         });
-
+        console.log(vacina);
         $.ajax({
             url: "tab_conf_apagar.php",
             type: "POST",
