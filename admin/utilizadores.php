@@ -84,6 +84,7 @@
         }
         ?>
         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Apagar utilizador</button>
+        <button type="button" class="btn" onclick="gerarPDF()">Imprimir Boletim</button>
     </div>
 
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

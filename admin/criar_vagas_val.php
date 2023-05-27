@@ -56,14 +56,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $id_vacina = $_POST['id_vacina'];
 
-        $sel_sql = "SELECT m.*
+        $sel_sql = "SELECT m.*, vac.vacina AS nome_vacina
             FROM marcacao m
             JOIN vagas v ON m.vaga = v.id_vagas
+            JOIN vacinas vac ON v.vacina = vac.id_vacina
             WHERE v.vacina = '$id_vacina'";
         $ans = mysqli_query($db, $sel_sql);
 
+
         while ($row = mysqli_fetch_assoc($ans)) {
             $paciente = $row['paciente'];
+            $vacina = $row['vacina'];
 
             $sel_sql_3 = "SELECT * FROM users WHERE id_user='$paciente'";
             $ans_3 = mysqli_query($db, $sel_sql_3);
@@ -85,11 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             enviar($destino, $assunto, $mensagem);
         }
 
-
-        $rem_sql = "DELETE FROM vacinas WHERE id_vacina='$id_vacina'";
+        $rem_sql = "DELETE FROM vagas WHERE vacina='$id_vacina'";
         mysqli_query($db, $rem_sql);
 
-        $rem_sql = "DELETE FROM vagas WHERE vacina='$id_vacina'";
+        $rem_sql = "DELETE FROM vacinas WHERE id_vacina='$id_vacina'";
         mysqli_query($db, $rem_sql);
 
         $rem_sql_2 = "DELETE m
