@@ -16,8 +16,11 @@ To do list:
 - Faltam:
     - Basicamente as tabelas todas (Paulo, looking at you 👀) ✔️
     - Corrigir Passwords ✔️
-    - Popup de confirmação
+    - Popup de confirmação ✔️
     - Alterar password ✔️
+    - Apagar vacina 
+    - Botão para imprimir boletim
+    - Botão para admin/enf imprimir boletim
 
 - Outras funcionalidades:
     - Multilingue ✔️
