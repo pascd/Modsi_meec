@@ -58,7 +58,7 @@ function Filtro() {
     var valor_coluna;
     var i, j;
 
-    for (i = 0; i < linhas.length; i++) {
+    for (i = 1; i < linhas.length; i++) {
         colunas = linhas[i].getElementsByTagName("td");
         for (j = 0; j < colunas.length; j++) {
             if (colunas[j]) {
@@ -73,4 +73,36 @@ function Filtro() {
             }
         }
     }
+}
+
+function gerarPDF() {
+    var tipo = 0;
+    $.ajax({
+        url: '/pdf/imprimir_pdf.php',
+        type: 'POST',
+        data: { tipo: tipo, id: id_user},
+        xhrFields: {
+            responseType: 'blob' // Set the response type to blob
+        },
+        success: function (response) {
+            // Create a new Blob object from the response
+            var blob = new Blob([response]);
+
+            // Create a link element and set its attributes for downloading the file
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'boletim_vacinas.pdf';
+
+            // Append the link to the document and trigger the download
+            document.body.appendChild(link);
+            link.click();
+
+            // Clean up resources
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(link.href);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
 }
