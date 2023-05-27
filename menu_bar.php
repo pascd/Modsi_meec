@@ -2,16 +2,15 @@
     session_start();
 ?>
 
+
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="../js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="/js/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="/js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="/js/plugins.js"></script>
+<script src="../js/plugins.js"></script>
 <!-- Active js -->
-<script src="/js/active.js"></script>
+<script src="../js/active.js"></script>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -116,7 +115,7 @@
                                 <!-- Appointment Button -->
                                 <a href="/login/login.php" id="login_registo" class="btn medilife-appoint-btn ml-30"> <span>Área Reservada</span></a>
                                 <div class="nav-item dropdown" id="perfil_gerir_sair">
-                                    <a class="btn medilife-appoint-btn ml-30" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Área Reservada</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Área Reservada</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <!-- Opções globais -->
                                         <a href="/perfil/meu_perfil.php" id="perfil" class="dropdown-item"> <span>Perfil</span></a>
@@ -134,8 +133,8 @@
                                     </div>    
                                 </div>
                             </div>
-                        </div>
-                    </nav>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
