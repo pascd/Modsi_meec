@@ -1,5 +1,9 @@
 var row_id_vagas = document.querySelectorAll('#table_vagas tr');
+var row_id_vacinas = document.querySelectorAll('#table_vacinas tr');
 var id_vaga;
+var outra;
+var vacina;
+var acao;
 
 $(document).ready(function () {
     $('#vagas-form').submit(function (e) {
@@ -31,7 +35,14 @@ $(document).ready(function () {
     $("#vagas-form").submit(function (event) {
         event.preventDefault();
 
-        var vacina = $("#vacinas").val();
+        if(outra == 1)
+        {
+            vacina = $("#outra_vacina").val();
+        }else{
+            vacina = $("#vacinas").val();
+        }
+        
+        acao = "";
         var vagas = $("#id_vagas").val();
         var data = $("#id_data").val();
         var hora = $("#id_hora").val();
@@ -40,7 +51,9 @@ $(document).ready(function () {
             vacinas: vacina,
             vagas: vagas,
             data: data,
-            hora: hora
+            hora: hora,
+            outra: outra,
+            acao: acao
         };
 
         $.ajax({
@@ -73,7 +86,7 @@ $(document).ready(function () {
             this.classList.add('active');
 
             id_vaga = this.getAttribute('id_vaga');
-
+            console.log(id_vaga);
             $.ajax({
                 url: "tab_conf_apagar_vaga.php",
                 type: "POST",
@@ -91,10 +104,52 @@ $(document).ready(function () {
         });
     });
 
+    row_id_vacinas.forEach(function (row_3) {
+        row_3.addEventListener('click', function (event) {
+
+            row_id_vacinas.forEach(function (otherRow) {
+                otherRow.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            id_vacina = this.getAttribute('id_vacina');
+            console.log(id_vacina);
+            $.ajax({
+                url: "tab_conf_apagar_vacina.php",
+                type: "POST",
+                data: { id_vacina: id_vacina },
+                dataType: "html",
+                success: function (response) {
+                    $(".modal-body-apagar-vacinas").html(response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log("AJAX erro");
+                    console.log("Error: " + errorThrown);
+
+                }
+            });
+        });
+    });
+
+
+
 });
 
-function apagar_v(button) {
-    var acao = "Apagar";
+function verificaroutra(opcao)
+{
+    var outra_vacina = document.getElementById("outra_vacina");
+    if(opcao.value == "outro"){
+        outra_vacina.disabled = false;
+        outra = 1;
+    }else{
+        outra_vacina.disabled = true;
+        outra = 0;
+    }
+}
+
+function apagar_vaga(button) {
+    acao = "apagar_vaga";
     var xhttp = new XMLHttpRequest();
     $.ajax({
         url: "criar_vagas_val.php",
@@ -108,7 +163,26 @@ function apagar_v(button) {
             console.log("Error: " + errorThrown);
         }
     });
-    location.reload();
+    //location.reload();
+}
+
+function apagar_vacina(button) {
+    acao = "apagar_vacina";
+    var xhttp = new XMLHttpRequest();
+    $.ajax({
+        url: "criar_vagas_val.php",
+        type: "POST",
+        data: { id_vacina: id_vacina, acao: acao },
+        dataType: "json",
+        success: function (response) {
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("AJAX erro");
+            console.log("Error: " + errorThrown);
+        }
+    });
+    console.log(data);
+    //location.reload();
 }
 
 function Filtro() {
@@ -135,4 +209,14 @@ function Filtro() {
             }
         }
     }
+}
+
+function mostrarVagas() {
+    document.getElementById("vagas-table").style.display = "block";
+    document.getElementById("vacinas-table").style.display = "none";
+}
+
+function mostrarVacinas() {
+    document.getElementById("vagas-table").style.display = "none";
+    document.getElementById("vacinas-table").style.display = "block";
 }

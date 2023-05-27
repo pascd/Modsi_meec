@@ -63,19 +63,19 @@
                                                             $vacina = $row['vacina'];
                                                             $vacinaOptions .= "<option value='$idVacina'>$vacina</option>";
                                                         }
+                                                        $vacinaOptions .= "<option value='outro'>Outro</option>";
                                                     } else {
                                                         echo "Error retrieving vaccine options from the database.";
                                                         exit();
                                                     }
                                                     ?>
-                                                    <select class="form-control" id="vacinas" name="vacinas" style="background-color: #ffffff;">
-                                                        <option id="id_vacina_covid" value="Covid" style="background-color: #ffffff;">Covid-19</option>
-                                                        <option id="id_vacina_hepatite" value="Hepatite" style="background-color: #ffffff;">Hepatite</option>
-                                                        <option id="id_vacina_tetano" value="Tetano" style="background-color: #ffffff;">Tetano</option>
-                                                        <option id="id_vacina_sarampo" value="Sarampo" style="background-color: #ffffff;">Sarampo</option>
+                                                    <select onchange="verificaroutra(this)" class="form-control" id="vacinas" name="vacinas" style="background-color: #ffffff;">
+                                                        <?php
+                                                        echo $vacinaOptions;
+                                                        ?>
                                                     </select>
-                                                    <br><br>
                                                 </div>
+                                                <input type="text" class="form-control" id="outra_vacina" placeholder="Outra Vacina" name="outra" disabled style="background-color: #ffffff;">
                                             </div>
                                             <div class="col-12 col-md-2">
                                                 <div class="form-group">
@@ -136,12 +136,18 @@
     </div>
     <br><br><br>
 
+    <div>
+        <button id="vagas-button" class="btn" onclick="mostrarVagas()">Ver Vagas</button>
+        <button id="vacinas-button" class="btn" onclick="mostrarVacinas()">Ver Vacinas</button>
+    </div>
+
+    <br><br><br>
+
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar vaga..">
 
     <br><br><br>
 
-    <div>
-
+    <div id="vagas-table" style="display: none;">
         <?php
 
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
@@ -155,8 +161,8 @@
 
 
         $sel_sql_2 = "SELECT v.*, vac.vacina
-                FROM vagas v
-                JOIN vacinas vac ON v.vacina = vac.id_vacina";
+        FROM vagas v
+        JOIN vacinas vac ON v.vacina = vac.id_vacina";
         $ans_2 = mysqli_query($db, $sel_sql_2);
         while ($row_2 = mysqli_fetch_assoc($ans_2)) {
             echo '<tr id_vaga="' . $row_2['id_vagas'] . '">';
@@ -170,10 +176,36 @@
         echo "</table>";
 
         ?>
-        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Apagar</button>
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_vaga">Apagar</button>
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div id="vacinas-table" style="display: none;">
+        <?php
+
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+        echo '<table class="content-table" id="table_vacinas">';
+        echo '<tr>';
+        echo '<th> Id_Vacina </th>';
+        echo '<th> Vacina </th>';
+        echo '</tr>';
+
+
+        $sel_sql_2 = "SELECT * FROM vacinas";
+        $ans_2 = mysqli_query($db, $sel_sql_2);
+        while ($row_3 = mysqli_fetch_assoc($ans_2)) {
+            echo '<tr id_vacina="' . $row_3['id_vacina'] . '">';
+            echo '<td>' . $row_3['id_vacina'] . '</td>';
+            echo '<td>' . $row_3['vacina'] . '</td>';
+            echo '</tr>';
+        }
+
+        echo "</table>";
+
+        ?>
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_vacina">Apagar</button>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter_vaga" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;width: auto;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -186,7 +218,26 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_2" onclick="apagar_v(this)">Confirmar</button>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_2" onclick="apagar_vaga(this)">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter_vacina" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;width: auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Apagar vaga</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body-apagar-vacinas">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter_2" onclick="apagar_vacina(this)">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -194,7 +245,6 @@
 
     <!-- ***** Book An Appoinment Area End ***** -->
     <br><br><br><br>
-
     <!-- ***** Footer Area Start ***** -->
     <script src="criar_vagas.js"></script>
     <script>
