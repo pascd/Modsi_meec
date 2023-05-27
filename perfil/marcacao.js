@@ -42,7 +42,7 @@ row_id_reservas.forEach(function (row_2) {
         $.ajax({
             url: "tab_conf_apagar.php",
             type: "POST",
-            data: { id_vaga: id_vaga},
+            data: { id_vaga: id_vaga },
             dataType: "html",
             success: function (response) {
                 $(".modal-body-apagar").html(response);
@@ -132,3 +132,37 @@ function alterar_m(button) {
     });
 
 }
+
+function gerarPDF() {
+    var tipo = 1;
+    $.ajax({
+        url: '/pdf/imprimir_pdf.php',
+        type: 'POST',
+        data: { tipo: tipo },
+        xhrFields: {
+            responseType: 'blob' // Set the response type to blob
+        },
+        success: function (response) {
+            // Create a new Blob object from the response
+            var blob = new Blob([response]);
+
+            // Create a link element and set its attributes for downloading the file
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'boletim_vacinas.pdf';
+
+            // Append the link to the document and trigger the download
+            document.body.appendChild(link);
+            link.click();
+
+            // Clean up resources
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(link.href);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+

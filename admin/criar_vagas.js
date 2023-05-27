@@ -155,7 +155,7 @@ function apagar_vaga(button) {
         url: "criar_vagas_val.php",
         type: "POST",
         data: { id_vaga: id_vaga, acao: acao },
-        dataType: "json",
+        dataType: "html",
         success: function (response) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -173,7 +173,7 @@ function apagar_vacina(button) {
         url: "criar_vagas_val.php",
         type: "POST",
         data: { id_vacina: id_vacina, acao: acao },
-        dataType: "json",
+        dataType: "html",
         success: function (response) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
