@@ -25,8 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$id_vaga_nova'";
     $ans = mysqli_query($db, $sel_sql);
 
-    echo "<table>";
+    echo '<table class="content-table">';
     while ($row = mysqli_fetch_assoc($ans)) {
+        echo '<tr class="touch2">';
         echo '<td>' . $row['vacina'] . '</td>';
         echo '<td>' . $row['data_vaga'] . '</td>';
         echo '<td>' . $row['hora'] . '</td>';

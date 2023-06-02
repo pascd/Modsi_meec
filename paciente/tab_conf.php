@@ -23,7 +23,7 @@ if (mysqli_num_rows($ans) > 0) {
     echo "</tr>";
     while ($row = mysqli_fetch_assoc($ans)) {
         if ($row['vagas'] > 0) {
-            echo '<tr id_vaga="' . $row['id_vagas'] . '" class="touch">';
+            echo '<tr id_vaga="' . $row['id_vagas'] . '" class="touch2">';
             echo '<td>' . $row['vacina'] . '</td>';
             echo '<td>' . $row['vagas'] . '</td>';
             echo '<td>' . $row['data_vaga'] . '</td>';

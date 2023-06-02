@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $nivel = "Admin";
             }
             
+            echo '<tr class="touch2">';
             echo '<td>' . $row['primeiro_nome'] . '</td>';
             echo '<td>' . $row['ultimo_nome'] . '</td>';
             echo '<td>' . $row['nascimento'] . '</td>';

@@ -16,6 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
 
 </head>
 
@@ -141,11 +142,11 @@
         <button id="vacinas-button" class="btn" onclick="mostrarVacinas()">Ver Vacinas</button>
     </div>
 
-    <br><br><br>
+    <br><br>
 
     <input type="text" id="filtro" onkeyup="Filtro()" placeholder="Procurar vaga..">
 
-    <br><br><br>
+    <br>
 
     <div id="vagas-table" style="display: none;">
         <?php
@@ -165,7 +166,7 @@
         JOIN vacinas vac ON v.vacina = vac.id_vacina";
         $ans_2 = mysqli_query($db, $sel_sql_2);
         while ($row_2 = mysqli_fetch_assoc($ans_2)) {
-            echo '<tr id_vaga="' . $row_2['id_vagas'] . '">';
+            echo '<tr id_vaga="' . $row_2['id_vagas'] . '" class="touch">';
             echo '<td>' . $row_2['vacina'] . '</td>';
             echo '<td>' . $row_2['vagas'] . '</td>';
             echo '<td>' . $row_2['data_vaga'] . '</td>';
@@ -185,7 +186,7 @@
         require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
         echo '<table class="content-table" id="table_vacinas">';
         echo '<tr>';
-        echo '<th> Id_Vacina </th>';
+        echo '<th> Id </th>';
         echo '<th> Vacina </th>';
         echo '</tr>';
 
@@ -193,7 +194,7 @@
         $sel_sql_2 = "SELECT * FROM vacinas";
         $ans_2 = mysqli_query($db, $sel_sql_2);
         while ($row_3 = mysqli_fetch_assoc($ans_2)) {
-            echo '<tr id_vacina="' . $row_3['id_vacina'] . '">';
+            echo '<tr id_vacina="' . $row_3['id_vacina'] . '" class="touch">';
             echo '<td>' . $row_3['id_vacina'] . '</td>';
             echo '<td>' . $row_3['vacina'] . '</td>';
             echo '</tr>';

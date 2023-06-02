@@ -1,5 +1,9 @@
 <script src="criar_vagas.js"></script>
 <?php
+
+echo "<link rel='stylesheet' href='../styles.css'>";
+echo "<link rel='stylesheet' href='../style.css'>";
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -10,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $sel_sql = "SELECT * FROM vacinas WHERE id_vacina = '$id_vaga_selec'";
     $ans = mysqli_query($db, $sel_sql);
 
-    echo "<table>";
+    echo '<table class="content-table">';
     echo '<tr>';
-    echo '<th> Id_Vacina </th>';
+    echo '<th> Id </th>';
     echo '<th> Vacina </th>';
     echo '</tr>';
     while ($row = mysqli_fetch_assoc($ans)) {
-        echo '<tr>';
+        echo '<tr class="touch2">';
         echo '<td>' . $row['id_vacina'] . '</td>';
         echo '<td>' . $row['vacina'] . '</td>';
         echo '</tr>';
