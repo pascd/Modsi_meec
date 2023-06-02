@@ -38,13 +38,13 @@
 }
 
 .outer-container {
-    min-height: 350px;
+    min-height: 370px;
     bottom: 0%;
     position: relative;
 }
 
 .chat-container {
-    max-height: 350px;
+    max-height: 370px;
     width: 100%;
     position: absolute;
     bottom: 0;

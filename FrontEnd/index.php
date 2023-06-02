@@ -59,25 +59,23 @@
                             <div class="first_questions">
                                 <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div>
                                 <p></p>
-                                <div class="button_layout">Ver as minhas marcações</div>
+                                <div class="button_layout" onclick="default_responses_2()">Ver as minhas marcações</div>
                                 <p></p>
-                                <div class="button_layout">Agendar vacinação</div>
+                                <div class="button_layout" onclick="default_responses_3()">Agendar vacinação</div>
                                 <p></p>
                             </div>
                         </div>
 
                         <!-- User input box -->
-                        <div class="chat-bar-input-block">
+                        <!-- <div class="chat-bar-input-block">
                             <div id="userInput">
                                 <input id="textInput" class="input-box" type="text" name="msg" placeholder="Pressionar 'Enter' para enviar mensagem">
                                 <p></p>
-                            </div>
+                            </div> -->
 
-                            <div class="chat-bar-icons">
-                                <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                    onclick="heartButton()"></i> -->
+                            <!-- <div class="chat-bar-icons">
                                 <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div id="chat-bar-bottom">
@@ -119,7 +117,7 @@
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Marcações que fazem a <br> Diferença<br></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>
+                                <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
                                 <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
@@ -133,7 +131,7 @@
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Serviços de Vacinação <br>Em que pode Confiar</h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>
+                                <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
                                 <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
@@ -224,7 +222,7 @@
                         ?>
 
                         <h6>Enfermeiro</h6>
-                        <p>Número de profissionais de saúde que prestam serviço ao nosso sistema</p>
+                        <p>Número de profissionais de saúde que prestam o serviço</p>
                     </div>
                 </div>
             </div>

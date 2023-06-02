@@ -39,27 +39,48 @@ function firstBotMessage() {
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
     let time = getTime();
-
-    $("#chat-timestamp").append(time);
-    document.getElementById("userInput").scrollIntoView(false);
+    document.getElementById("chat-timestamp").innerHTML = time;
+    
+    document.getElementById("userInput").scrollIntoView(true);
 }
 
 function default_responses_1() {
+
     let message_1 = "Pode alterar os dados do seu perfil ao clicar";
-    let Html_1 = '<p class="botText"><span>' + message_1 + ' <a href="https://www.youtube.com">aqui</a></span></p>';
-    $("#chatbox").append(Html_1);
+    
+    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + message_1 + ' <a href="/perfil/meu_perfil.php">aqui</a></span></p>';
 
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+    let time = getTime();
 
-    let Html_2 = '<p class="botText"><span> Deseja mais alguma coisa? </span></p>'
-    $("#chatbox").append(Html_2);
+    document.getElementById("chat-timestamp").innerHTML = time;
 
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+    document.getElementById("userInput").scrollIntoView(true);
+}
 
-    let Html_3 = '<div class="first_questions"> <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div><p></p> <div class="button_layout">Ver as minhas reservas</div><p></p> <div class="button_layout">Agendar uma Vacina</div><p></p> </div>'
-    $("#chatbox").append(Html_3);
+function default_responses_2() {
 
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+    let message_1 = "Pode ver as suas marcações ao clicar";
+    
+    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + message_1 + ' <a href="/perfil/minhas_marcacoes.php">aqui</a></span></p>';
+
+    let time = getTime();
+
+    document.getElementById("chat-timestamp").innerHTML = time;
+
+    document.getElementById("userInput").scrollIntoView(true);
+}
+
+function default_responses_3() {
+
+    let message_1 = "Pode agendar uma nova vacinação ao clicar";
+    
+    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + message_1 + ' <a href="/paciente/agendar.php">aqui</a></span></p>';
+
+    let time = getTime();
+
+    document.getElementById("chat-timestamp").innerHTML = time;
+
+    document.getElementById("userInput").scrollIntoView(true);
 }
 
 firstBotMessage();
