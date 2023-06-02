@@ -30,7 +30,7 @@
     </div> -->
 
     <!-- ***** Header Area Start ***** -->
-    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
     <script> 
         $(function(){
         $("#header-area").load("../menu_bar.php"); 

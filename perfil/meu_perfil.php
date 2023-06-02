@@ -20,11 +20,10 @@
 
 </head>
 
-<?php session_start(); ?>
 
 <body>
     <!-- ***** Header Area Start ***** -->
-    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
     <script>
         $(function() {
             $("#header-area").load("../menu_bar.php");
@@ -35,6 +34,9 @@
     <br><br><br><br>
     <br><br><br><br>
 
+    <script src="perfil.js"></script>
+
+    <?php session_start(); ?>
 
     <div id="form" style="margin-left: 2%; background-color: #f5f4f4; width: 96%;">
 
@@ -79,19 +81,22 @@
             </div>
             <div id="email-erro" class="error"></div>
 
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Alterar password
-            </button>
-
-            <input type="submit" class="btn btn-primary" value="Editar"><br><br>
-            <div id="perfil-check" class="error"></div>
+            <div style="float:left;width: 50%;">
+                <button type="button" style="float:left;width: 70%;"class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Alterar password
+                </button>
+            </div>
+            <div style="float:left;width: 50%;">
+                <input type="submit" class="btn btn-primary" value="Editar">
+                <br>
+                <div id="perfil-check" class="error"></div>
+            </div>
         </form>
     </div>
 
-    <script src="perfil.js"></script>
-    </script>
-    </p>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    
 
 
     <!-- Button trigger modal -->
