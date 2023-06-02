@@ -31,11 +31,11 @@
 
     <!-- ***** Header Area Start ***** -->
     <script src="../js/jquery/jquery-2.2.4.min.js"></script>
-    <script> 
-        $(function(){
-        $("#header-area").load("../menu_bar.php"); 
+    <script>
+        $(function() {
+            $("#header-area").load("../menu_bar.php");
         });
-    </script>   
+    </script>
     <div id="header-area"></div>
     <!-- ***** Header Area End ***** -->
 
@@ -57,25 +57,26 @@
                             <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
                             <!-- <p id="options_1" class="first_questions">Yes</p> -->
                             <div class="first_questions">
-                                <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div><p></p>
-                                <div class="button_layout">Ver as minhas marcações</div><p></p>
-                                <div class="button_layout">Agendar vacinação</div><p></p>
+                                <div class="button_layout" onclick="default_responses_1()">Como alterar o meu perfil</div>
+                                <p></p>
+                                <div class="button_layout">Ver as minhas marcações</div>
+                                <p></p>
+                                <div class="button_layout">Agendar vacinação</div>
+                                <p></p>
                             </div>
                         </div>
 
                         <!-- User input box -->
                         <div class="chat-bar-input-block">
                             <div id="userInput">
-                                <input id="textInput" class="input-box" type="text" name="msg"
-                                    placeholder="Pressionar 'Enter' para enviar mensagem">
+                                <input id="textInput" class="input-box" type="text" name="msg" placeholder="Pressionar 'Enter' para enviar mensagem">
                                 <p></p>
                             </div>
 
                             <div class="chat-bar-icons">
                                 <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
                                     onclick="heartButton()"></i> -->
-                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
-                                    onclick="sendButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
                             </div>
                         </div>
 
@@ -104,7 +105,7 @@
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Serviços de Vacinação <br>Em que pode Confiar</h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>
+                                <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
                                 <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
@@ -153,9 +154,20 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact-area text-center mb-100">
                         <i class="icon-blood-transfusion-2"></i>
-                        <h2><span class="counter">5632</span></h2>
-                        <h6>Blood donations</h6>
-                        <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+
+                        <?php
+
+                        require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+
+                        $sel_sql = "SELECT * FROM marcacao WHERE estado='Resolvido'";
+                        $ans = mysqli_query($db, $sel_sql);
+
+                        $marcacao = mysqli_num_rows($ans);
+                        echo '<h2><span class="counter">' .  $marcacao . '</span></h2>';
+                        ?>
+
+                        <h6>Administrações</h6>
+                        <p>Registo de todas as administrações realizadas pelo nosso serviço</p>
                     </div>
                 </div>
 
@@ -163,9 +175,18 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact-area text-center mb-100">
                         <i class="icon-atoms"></i>
-                        <h2><span class="counter">23</span>k</h2>
-                        <h6>Pacients</h6>
-                        <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+
+                        <?php
+
+                        $sel_sql = "SELECT * FROM users WHERE nivel='3'";
+                        $ans = mysqli_query($db, $sel_sql);
+
+                        $utente = mysqli_num_rows($ans);
+                        echo '<h2><span class="counter">' .  $utente . '</span></h2>';
+                        ?>
+
+                        <h6>Utentes</h6>
+                        <p>Número de utentes que têm acesso aos nossos serviços especializados de vacinação</p>
                     </div>
                 </div>
 
@@ -173,9 +194,18 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact-area text-center mb-100">
                         <i class="icon-microscope"></i>
-                        <h2><span class="counter">25</span></h2>
-                        <h6>Specialities</h6>
-                        <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+
+                        <?php
+
+                        $sel_sql = "SELECT * FROM vacinas";
+                        $ans = mysqli_query($db, $sel_sql);
+
+                        $vacinas = mysqli_num_rows($ans);
+                        echo '<h2><span class="counter">' .  $vacinas . '</span></h2>';
+                        ?>
+
+                        <h6>Vacinas</h6>
+                        <p>Quantidade de vacinas armazenadas em stock no sistema</p>
                     </div>
                 </div>
 
@@ -183,9 +213,18 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact-area text-center mb-100">
                         <i class="icon-doctor-1"></i>
-                        <h2><span class="counter">723</span></h2>
-                        <h6>Doctors</h6>
-                        <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+
+                        <?php
+
+                        $sel_sql = "SELECT * FROM users WHERE nivel='2'";
+                        $ans = mysqli_query($db, $sel_sql);
+
+                        $enfermeiro = mysqli_num_rows($ans);
+                        echo '<h2><span class="counter">' .  $enfermeiro . '</span></h2>';
+                        ?>
+
+                        <h6>Enfermeiro</h6>
+                        <p>Número de profissionais de saúde que prestam serviço ao nosso sistema</p>
                     </div>
                 </div>
             </div>
@@ -227,11 +266,11 @@
     <script src="../chatbot/chat.js"></script>
 
     <!-- ***** Footer Area Start ***** -->
-    <script> 
-        $(function(){
-        $("#footer-area").load("../footer.php"); 
+    <script>
+        $(function() {
+            $("#footer-area").load("../footer.php");
         });
-    </script>   
+    </script>
     <div id="footer-area"></div>
     <!-- ***** Footer Area End ***** -->
 
