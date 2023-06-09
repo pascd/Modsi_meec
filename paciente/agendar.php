@@ -77,7 +77,7 @@
             $sel_sql = "SELECT v.*, vac.vacina
             FROM vagas v
             JOIN vacinas vac ON v.vacina = vac.id_vacina
-            WHERE v.vacina = '$selected_vaccine'";
+            WHERE v.vacina = '$selected_vaccine' AND v.data_vaga >= curdate()";
             $ans = mysqli_query($db, $sel_sql);
 
             if (mysqli_num_rows($ans) > 0) {
