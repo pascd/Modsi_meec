@@ -9,16 +9,16 @@ $(document).ready(function () {
     $('#vagas-form').submit(function (e) {
         e.preventDefault();
         $.ajax({
-            url: "criar_vagas.php",
+            url: "criar_vagas_val.php",
             type: "POST",
             data: $('#vagas-form').serialize(),
-            dataType: "html",
+            dataType: "json",
             success: function (response) {
                 if (response.status == 'success') {
-                    console.log("AJAX");
                     $('#vagas-form')[0].reset();
                     $('.error').text('');
                     $('#vagas-check').text('Vagas introduzidas com sucesso');
+                    location.reload();
                 } else {
                     $('.error').text('');
                     $('#vagas-check').text(response.errors);
@@ -65,6 +65,7 @@ $(document).ready(function () {
 
                 if (response.status === "success") {
                     console.log("Sucesso");
+                    location.reload();
                 } else {
                     console.error("Error: " + response.errors);
                 }
@@ -163,7 +164,7 @@ function apagar_vaga(button) {
             console.log("Error: " + errorThrown);
         }
     });
-    //location.reload();
+    location.reload();
 }
 
 function apagar_vacina(button) {
@@ -182,7 +183,7 @@ function apagar_vacina(button) {
         }
     });
     console.log(data);
-    //location.reload();
+    location.reload();
 }
 
 function Filtro() {
