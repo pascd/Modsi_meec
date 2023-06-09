@@ -42,6 +42,7 @@ $(document).ready(function () {
                     $('#registo-form')[0].reset();
                     $('.error').text('');
                     $('#registo-check').text('Registo realizado com sucesso!');
+                    location.reload();
                 } else {
                     $('.error').text('');
                     $('#primeiro-erro').html(response.errors.primeiro);

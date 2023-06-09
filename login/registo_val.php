@@ -104,6 +104,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
       echo "Erro ao criar registo: " . mysqli_error($db);
     }
+
+    $html = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/mail/registo_mail.html');
+
+        // Replace placeholders in HTML template with dynamic content
+        $emailContent = str_replace('{nome}', $Primeiro, $html);
+        $emailContent = str_replace('{apelido}', $Ultimo, $emailContent);
+
+        $destino = $Email;
+        $assunto = "Registo de utilizador";
+        $mensagem = $emailContent;
+
+        enviar($destino, $assunto, $mensagem);
+
+
     mysqli_close($db);
   } else {
     $response = array('status' => 'error', 'errors' => $errors);

@@ -22,6 +22,7 @@ $('#save-changes-btn').click(function () {
             console.error(textStatus, errorThrown);
         }
     });
+    location.reload();
 });
 
     $('#perfil-form').submit(function (e) {

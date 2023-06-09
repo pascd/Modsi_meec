@@ -42,6 +42,7 @@ function agendar(button) {
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send('id_vagas=' + encodeURIComponent(id_vaga));
     console.log(id_vaga);
+    location.reload();
 }
 
 $(document).ready(function () {
