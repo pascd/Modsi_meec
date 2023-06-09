@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mail/email_enviar.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   /*
@@ -11,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $NUS = mysqli_real_escape_string($db,$_POST['NUS']);
         $Password = mysqli_real_escape_string($db,$_POST['password']);
         $CPassword = mysqli_real_escape_string($db,$_POST['cpassword']);
-        */
+  */
 
   $Primeiro = $_POST['primeiro'];
   $Ultimo = $_POST['ultimo'];
