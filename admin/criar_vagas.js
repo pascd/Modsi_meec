@@ -38,7 +38,7 @@ $(document).ready(function () {
         if(outra == 1)
         {
             vacina = $("#outra_vacina").val();
-        }else{
+        }else if(outra == 0){
             vacina = $("#vacinas").val();
         }
         
