@@ -107,11 +107,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $hora = $_POST['hora'];
         $outra = $_POST['outra'];
 
+        /*
         var_dump($vacina);
         var_dump($vagas);
         var_dump($data);
         var_dump($hora);
         var_dump($outra);
+        */
 
         $errors = array();
 
@@ -144,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($outra == 1) {
             $ins_sql = "INSERT INTO vacinas (vacina) VALUES ('$vacina')";
             if (mysqli_query($db, $ins_sql)) {
-                echo "Vacina registada com sucesso.";
+                //echo "Vacina registada com sucesso.";
                 $vacinaId = mysqli_insert_id($db);
                 var_dump($vacinaId);
             } else {
@@ -152,15 +154,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
             $ins_sql_2 = "INSERT INTO vagas (vacina, vagas, data_vaga, hora) VALUES ('$vacinaId', '$vagas', '$data', '$hora')";
             if (mysqli_query($db, $ins_sql_2)) {
-                echo "Registo criado com sucesso.";
+                //echo "Registo criado com sucesso.";
             } else {
                 echo "Erro ao criar registo: " . mysqli_error($db);
             }
             mysqli_close($db);
-        } else {
+        } else if ($outra == 0) {
             $ins_sql_2 = "INSERT INTO vagas (vacina, vagas, data_vaga, hora) VALUES ('$vacina', '$vagas', '$data', '$hora')";
             if (mysqli_query($db, $ins_sql_2)) {
-                echo "Registo criado com sucesso.";
+                //echo "Registo criado com sucesso.";
             } else {
                 echo "Erro ao criar registo: " . mysqli_error($db);
             }

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ans = mysqli_query($db, $sel_sql);
 
     if ($ans->num_rows > 0) {
-        //$errors['agendar']="Já possui uma reserva para este horário";
+        $errors['agendar']="Já possui uma reserva para este horário";
     }
 
     $sel_sql = "SELECT * FROM marcacao WHERE paciente='$id_paciente'";
@@ -43,7 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         //Para o email
-        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$id_vaga'";
+        $sel_sql = "SELECT v.*, vac.vacina
+                FROM vagas v
+                JOIN vacinas vac ON v.vacina = vac.id_vacina
+                WHERE v.id_vagas = '$id_vaga'";
         $ans = mysqli_query($db, $sel_sql);
 
         if (mysqli_num_fields($ans) > 0) {

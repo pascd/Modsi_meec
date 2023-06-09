@@ -42,8 +42,7 @@ function agendar(button) {
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send('id_vagas=' + encodeURIComponent(id_vaga));
     console.log(id_vaga);
-    window.location();
-
+    location.reload();
 }
 
 $(document).ready(function () {
@@ -57,9 +56,10 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.status == 'success') {
                     console.log("AJAX");
-                    //$('#agendar-form')[0].reset();
+                    $('#agendar-form')[0].reset();
                     $('.error').text('');
                     $('#agendar-check').text('Agendamento realizado com sucesso!');
+                    location.reload();
                 } else {
                     $('#agendar-check').text(response.errors.agendar);
                 }

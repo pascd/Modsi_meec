@@ -109,6 +109,7 @@ function apagar_m(button) {
 
         }
     });
+    location.reload();
 }
 
 function alterar_m(button) {
@@ -130,6 +131,7 @@ function alterar_m(button) {
 
         }
     });
+    location.reload();
 
 }
 
