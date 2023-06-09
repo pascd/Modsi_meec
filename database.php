@@ -5,7 +5,6 @@
         $password = '1234'; // replace with your database password
         $dbname = '1190939_Vacinacao'; // replace with your database name
         
-        
         // Create connection
         $db = new mysqli($servername, $username, $password, $dbname);
         
