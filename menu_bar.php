@@ -91,14 +91,6 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/FrontEnd/index.php">Home <span class="sr-only">(current)</span></a>
                                     </li>
-                                    <!-- <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acerca</a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="/acerca/missao_e_valores.html">Missão e Valores</a>
-                                            <a class="dropdown-item" href="/acerca/welcome.html">Mensagem de Boas Vindas</a>
-                                            <a class="dropdown-item" href="/acerca/contactos.html">Contactos</a>
-                                        </div>
-                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" href="/acerca/contactos.html">Contactos</a>
                                     </li>

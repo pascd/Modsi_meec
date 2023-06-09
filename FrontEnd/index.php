@@ -37,11 +37,11 @@
         });
     </script>
     <div id="header-area"></div>
-    <!-- ***** Header Area End ***** -->
+    <?php
+    session_start();
+    ?>
 
-    <!-- ***** ChatBot Start ***** -->
-
-    <div class="chat-bar-collapsible">
+    <div id="chatbot_janela" class="chat-bar-collapsible">
         <button id="chat-button" type="button" class="collapsible">Sistema de Vacinação Chatbot
             <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
         </button>
@@ -73,20 +73,20 @@
                                 <p></p>
                             </div> -->
 
-                            <!-- <div class="chat-bar-icons">
+                        <!-- <div class="chat-bar-icons">
                                 <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
                             </div> -->
-                        </div>
-
-                        <div id="chat-bar-bottom">
-                            <p></p>
-                        </div>
-
                     </div>
-                </div>
 
+                    <div id="chat-bar-bottom">
+                        <p></p>
+                    </div>
+
+                </div>
             </div>
+
         </div>
+    </div>
 
     </div>
     <!-- ***** Chat Bot End ***** -->
@@ -104,7 +104,6 @@
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Serviços de Vacinação <br>Em que pode Confiar</h2>
                                 <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
-                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +117,6 @@
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Marcações que fazem a <br> Diferença<br></h2>
                                 <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
-                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +130,6 @@
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Serviços de Vacinação <br>Em que pode Confiar</h2>
                                 <h6 data-animation="fadeInUp" data-delay="400ms">Somos Sistema de Vacinação Portuguesa</h6>
-                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover Medifile <span>+</span></a>
                             </div>
                         </div>
                     </div>
@@ -263,6 +260,16 @@
     <script src="../chatbot/responses.js"></script>
     <script src="../chatbot/chat.js"></script>
 
+    <script>
+        var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
+
+        if (nivel == 0) {
+            document.getElementById('chatbot_janela').style.display = 'none';
+        } else {
+            document.getElementById('chatbot_janela').style.display = 'block';
+
+        }
+    </script>
     <!-- ***** Footer Area Start ***** -->
     <script>
         $(function() {
