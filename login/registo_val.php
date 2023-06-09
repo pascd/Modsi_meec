@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE email = '$Email'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      $errors['email'] = "Este email ja esta a ser utilizado.";
+      //$errors['email'] = "Este email ja esta a ser utilizado.";
     }
   }
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE contacto = '$Telemovel'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      $errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
+      //$errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
     }
   }
 
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE nus = '$NUS'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      $errors['nus'] = "Este NUS ja esta a ser utilizado.";
+      //$errors['nus'] = "Este NUS ja esta a ser utilizado.";
     }
   }
 
