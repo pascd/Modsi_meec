@@ -13,6 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $ans = mysqli_query($db, $sel_sql);
 
     echo '<table id="table_alt" class="content-table">';
+    echo '<tr>';
+    echo '<th> Vacina </th>';
+    echo '<th> Data </th>';
+    echo '<th> Hora </th>';
+    echo '</tr>';
     while ($row = mysqli_fetch_assoc($ans)) {
         echo '<tr class="touch2">'; 
         echo '<td>' . $row['vacina'] . '</td>';

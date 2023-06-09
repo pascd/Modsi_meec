@@ -14,9 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $ans_3 = mysqli_query($db, $sel_sql_3);
 
     echo '<table id="table_alt" class="content-table">';
+    // echo '<table class="content-table" id="table_reserva">';
+             echo '<tr>';
+             echo '<th> Vacina </th>';
+             echo '<th> Data </th>';
+             echo '<th> Hora </th>';
+             echo '</tr>';
     while ($row_3 = mysqli_fetch_assoc($ans_3)) {
 
-        echo '<tr id_vaga_nova="' . $row_3['id_vagas'] . '" class="touch">';
+        echo '<tr id_vaga_nova="' . $row_3['id_vagas'] . '" class="touch2">';
         echo '<td>' . $row_3['vacina'] . '</td>';
         echo '<td>' . $row_3['data_vaga'] . '</td>';
         echo '<td>' . $row_3['hora'] . '</td>';
