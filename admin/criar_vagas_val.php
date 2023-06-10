@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($acao == "apagar_vaga") {
 
         $id_vaga = $_POST['id_vaga'];
+        var_dump($id_vaga);
 
         $sel_sql = "SELECT * FROM marcacao WHERE vaga='$id_vaga'";
         $ans = mysqli_query($db, $sel_sql);
