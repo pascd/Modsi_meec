@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE email = '$Email'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      //$errors['email'] = "Este email ja esta a ser utilizado.";
+      $errors['email'] = "Este email ja esta a ser utilizado.";
     }
   }
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE contacto = '$Telemovel'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      //$errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
+      $errors['telemovel'] = "Este telemovel ja esta a ser utilizado.";
     }
   }
 
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sel_sql = "SELECT * FROM users WHERE nus = '$NUS'";
     $ans = mysqli_query($db, $sel_sql);
     if ($ans->num_rows > 0) {
-      //$errors['nus'] = "Este NUS ja esta a ser utilizado.";
+      $errors['nus'] = "Este NUS ja esta a ser utilizado.";
     }
   }
 
@@ -91,22 +91,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Alterar_Senha = 0;
     $ins_sql = "INSERT INTO users (primeiro_nome, ultimo_nome, nascimento, nus, email, contacto, pass, alt_senha, nivel) VALUES ('$Primeiro', '$Ultimo', '$Nascimento', '$NUS', '$Email', '$Telemovel', '$Hash', '$Alterar_Senha', '$Nivel')";
     if (mysqli_query($db, $ins_sql)) {
-      echo "Registo criado com sucesso.";
+      //echo "Registo criado com sucesso.";
     } else {
       echo "Erro ao criar registo: " . mysqli_error($db);
     }
 
     $html = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/mail/registo_mail.html');
 
-        // Replace placeholders in HTML template with dynamic content
-        $emailContent = str_replace('{nome}', $Primeiro, $html);
-        $emailContent = str_replace('{apelido}', $Ultimo, $emailContent);
+    // Replace placeholders in HTML template with dynamic content
+    $emailContent = str_replace('{nome}', $Primeiro, $html);
+    $emailContent = str_replace('{apelido}', $Ultimo, $emailContent);
 
-        $destino = $Email;
-        $assunto = "Registo de utilizador";
-        $mensagem = $emailContent;
+    $destino = $Email;
+    $assunto = "Registo de utilizador";
+    $mensagem = $emailContent;
 
-        enviar($destino, $assunto, $mensagem);
+    enviar($destino, $assunto, $mensagem);
 
 
     mysqli_close($db);

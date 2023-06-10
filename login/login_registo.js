@@ -39,7 +39,6 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.status == 'success') {
                     console.log("AJAX");
-                    $('#registo-form')[0].reset();
                     $('.error').text('');
                     $('#registo-check').text('Registo realizado com sucesso!');
                     location.reload();
