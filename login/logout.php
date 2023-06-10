@@ -13,6 +13,6 @@
 
     session_destroy();
 
-    header("Location: ../FrontEnd/index.php");
+    header("Location: ../index.php");
 
     ?>
