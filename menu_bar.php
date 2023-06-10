@@ -82,14 +82,14 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="/FrontEnd/index.php"><img src="/img/core-img/logo.png" alt="Logo" width="171"></a>
+                            <a class="navbar-brand" href="/index.php"><img src="/img/core-img/logo.png" alt="Logo" width="171"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                             <div class="collapse navbar-collapse" id="medilifeMenu">
                                 <!-- Menu Area -->
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="/FrontEnd/index.php">Home <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/acerca/contactos.html">Contactos</a>

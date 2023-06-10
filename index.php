@@ -11,15 +11,15 @@
     <!-- Title  -->
     <title>Sistema de vacinação Portuguesa | Home</title>
 
-    <link rel="stylesheet" href="../chatbot/chat.css">
+    <link rel="stylesheet" href="/chatbot/chat.css">
     <!-- <link rel="stylesheet" href="chatbot/home.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../img/Vaccine.png">
+    <link rel="icon" href="/img/Vaccine.png">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
 
 </head>
 
@@ -30,10 +30,10 @@
     </div> -->
 
     <!-- ***** Header Area Start ***** -->
-    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
     <script>
         $(function() {
-            $("#header-area").load("../menu_bar.php");
+            $("#header-area").load("/menu_bar.php");
         });
     </script>
     <div id="header-area"></div>
@@ -97,7 +97,7 @@
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00000-3993320424.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(/img/bg_img/00000-3993320424.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00001-3993320425.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(/img/bg_img/00001-3993320425.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -123,7 +123,7 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../img/bg_img/00011-1621470304.png);">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(/img/bg_img/00011-1621470304.png);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -257,8 +257,8 @@
     </div>
     <!-- ***** Blog Area End ***** -->
 
-    <script src="../chatbot/responses.js"></script>
-    <script src="../chatbot/chat.js"></script>
+    <script src="/chatbot/responses.js"></script>
+    <script src="/chatbot/chat.js"></script>
 
     <script>
         var nivel = "<?php echo isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 0 ?>";
@@ -273,7 +273,7 @@
     <!-- ***** Footer Area Start ***** -->
     <script>
         $(function() {
-            $("#footer-area").load("../footer.php");
+            $("#footer-area").load("/footer.php");
         });
     </script>
     <div id="footer-area"></div>

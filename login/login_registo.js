@@ -14,7 +14,7 @@ $(document).ready(function () {
                     if (alt_senha == 1) {
                         window.location.href = "/perfil/meu_perfil.php";
                     } else {
-                        window.location.href = "/FrontEnd/index.php";
+                        window.location.href = "/index.php";
                     }
                 } else {
                     $('.error').text('');
