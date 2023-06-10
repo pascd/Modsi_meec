@@ -16,7 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $rem_sql = "DELETE FROM marcacao WHERE paciente='$paciente' AND vaga='$vaga'";
         mysqli_query($db, $rem_sql);
 
-        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+        $sel_sql = "SELECT v.*, vac.vacina
+        FROM vagas v
+        JOIN vacinas vac ON v.vacina = vac.id_vacina
+        WHERE v.id_vagas='$vaga'";
+
         $ans = mysqli_query($db, $sel_sql);
         $row = mysqli_fetch_array($ans);
         $nome = $_SESSION['primeiro_nome'];
@@ -44,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $mensagem = $emailContent;
 
         enviar($destino, $assunto, $mensagem);
-
     }
 
     if ($acao == "Alterar") {
@@ -75,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
         //Para o email
-        $sel_sql = "SELECT * FROM vagas WHERE id_vagas='$vaga'";
+        $sel_sql = "SELECT v.*, vac.vacina
+        FROM vagas v
+        JOIN vacinas vac ON v.vacina = vac.id_vacina
+        WHERE v.id_vagas='$vaga'";
         $ans = mysqli_query($db, $sel_sql);
 
         if (mysqli_num_fields($ans) > 0) {
@@ -115,4 +121,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         enviar($destino, $assunto, $mensagem);
     }
 }
-?>

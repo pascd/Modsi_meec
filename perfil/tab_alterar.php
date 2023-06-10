@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $sel_sql_3 = "SELECT v.*, vac.vacina
     FROM vagas v
     JOIN vacinas vac ON v.vacina = vac.id_vacina
-    WHERE vac.vacina = '$vacina'";
+    WHERE vac.vacina = '$vacina' AND v.data_vaga >= curdate()";
 
     $ans_3 = mysqli_query($db, $sel_sql_3);
 
