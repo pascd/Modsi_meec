@@ -32,14 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }
         } else {
           if (!password_verify($Password_atual, $senha)) {
-            $errors['password_atual'] = "Password atual está incorretalelel.";
+            $errors['password_atual'] = "Password atual está incorreta.";
           }
         }
       }
     }
 
     if (empty($Nova_password)) {
-      $errors['nova_password'] = "Precisa de inserir uma nova password.";
+      $errors['nova_password'] = "Precisa inserir uma nova password.";
     } else if (strlen($Nova_password) < 8) {
       $errors['nova_password'] = "Password necessita de ter pelo menos 8 caracteres.";
     }
@@ -58,6 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query = "UPDATE users SET pass='$Hash', alt_senha='$senha_alterada' WHERE id_user=$id";
         mysqli_query($db, $query);
       } else {
+        $response = array('status' => 'success');
+        $Hash = password_hash($Nova_password, PASSWORD_BCRYPT);
+        $query = "UPDATE users SET pass='$Hash' WHERE id_user=$id";
+        mysqli_query($db, $query);
       }
     } else {
       $response = array('status' => 'error', 'errors' => $errors);

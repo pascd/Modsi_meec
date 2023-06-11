@@ -16,6 +16,7 @@ $('#save-changes-btn').click(function () {
             confirmar_senha: confirmar_senha,
             alterar_senha: alterar_senha
         },
+        dataType: "html",
         success: function (response) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -23,6 +24,7 @@ $('#save-changes-btn').click(function () {
         }
     });
     location.reload();
+    //console.log(senha_atual + " " + nova_senha + " " + confirmar_senha);
 });
 
     $('#perfil-form').submit(function (e) {

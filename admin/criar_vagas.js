@@ -75,6 +75,7 @@ $(document).ready(function () {
                 console.error("Erro: " + error);
             }
         });
+        location.reload();
     });
 
     row_id_vagas.forEach(function (row_2) {
